@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440DD5FC272E97BD00758AD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD5FB272E97BD00758AD9 /* Model.swift */; };
+		440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD602272E982D00758AD9 /* VMGlobal.swift */; };
+		440DD606272E984F00758AD9 /* Components1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD605272E984F00758AD9 /* Components1.swift */; };
 		44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F0E2728688F00DEE0EF /* NaticsApp.swift */; };
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440DD5FB272E97BD00758AD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		440DD602272E982D00758AD9 /* VMGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMGlobal.swift; sourceTree = "<group>"; };
+		440DD605272E984F00758AD9 /* Components1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components1.swift; sourceTree = "<group>"; };
 		44558F0B2728688F00DEE0EF /* Natics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Natics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44558F0E2728688F00DEE0EF /* NaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaticsApp.swift; sourceTree = "<group>"; };
 		44558F102728688F00DEE0EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +39,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440DD5FA272E97A800758AD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				440DD5FB272E97BD00758AD9 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		440DD5FD272E97D100758AD9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				440DD5FE272E97DA00758AD9 /* Components */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		440DD5FE272E97DA00758AD9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				440DD604272E983B00758AD9 /* Components1 */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		440DD601272E981B00758AD9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				440DD602272E982D00758AD9 /* VMGlobal.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		440DD604272E983B00758AD9 /* Components1 */ = {
+			isa = PBXGroup;
+			children = (
+				440DD605272E984F00758AD9 /* Components1.swift */,
+			);
+			path = Components1;
+			sourceTree = "<group>";
+		};
 		44558F022728688F00DEE0EF = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +98,9 @@
 		44558F0D2728688F00DEE0EF /* Natics */ = {
 			isa = PBXGroup;
 			children = (
+				440DD601272E981B00758AD9 /* ViewModels */,
+				440DD5FD272E97D100758AD9 /* Features */,
+				440DD5FA272E97A800758AD9 /* Models */,
 				44558F0E2728688F00DEE0EF /* NaticsApp.swift */,
 				44558F102728688F00DEE0EF /* ContentView.swift */,
 				44558F122728689100DEE0EF /* Assets.xcassets */,
@@ -139,6 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
+				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
+				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
 			);
