@@ -14,6 +14,14 @@
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
 		44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F152728689100DEE0EF /* Preview Assets.xcassets */; };
+		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
+		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
+		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
+		49468252272FA62300C92AEE /* CasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468251272FA62300C92AEE /* CasesView.swift */; };
+		49468254272FA63400C92AEE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468253272FA63400C92AEE /* SettingsView.swift */; };
+		49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468256272FAB1100C92AEE /* SideBarModel.swift */; };
+		49468259272FBC8000C92AEE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468258272FBC8000C92AEE /* DashboardView.swift */; };
+		4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825A272FBD2000C92AEE /* WatchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		44558F122728689100DEE0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44558F152728689100DEE0EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44558F172728689100DEE0EF /* Natics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Natics.entitlements; sourceTree = "<group>"; };
+		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
+		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		49468251272FA62300C92AEE /* CasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesView.swift; sourceTree = "<group>"; };
+		49468253272FA63400C92AEE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		49468256272FAB1100C92AEE /* SideBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarModel.swift; sourceTree = "<group>"; };
+		49468258272FBC8000C92AEE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		4946825A272FBD2000C92AEE /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,9 @@
 		440DD5FD272E97D100758AD9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				49468245272FA4D200C92AEE /* Settings */,
+				49468244272FA4CC00C92AEE /* Cases */,
+				49468243272FA4BE00C92AEE /* Trends */,
 				440DD5FE272E97DA00758AD9 /* Components */,
 			);
 			path = Features;
@@ -58,6 +77,7 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49468239272F9E6B00C92AEE /* SideBarMenu */,
 				440DD604272E983B00758AD9 /* Components1 */,
 			);
 			path = Components;
@@ -116,6 +136,114 @@
 				44558F152728689100DEE0EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49468239272F9E6B00C92AEE /* SideBarMenu */ = {
+			isa = PBXGroup;
+			children = (
+				49468255272FAA6300C92AEE /* Model */,
+				4946823B272F9E9F00C92AEE /* View */,
+				4946823C272F9EA500C92AEE /* ViewModel */,
+			);
+			path = SideBarMenu;
+			sourceTree = "<group>";
+		};
+		4946823B272F9E9F00C92AEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4946823F272F9FE700C92AEE /* SideBarView.swift */,
+				49468258272FBC8000C92AEE /* DashboardView.swift */,
+				4946825A272FBD2000C92AEE /* WatchListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4946823C272F9EA500C92AEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49468241272FA08A00C92AEE /* SiderBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49468243272FA4BE00C92AEE /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				4946824D272FA58C00C92AEE /* View */,
+				4946824C272FA58500C92AEE /* ViewModel */,
+			);
+			path = Trends;
+			sourceTree = "<group>";
+		};
+		49468244272FA4CC00C92AEE /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				4946824A272FA57000C92AEE /* View */,
+				49468249272FA56600C92AEE /* ViewModel */,
+			);
+			path = Cases;
+			sourceTree = "<group>";
+		};
+		49468245272FA4D200C92AEE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				49468247272FA51400C92AEE /* View */,
+				49468248272FA51A00C92AEE /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		49468247272FA51400C92AEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49468253272FA63400C92AEE /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49468248272FA51A00C92AEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49468249272FA56600C92AEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4946824A272FA57000C92AEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49468251272FA62300C92AEE /* CasesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4946824C272FA58500C92AEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4946824D272FA58C00C92AEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4946824F272FA61800C92AEE /* TrendsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49468255272FAA6300C92AEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49468256272FAB1100C92AEE /* SideBarModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +317,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
+				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
+				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
+				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
+				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
+				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
+				49468250272FA61800C92AEE /* TrendsView.swift in Sources */,
+				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
+				49468254272FA63400C92AEE /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +460,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -352,7 +488,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
