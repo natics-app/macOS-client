@@ -16,6 +16,14 @@
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
 		44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F152728689100DEE0EF /* Preview Assets.xcassets */; };
+		4946825E273067FE00C92AEE /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825D273067FE00C92AEE /* ExportButton.swift */; };
+		494682632730682800C92AEE /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825F2730682800C92AEE /* TrendsViewModel.swift */; };
+		494682642730682800C92AEE /* HeatMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494682602730682800C92AEE /* HeatMapViewModel.swift */; };
+		494682652730682800C92AEE /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494682612730682800C92AEE /* HeatMapModel.swift */; };
+		494682662730682800C92AEE /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494682622730682800C92AEE /* LocationBarChartView.swift */; };
+		494682682730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 494682672730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson */; };
+		4946826A2730684F00C92AEE /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494682692730684F00C92AEE /* GeoJSON.swift */; };
+		4946826E27306C1100C92AEE /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4946826D27306C1100C92AEE /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,13 @@
 		44558F122728689100DEE0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44558F152728689100DEE0EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44558F172728689100DEE0EF /* Natics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Natics.entitlements; sourceTree = "<group>"; };
+		4946825D273067FE00C92AEE /* ExportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
+		4946825F2730682800C92AEE /* TrendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewModel.swift; sourceTree = "<group>"; };
+		494682602730682800C92AEE /* HeatMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapViewModel.swift; sourceTree = "<group>"; };
+		494682612730682800C92AEE /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
+		494682622730682800C92AEE /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
+		494682672730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndonesiaGeoJSONProvinces.geojson; sourceTree = "<group>"; };
+		494682692730684F00C92AEE /* GeoJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4946826E27306C1100C92AEE /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +70,7 @@
 		440DD5FD272E97D100758AD9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4946825C2730679500C92AEE /* HeatMapView */,
 				440DD5FE272E97DA00758AD9 /* Components */,
 			);
 			path = Features;
@@ -62,6 +79,7 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4946825D273067FE00C92AEE /* ExportButton.swift */,
 				440DD604272E983B00758AD9 /* Components1 */,
 			);
 			path = Components;
@@ -70,6 +88,9 @@
 		440DD601272E981B00758AD9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				494682602730682800C92AEE /* HeatMapViewModel.swift */,
+				4946825F2730682800C92AEE /* TrendsViewModel.swift */,
+				494682692730684F00C92AEE /* GeoJSON.swift */,
 				440DD602272E982D00758AD9 /* VMGlobal.swift */,
 			);
 			path = ViewModels;
@@ -125,6 +146,7 @@
 				440DD5FA272E97A800758AD9 /* Models */,
 				44558F0E2728688F00DEE0EF /* NaticsApp.swift */,
 				44558F102728688F00DEE0EF /* ContentView.swift */,
+				494682672730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson */,
 				44558F122728689100DEE0EF /* Assets.xcassets */,
 				44558F172728689100DEE0EF /* Natics.entitlements */,
 				44558F142728689100DEE0EF /* Preview Content */,
@@ -138,6 +160,15 @@
 				44558F152728689100DEE0EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4946825C2730679500C92AEE /* HeatMapView */ = {
+			isa = PBXGroup;
+			children = (
+				494682612730682800C92AEE /* HeatMapModel.swift */,
+				494682622730682800C92AEE /* LocationBarChartView.swift */,
+			);
+			path = HeatMapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +187,9 @@
 			dependencies = (
 			);
 			name = Natics;
+			packageProductDependencies = (
+				4946826D27306C1100C92AEE /* Charts */,
+			);
 			productName = Natics;
 			productReference = 44558F0B2728688F00DEE0EF /* Natics.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +218,9 @@
 				Base,
 			);
 			mainGroup = 44558F022728688F00DEE0EF;
+			packageReferences = (
+				4946826C27306C1100C92AEE /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 44558F0C2728688F00DEE0EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +237,7 @@
 			files = (
 				44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */,
 				44558F132728689100DEE0EF /* Assets.xcassets in Resources */,
+				494682682730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,13 +248,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494682662730682800C92AEE /* LocationBarChartView.swift in Sources */,
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
+				4946825E273067FE00C92AEE /* ExportButton.swift in Sources */,
+				4946826A2730684F00C92AEE /* GeoJSON.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
+				494682642730682800C92AEE /* HeatMapViewModel.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
+				494682632730682800C92AEE /* TrendsViewModel.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
+				494682652730682800C92AEE /* HeatMapModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +392,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -376,7 +420,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -416,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4946826C27306C1100C92AEE /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4946826D27306C1100C92AEE /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4946826C27306C1100C92AEE /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44558F032728688F00DEE0EF /* Project object */;
 }
