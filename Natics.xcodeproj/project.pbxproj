@@ -10,6 +10,8 @@
 		440DD5FC272E97BD00758AD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD5FB272E97BD00758AD9 /* Model.swift */; };
 		440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD602272E982D00758AD9 /* VMGlobal.swift */; };
 		440DD606272E984F00758AD9 /* Components1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD605272E984F00758AD9 /* Components1.swift */; };
+		4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */; };
+		4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4454BDE7272FA6600012E4A4 /* Constants.swift */; };
 		44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F0E2728688F00DEE0EF /* NaticsApp.swift */; };
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		440DD5FB272E97BD00758AD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		440DD602272E982D00758AD9 /* VMGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMGlobal.swift; sourceTree = "<group>"; };
 		440DD605272E984F00758AD9 /* Components1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components1.swift; sourceTree = "<group>"; };
+		4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		4454BDE7272FA6600012E4A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44558F0B2728688F00DEE0EF /* Natics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Natics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44558F0E2728688F00DEE0EF /* NaticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaticsApp.swift; sourceTree = "<group>"; };
 		44558F102728688F00DEE0EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,22 @@
 			path = Components1;
 			sourceTree = "<group>";
 		};
+		4454BDE0272F9BD20012E4A4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4454BDE7272FA6600012E4A4 /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4454BDE1272F9C760012E4A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		44558F022728688F00DEE0EF = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +138,8 @@
 		44558F0D2728688F00DEE0EF /* Natics */ = {
 			isa = PBXGroup;
 			children = (
+				4454BDE1272F9C760012E4A4 /* Extension */,
+				4454BDE0272F9BD20012E4A4 /* Util */,
 				440DD601272E981B00758AD9 /* ViewModels */,
 				440DD5FD272E97D100758AD9 /* Features */,
 				440DD5FA272E97A800758AD9 /* Models */,
@@ -319,8 +341,10 @@
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
+				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
+				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
