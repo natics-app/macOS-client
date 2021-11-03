@@ -9,26 +9,25 @@ import SwiftUI
 
 struct SideBarView: View {
     @StateObject var viewModel = SideBarViewModel()
-
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                List {
+                List{
                     DashboardView()
                     WatchListView()
                     Spacer()
                 }.listStyle(SidebarListStyle())
-                    .toolbar {
+                .toolbar {
                         ToolbarItem(placement: .navigation) {
                             Button(action: viewModel.toggleSidebar) {
                                 Image(systemName: "sidebar.left")
                                     .help("Toggle Sidebar")
                             }
                         }
-                        
                 }
-            }
-        }.navigationTitle("Natics")
+            }.navigationTitle("")
+        }
     }
 }
 

@@ -9,7 +9,19 @@ import SwiftUI
 
 struct CasesView: View {
     var body: some View {
-        Text("Cases")
+        VStack {
+            Text("Cases Dashboard")
+        }.navigationTitle("")
+        .toolbar {
+            ToolbarItem(placement: ToolbarItemPlacement.navigation) {
+                Text("Cases")
+                    .font(.system(size: 24))
+                    .fontWeight(.semibold)
+            }
+            ToolbarItem {
+                ToolbarView().padding(.top, 27)
+            }
+        }
     }
 }
 

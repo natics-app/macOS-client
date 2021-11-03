@@ -9,7 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
+        VStack {
+            Text("Dashboard Settings")
+        }
+        .navigationTitle("")
+        .toolbar {
+            ToolbarItem(placement: ToolbarItemPlacement.navigation) {
+                Text("Settings")
+                    .font(.system(size: 24))
+                    .fontWeight(.semibold)
+            }
+        }
     }
 }
 
