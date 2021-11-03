@@ -26,5 +26,10 @@ struct SharingButton_Previews: PreviewProvider {
         SharingButton(label: "Export All") {
             
         }
+        
+        SharingButton(label: "Share") {
+            
+        }
+        
     }
 }

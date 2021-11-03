@@ -14,12 +14,11 @@ struct ToolbarView: View {
                 Spacer()
                 
                 ActionButton(action: {
-                    print("Clicked2")
                 }, imageName: "bell.badge.fill")
                     .padding(.trailing, 16)
+                    .help("Notification Bell")
                 
                 FilledButton(title: "Add Watchlist") {
-                    print("Add Watchlist")
                 }.help("Add Watch List")
             }.padding(.init(top: 27, leading: 0, bottom: 0, trailing: 24))
         }
