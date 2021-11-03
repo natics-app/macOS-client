@@ -24,6 +24,8 @@
 		494682682730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 494682672730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson */; };
 		4946826A2730684F00C92AEE /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494682692730684F00C92AEE /* GeoJSON.swift */; };
 		4946826E27306C1100C92AEE /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4946826D27306C1100C92AEE /* Charts */; };
+		498906E72732CA6000773602 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498906E62732CA6000773602 /* MapEvent.swift */; };
+		498906E92732CAA500773602 /* MapLegendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498906E82732CAA500773602 /* MapLegendIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		494682622730682800C92AEE /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
 		494682672730684200C92AEE /* IndonesiaGeoJSONProvinces.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndonesiaGeoJSONProvinces.geojson; sourceTree = "<group>"; };
 		494682692730684F00C92AEE /* GeoJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
+		498906E62732CA6000773602 /* MapEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
+		498906E82732CAA500773602 /* MapLegendIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLegendIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				4946825D273067FE00C92AEE /* ExportButton.swift */,
+				498906E82732CAA500773602 /* MapLegendIndicator.swift */,
 				440DD604272E983B00758AD9 /* Components1 */,
 			);
 			path = Components;
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4454BDE7272FA6600012E4A4 /* Constants.swift */,
+				498906E62732CA6000773602 /* MapEvent.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				494682632730682800C92AEE /* TrendsViewModel.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
+				498906E72732CA6000773602 /* MapEvent.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
+				498906E92732CAA500773602 /* MapLegendIndicator.swift in Sources */,
 				494682652730682800C92AEE /* HeatMapModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

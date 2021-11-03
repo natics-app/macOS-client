@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Natics
+//  MacOSMap
 //
-//  Created by Puras Handharmahua on 26/10/21.
+//  Created by Jackie Leonardy on 27/10/21.
 //
 
 import SwiftUI
@@ -15,22 +15,11 @@ struct ContentView: View {
             span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30)
         )
     @StateObject var viewModel = TrendsViewModel()
-
-    @State private var lineCoordinates = [
-
-        // Steve Jobs theatre
-        CLLocationCoordinate2D(latitude: 122.04731, longitude:  -4.770176),
-
-        // Caffè Macs
-        CLLocationCoordinate2D(latitude: 37.336083, longitude: -122.007356),
-
-        // Apple wellness center
-        CLLocationCoordinate2D(latitude: 37.336901, longitude:  -122.012345)
-      ]
-//    @State private var lineCoordinates = HeatMapModel.shared.getMap()
-
+    @State var overImg = false
+    var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
-    /// <#Description#>
+    @State private var point1: NSPoint = .zero
+    
     var body: some View {
         VStack {
             GeometryReader { geo in
@@ -38,13 +27,19 @@ struct ContentView: View {
                     VStack(alignment: .center){
                         HStack(){
                             VStack(alignment: .leading, spacing: 0){
-                                Text("Interest by Region")
-                                    .font(.title)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.accentColor)
-                                Text("Summary based on the total number of cases")
-                                    .font(.body)
-                                    .foregroundColor(.secondary)
+                                HStack(spacing: 8) {
+                                    Text("Interest by Region")
+                                        .font(.system(size: 24))
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.accentColor)
+                                    Button {
+                                        
+                                    } label: {
+                                        Image(systemName: "info.circle").resizable()
+                                            .frame(width: 18, height: 18, alignment: .center)
+                                    }.buttonStyle(PlainButtonStyle())
+
+                                }
                             }.padding(.leading, 10)
                             Spacer()
                             ExportButton {
@@ -54,9 +49,25 @@ struct ContentView: View {
                         }
                         .padding(10)
                         HStack() {
-                            HStack {
-                                Spacer()
-                                    MapCompat(coordinateRegion: $region, lineCoordinates: lineCoordinates)
+                            VStack {
+                                ZStack(alignment: .center) {
+                                    MapCompat(coordinateRegion: $region)
+                                    .trackingMouse { location in
+                                                            self.point1 = location }
+                                    .clipped()
+                                    Rectangle()
+                                                    .fill(Color.red)
+                                                    .frame(width: 10, height: 10)
+                                }
+                                    
+                                
+                                Text("\(String(format: "X = %.0f, Y = %.0f", self.point1.x, self.point1.y))")
+                                HStack(alignment: .center, spacing: 16) {
+                                    MapLegendIndicator(legendColor: Color.red, legendLabel: "Sangat Rawan (>300)")
+                                    MapLegendIndicator(legendColor: Color.orange, legendLabel: "Rawan (100-299)")
+                                    MapLegendIndicator(legendColor: Color.yellow, legendLabel: "Cukup Rawan (1-99)")
+                                    MapLegendIndicator(legendColor: Color.green, legendLabel: "Tidak Rawan")
+                                }
                                 Spacer()
                             }
                         .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -66,7 +77,7 @@ struct ContentView: View {
                                 Spacer()
                                 LocationBarChartView(viewModel: viewModel)
                                 Spacer()
-                        }
+                            }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
                         }                        .padding(10)
                 }.background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -75,6 +86,14 @@ struct ContentView: View {
 
                 }
             }.padding(10)
+                .onAppear(perform: {
+                                NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
+                                    if overImg {
+                                        print("mouse: \(self.mouseLocation.x) \(self.mouseLocation.y)")
+                                    }
+                                    return $0
+                                }
+                            })
         }.navigationTitle("Trends")
             .padding(.bottom, 20)
             .padding(.top, 20)
