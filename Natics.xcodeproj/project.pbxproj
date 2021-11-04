@@ -16,6 +16,11 @@
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
 		44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F152728689100DEE0EF /* Preview Assets.xcassets */; };
+		4901D4742732DD99000DC572 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4732732DD99000DC572 /* DatePickerView.swift */; };
+		4901D4782732E293000DC572 /* DatePickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4772732E293000DC572 /* DatePickerList.swift */; };
+		4901D47A2732E4E0000DC572 /* DatePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4792732E4E0000DC572 /* DatePickerModel.swift */; };
+		4901D47F2732E88A000DC572 /* DatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D47E2732E88A000DC572 /* DatePickerViewModel.swift */; };
+		4901D4812733899F000DC572 /* DatePickerCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4802733899F000DC572 /* DatePickerCustomView.swift */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -47,6 +52,11 @@
 		44558F122728689100DEE0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44558F152728689100DEE0EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44558F172728689100DEE0EF /* Natics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Natics.entitlements; sourceTree = "<group>"; };
+		4901D4732732DD99000DC572 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		4901D4772732E293000DC572 /* DatePickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerList.swift; sourceTree = "<group>"; };
+		4901D4792732E4E0000DC572 /* DatePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModel.swift; sourceTree = "<group>"; };
+		4901D47E2732E88A000DC572 /* DatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewModel.swift; sourceTree = "<group>"; };
+		4901D4802733899F000DC572 /* DatePickerCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCustomView.swift; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -99,6 +109,7 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4901D4722732DD88000DC572 /* Picker */,
 				498C4BD7273144AF00963B45 /* Buttons */,
 				498C4BD42731449E00963B45 /* Navigation Bar */,
 				49468239272F9E6B00C92AEE /* SideBarMenu */,
@@ -178,6 +189,42 @@
 				44558F152728689100DEE0EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4901D4722732DD88000DC572 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				4901D47D2732E856000DC572 /* ViewModel */,
+				4901D47C2732E850000DC572 /* Model */,
+				4901D47B2732E567000DC572 /* View */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		4901D47B2732E567000DC572 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4901D4732732DD99000DC572 /* DatePickerView.swift */,
+				4901D4772732E293000DC572 /* DatePickerList.swift */,
+				4901D4802733899F000DC572 /* DatePickerCustomView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4901D47C2732E850000DC572 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4901D4792732E4E0000DC572 /* DatePickerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4901D47D2732E856000DC572 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4901D47E2732E88A000DC572 /* DatePickerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		49468239272F9E6B00C92AEE /* SideBarMenu */ = {
@@ -382,19 +429,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				498C4BDF273149F300963B45 /* DashboardModel.swift in Sources */,
+				4901D47F2732E88A000DC572 /* DatePickerViewModel.swift in Sources */,
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
+				4901D4782732E293000DC572 /* DatePickerList.swift in Sources */,
 				498C4BEC273179B300963B45 /* NavigationBarView.swift in Sources */,
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
+				4901D4742732DD99000DC572 /* DatePickerView.swift in Sources */,
 				498C4BD62731449E00963B45 /* ToolbarView.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				498C4BE327316CDB00963B45 /* SharingButton.swift in Sources */,
 				498C4BDD2731498D00963B45 /* DashboardViewModel.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
+				4901D4812733899F000DC572 /* DatePickerCustomView.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				498C4BE127316BA300963B45 /* WatchlistViewModel.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
+				4901D47A2732E4E0000DC572 /* DatePickerModel.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
 				498C4BDB273144AF00963B45 /* FilledButton.swift in Sources */,

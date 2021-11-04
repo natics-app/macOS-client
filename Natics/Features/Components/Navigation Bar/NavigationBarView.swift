@@ -8,20 +8,36 @@
 import SwiftUI
 
 struct NavigationBarView: View {
-    @State private var selection = "Past week"
-    let timeRange = ["Past week", "Past month", "Past 3 months", "Past 6 months", "Past Year"]
-
+    @StateObject var viewModel = DatePickerViewModel()
+    @State var value = ""
+    var dropDownList = ["PSO", "PFA", "AIR", "HOT"]
         var body: some View {
             HStack {
-                Picker("", selection: $selection) {
-                    ForEach(timeRange, id: \.self) { data in
-                        Text(data)
-                        if data == timeRange.first {
-                            Divider()
+                Picker(viewModel.selection!.rawValue, selection: $viewModel.selection) {
+                    ForEach(viewModel.datePickerList, id: \.hashValue) { data in
+                        VStack {
+                            data.getContainingView()
                         }
                     }
                 }.pickerStyle(MenuPickerStyle())
                     .frame(width: 240, height: 28, alignment: .center)
+                
+                Menu {
+                        ForEach(viewModel.datePickerList, id: \.self){ client in
+                            Button(client.rawValue) {
+                                self.value = client.getCalculatedYear()
+                            }
+                        }
+                } label: {
+                    VStack(spacing: 5){
+                        HStack{
+                            Text(value.isEmpty ? viewModel.selection!.rawValue : value)
+                                .foregroundColor(value.isEmpty ? .gray : .black)
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+
             }
         }
 }
