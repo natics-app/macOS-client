@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 // Region interface functions
-protocol RegionInterface {
-    func getAllProvince() -> AnyPublisher<MCBaseResponse<RegionGetResponse>, MCBaseErrorModel>
+protocol RegionInterface: Service {
+    func getAllProvince() -> AnyPublisher<Response, MCBaseErrorModel>
     func getAllRegencies()
 }
 
