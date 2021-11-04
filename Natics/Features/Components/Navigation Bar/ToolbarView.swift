@@ -20,7 +20,7 @@ struct ToolbarView: View {
                 
                 FilledButton(title: "Add Watchlist") {
                 }.help("Add Watch List")
-            }.padding(.init(top: 27, leading: 0, bottom: 0, trailing: 24))
+            }.padding(.init(top: 27, leading: 0, bottom: 0, trailing: 16))
         }
     }
 }

@@ -60,13 +60,3 @@ extension DatePickerModel {
     }
 }
 
-extension DatePickerModel {
-    @ViewBuilder func getContainingView() -> some View {
-        switch self {
-        case .pastWeek, .pastMonth, .pastThree, .pastSix:
-            DatePickerList(rowTitle: getCalculatedYear(), rowSubTitle: getCalculatedYear())
-        case .pastYear:
-            DatePickerCustomView()
-        }
-    }
-}

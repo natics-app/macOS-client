@@ -15,11 +15,32 @@ class DatePickerViewModel: ObservableObject {
     @Published var filterEndDate = Date()
     @Published var isCustomTapped = false
     
+    @Published var isEverClicked = false
+    
     func customTapped() {
         isCustomTapped.toggle()
     }
     
     func closePicker() {
         isCustomTapped = false
+    }
+    
+    func isClicked() {
+        isEverClicked = true
+    }
+    
+    func checkDateRange() {
+        if filterStartDate > filterEndDate {
+            filterStartDate = filterEndDate
+        }
+    }
+    
+    func returnCustomRange() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yy"
+        let start = dateFormatter.string(from: self.filterStartDate)
+        let end = dateFormatter.string(from: self.filterEndDate)
+        
+        return "\(start) - \(end)"
     }
 }

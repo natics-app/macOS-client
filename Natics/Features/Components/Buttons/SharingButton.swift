@@ -14,9 +14,10 @@ struct SharingButton: View {
     var body: some View {
         Button(action: self.action, label: {
            Text(self.label)
-                .font(.system(size: 11))
+                .font(Font.custom("SF Pro Text", size: 11))
                 .fontWeight(.medium)
-        }).padding([.leading, .trailing], 8)
+                .padding([.trailing, .leading], 8)
+        })
         .opacity(0.85)
     }
 }

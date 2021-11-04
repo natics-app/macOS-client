@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct TrendsView: View {
+    @EnvironmentObject var viewModel: DatePickerViewModel
+    
     var body: some View {
-        HStack{
-            NavigationBarView()
-            Text("Trends Dashboard")
+        VStack(){
+            HStack {
+                NavigationBarView()
+            }
+            Spacer()
         }.navigationTitle("")
         .toolbar {
             ToolbarItem(placement: ToolbarItemPlacement.navigation) {
@@ -23,11 +27,13 @@ struct TrendsView: View {
                 ToolbarView()
             }
         }
+        .padding(24)
     }
 }
 
 struct TrendsView_Previews: PreviewProvider {
     static var previews: some View {
         TrendsView()
+            .environmentObject(DatePickerViewModel())
     }
 }

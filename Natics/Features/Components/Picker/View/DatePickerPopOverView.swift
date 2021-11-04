@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct DatePickerPopOverView: View {
-    @StateObject var viewModel: DatePickerViewModel
+    @ObservedObject var viewModel: DatePickerViewModel
+    @ObservedObject var sideBarViewModel : SideBarViewModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             VStack(alignment: .leading, spacing: 4) {
@@ -18,7 +20,11 @@ struct DatePickerPopOverView: View {
                 VStack(alignment: .leading, spacing: 0){
                     ForEach(viewModel.datePickerList, id: \.self) { data in
                         Button {
+                            viewModel.selection = data
                             print(data.getCalculatedYear())
+                            sideBarViewModel.closePopOver()
+                            viewModel.isClicked()
+                            
                         } label: {
                             DatePickerList(rowTitle: data.rawValue, rowSubTitle: data.getCalculatedYear())
                         }
@@ -43,6 +49,6 @@ struct DatePickerPopOverView: View {
 
 struct DatePickerPopOverView_Previews: PreviewProvider {
     static var previews: some View {
-        DatePickerPopOverView(viewModel: DatePickerViewModel())
+        DatePickerPopOverView(viewModel: DatePickerViewModel(), sideBarViewModel: SideBarViewModel())
     }
 }
