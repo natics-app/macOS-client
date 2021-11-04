@@ -8,36 +8,32 @@
 import SwiftUI
 
 struct NavigationBarView: View {
-    @StateObject var viewModel = DatePickerViewModel()
+    @StateObject var sideBarViewModel = SideBarViewModel()
+    @EnvironmentObject var viewModel: DatePickerViewModel
+    
     @State var value = ""
-    var dropDownList = ["PSO", "PFA", "AIR", "HOT"]
         var body: some View {
-            HStack {
-                Picker(viewModel.selection!.rawValue, selection: $viewModel.selection) {
-                    ForEach(viewModel.datePickerList, id: \.hashValue) { data in
-                        VStack {
-                            data.getContainingView()
-                        }
-                    }
-                }.pickerStyle(MenuPickerStyle())
-                    .frame(width: 240, height: 28, alignment: .center)
+            HStack(spacing: 0) {
                 
-                Menu {
-                        ForEach(viewModel.datePickerList, id: \.self){ client in
-                            Button(client.rawValue) {
-                                self.value = client.getCalculatedYear()
-                            }
-                        }
+                Button {
+                    sideBarViewModel.showPopover()
+                    viewModel.closePicker()
                 } label: {
-                    VStack(spacing: 5){
-                        HStack{
-                            Text(value.isEmpty ? viewModel.selection!.rawValue : value)
-                                .foregroundColor(value.isEmpty ? .gray : .black)
-                        }
-                        .padding(.horizontal)
+                    HStack(){
+                        Image(systemName: "calendar")
+                        Text(viewModel.selection!.rawValue)
+                            .font(.system(size: 11))
+                            .fontWeight(.medium)
+                    }
+                }.padding([.leading, .trailing], 8)
+                .opacity(0.85)
+                .popover(isPresented: $sideBarViewModel.customTimeRangePopOver, arrowEdge: .bottom) {
+                    if viewModel.isCustomTapped {
+                        DatePickerView(startDate: $viewModel.filterStartDate, endDate: $viewModel.filterEndDate)
+                    } else {
+                        DatePickerPopOverView(viewModel: self.viewModel)
                     }
                 }
-
             }
         }
 }
@@ -45,5 +41,6 @@ struct NavigationBarView: View {
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBarView()
+            .environmentObject(DatePickerViewModel())
     }
 }

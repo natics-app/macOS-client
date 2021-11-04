@@ -25,17 +25,17 @@ struct DatePickerView: View {
                     DatePicker(selection: $startDate, in: ...Date(), displayedComponents: .date) {
                     }
                     .accentColor(.green)
-//                            .background(RoundedRectangle(cornerRadius: 0)
-//                            .fill(Color.green)
-//                            .opacity(0.2))
                             .datePickerStyle(StepperFieldDatePickerStyle())
-                    DatePicker(selection: $startDate, in: ...Date(), displayedComponents: .date) {
+                    DatePicker(selection: $endDate, in: ...Date(), displayedComponents: .date) {
                     }
                     .datePickerStyle(StepperFieldDatePickerStyle())
                 }
             }
-        }.padding(16)
-            .frame(width: 162, height: 101, alignment: .center)
+        }
+        .cornerRadius(8)
+        .frame(width: 162, height: 101, alignment: .center)
+        .padding([.top, .leading, .trailing], 16)
+        .padding(.bottom, 24)
     }
 }
 

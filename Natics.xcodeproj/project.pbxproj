@@ -21,6 +21,7 @@
 		4901D47A2732E4E0000DC572 /* DatePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4792732E4E0000DC572 /* DatePickerModel.swift */; };
 		4901D47F2732E88A000DC572 /* DatePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D47E2732E88A000DC572 /* DatePickerViewModel.swift */; };
 		4901D4812733899F000DC572 /* DatePickerCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D4802733899F000DC572 /* DatePickerCustomView.swift */; };
+		4901D48327339B5B000DC572 /* DatePickerPopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901D48227339B5B000DC572 /* DatePickerPopOverView.swift */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -57,6 +58,7 @@
 		4901D4792732E4E0000DC572 /* DatePickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModel.swift; sourceTree = "<group>"; };
 		4901D47E2732E88A000DC572 /* DatePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewModel.swift; sourceTree = "<group>"; };
 		4901D4802733899F000DC572 /* DatePickerCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCustomView.swift; sourceTree = "<group>"; };
+		4901D48227339B5B000DC572 /* DatePickerPopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopOverView.swift; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				4901D4732732DD99000DC572 /* DatePickerView.swift */,
 				4901D4772732E293000DC572 /* DatePickerList.swift */,
 				4901D4802733899F000DC572 /* DatePickerCustomView.swift */,
+				4901D48227339B5B000DC572 /* DatePickerPopOverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				498C4BDB273144AF00963B45 /* FilledButton.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
 				49468250272FA61800C92AEE /* TrendsView.swift in Sources */,
+				4901D48327339B5B000DC572 /* DatePickerPopOverView.swift in Sources */,
 				498C4BE9273172B100963B45 /* WatchlistModel.swift in Sources */,
 				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
 				498C4BDA273144AF00963B45 /* IconButton.swift in Sources */,
