@@ -7,11 +7,13 @@
 
 import Foundation
 
+// General response for all request
 struct MCBaseResponse<T>: Codable where T: Codable {
     let message: String?
     let data: T?
 }
 
+// Error response model
 struct MCBaseErrorModel: Codable, Error {
     var name, message: String?
     var code, status: Int?
@@ -19,6 +21,7 @@ struct MCBaseErrorModel: Codable, Error {
     var cache: Data?
 }
 
+// General error enum
 enum BaseError {
     case unexpected(cache: Data?)
     case unknown(cache: Data?)

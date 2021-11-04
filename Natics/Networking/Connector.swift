@@ -16,14 +16,23 @@ struct Connector<N, S> where N: NetworkDescription, S: Codable {
     /// Dispatches an URLRequest and returns a publisher
     /// - Parameter request: URLRequest
     /// - Returns: A publisher with the provided decoded data or an error
-    func doConnect(request: URLRequest) -> AnyPublisher<S, MCBaseErrorModel> {
+    func doConnect(request: N, baseUrl: String) -> AnyPublisher<S, MCBaseErrorModel> {
+        
+        guard let urlRequest = request.asURLRequest(baseURL: baseUrl) else {
+            return Fail(
+                outputType: S.self,
+                failure: BaseError.Unreachable(cache: nil).desc
+            ).eraseToAnyPublisher()
+        }
+        
         return urlSession
-            .dataTaskPublisher(for: request)
+            .dataTaskPublisher(for: urlRequest)
             .tryMap({ (data: Data, response: URLResponse)  in // Map on Request response
                 // If the response is invalid, throw an error
+//                print("debugNetwork: \(String(data: data, encoding: .utf8))")
                 if let response = response as? HTTPURLResponse,
                    !(200...299).contains(response.statusCode) {
-//                    print(String(data: data, encoding: .utf8))
+//                    print("debugNetwork: \(String(data: data, encoding: .utf8))")
                     throw httpError(response.statusCode)
                 }
                 return data
@@ -52,6 +61,7 @@ extension Connector {
         default: return BaseError.unexpected(cache: nil).desc
         }
     }
+    
     /// Parses URLSession Publisher errors and return proper ones
     /// - Parameter error: URLSession publisher error
     /// - Returns: Readable NetworkRequestError
