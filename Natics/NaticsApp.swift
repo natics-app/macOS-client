@@ -10,9 +10,7 @@ import AppKit
 
 @main
 struct NaticsApp: App {
-    
-//    let clr = NSColor.labe
-    
+        
     var body: some Scene {
         WindowGroup {
             SideBarView()

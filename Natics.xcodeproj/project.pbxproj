@@ -16,6 +16,14 @@
 		44558F112728688F00DEE0EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44558F102728688F00DEE0EF /* ContentView.swift */; };
 		44558F132728689100DEE0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F122728689100DEE0EF /* Assets.xcassets */; };
 		44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44558F152728689100DEE0EF /* Preview Assets.xcassets */; };
+		4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */; };
+		4495345127327D5F00CADA9F /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345027327D5F00CADA9F /* Interface.swift */; };
+		44953453273280AD00CADA9F /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44953452273280AD00CADA9F /* Extension+Encodable.swift */; };
+		449534552732819900CADA9F /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449534542732819900CADA9F /* Connection.swift */; };
+		449534572732822200CADA9F /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449534562732822200CADA9F /* Connector.swift */; };
+		4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345A2733A19B00CADA9F /* Interface+Region.swift */; };
+		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
+		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -38,6 +46,14 @@
 		44558F122728689100DEE0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44558F152728689100DEE0EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44558F172728689100DEE0EF /* Natics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Natics.entitlements; sourceTree = "<group>"; };
+		4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCGenericResponseModel.swift; sourceTree = "<group>"; };
+		4495345027327D5F00CADA9F /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		44953452273280AD00CADA9F /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
+		449534542732819900CADA9F /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		449534562732822200CADA9F /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		4495345A2733A19B00CADA9F /* Interface+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Region.swift"; sourceTree = "<group>"; };
+		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
+		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -63,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				440DD5FB272E97BD00758AD9 /* Model.swift */,
+				4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */,
+				4495345E2733B79D00CADA9F /* RegionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */,
+				44953452273280AD00CADA9F /* Extension+Encodable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 		44558F0D2728688F00DEE0EF /* Natics */ = {
 			isa = PBXGroup;
 			children = (
+				4495344F27327D3F00CADA9F /* Networking */,
 				4454BDE1272F9C760012E4A4 /* Extension */,
 				4454BDE0272F9BD20012E4A4 /* Util */,
 				440DD601272E981B00758AD9 /* ViewModels */,
@@ -158,6 +178,34 @@
 				44558F152728689100DEE0EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4495344F27327D3F00CADA9F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				449534592733A08600CADA9F /* Interface */,
+				449534582733A07C00CADA9F /* Request */,
+				4495345027327D5F00CADA9F /* Interface.swift */,
+				449534542732819900CADA9F /* Connection.swift */,
+				449534562732822200CADA9F /* Connector.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		449534582733A07C00CADA9F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4495345C2733B55600CADA9F /* Request+Region.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		449534592733A08600CADA9F /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4495345A2733A19B00CADA9F /* Interface+Region.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		49468239272F9E6B00C92AEE /* SideBarMenu */ = {
@@ -342,17 +390,25 @@
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
+				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
+				4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */,
+				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
+				449534552732819900CADA9F /* Connection.swift in Sources */,
+				4495345D2733B55600CADA9F /* Request+Region.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
+				449534572732822200CADA9F /* Connector.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
 				49468250272FA61800C92AEE /* TrendsView.swift in Sources */,
+				4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */,
 				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
 				49468254272FA63400C92AEE /* SettingsView.swift in Sources */,
+				44953453273280AD00CADA9F /* Extension+Encodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +540,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = LR9373A784;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -512,7 +568,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = LR9373A784;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
