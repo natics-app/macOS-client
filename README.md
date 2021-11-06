@@ -12,6 +12,8 @@ app
 │   ├── CacheManager                        # Data caching
 │   │   ├──  PhotoCacheManager.swift
 │   │   └──  ...
+│   ├── Constants.swift
+│   ├── AnotherUtil.swift 
 │   └── ...
 ├── Networking                             # Networking Modules
 │   ├── Interface                          
