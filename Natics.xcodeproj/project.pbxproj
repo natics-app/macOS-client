@@ -38,6 +38,16 @@
 		4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345A2733A19B00CADA9F /* Interface+Region.swift */; };
 		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
 		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
+		44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */; };
+		44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */; };
+		44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B727371ABB0034DBA2 /* MapEvent.swift */; };
+		44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */; };
+		44DE84BC27371B5D0034DBA2 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84BA27371B5D0034DBA2 /* ExportButton.swift */; };
+		44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84BD27371BD10034DBA2 /* GeoJSON.swift */; };
+		44DE84C127371BD10034DBA2 /* HeatMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84BE27371BD10034DBA2 /* HeatMapViewModel.swift */; };
+		44DE84C227371BD10034DBA2 /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84BF27371BD10034DBA2 /* TrendsViewModel.swift */; };
+		44DE84C527371CD10034DBA2 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 44DE84C427371CD10034DBA2 /* Charts */; };
+		44DE84C727371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -87,6 +97,15 @@
 		4495345A2733A19B00CADA9F /* Interface+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Region.swift"; sourceTree = "<group>"; };
 		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
 		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
+		44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
+		44DE84B727371ABB0034DBA2 /* MapEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
+		44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLegendIndicator.swift; sourceTree = "<group>"; };
+		44DE84BA27371B5D0034DBA2 /* ExportButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
+		44DE84BD27371BD10034DBA2 /* GeoJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
+		44DE84BE27371BD10034DBA2 /* HeatMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapViewModel.swift; sourceTree = "<group>"; };
+		44DE84BF27371BD10034DBA2 /* TrendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendsViewModel.swift; sourceTree = "<group>"; };
+		44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndonesiaGeoJSONProvinces.geojson; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -107,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44DE84C527371CD10034DBA2 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +146,7 @@
 		440DD5FD272E97D100758AD9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				44DE84B227371A8C0034DBA2 /* HeatMapView */,
 				49468245272FA4D200C92AEE /* Settings */,
 				49468244272FA4CC00C92AEE /* Cases */,
 				49468243272FA4BE00C92AEE /* Trends */,
@@ -137,6 +158,8 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				44DE84BA27371B5D0034DBA2 /* ExportButton.swift */,
+				44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */,
 				44159B672736AF990077F3FF /* Picker */,
 				44159B622736AF900077F3FF /* Navigation Bar */,
 				44159B5B2736AF880077F3FF /* Buttons */,
@@ -150,6 +173,9 @@
 		440DD601272E981B00758AD9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				44DE84BD27371BD10034DBA2 /* GeoJSON.swift */,
+				44DE84BE27371BD10034DBA2 /* HeatMapViewModel.swift */,
+				44DE84BF27371BD10034DBA2 /* TrendsViewModel.swift */,
 				440DD602272E982D00758AD9 /* VMGlobal.swift */,
 			);
 			path = ViewModels;
@@ -222,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4454BDE7272FA6600012E4A4 /* Constants.swift */,
+				44DE84B727371ABB0034DBA2 /* MapEvent.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -264,6 +291,7 @@
 				44558F0E2728688F00DEE0EF /* NaticsApp.swift */,
 				44558F102728688F00DEE0EF /* ContentView.swift */,
 				44558F122728689100DEE0EF /* Assets.xcassets */,
+				44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */,
 				44558F172728689100DEE0EF /* Natics.entitlements */,
 				44558F142728689100DEE0EF /* Preview Content */,
 			);
@@ -304,6 +332,15 @@
 				4495345A2733A19B00CADA9F /* Interface+Region.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		44DE84B227371A8C0034DBA2 /* HeatMapView */ = {
+			isa = PBXGroup;
+			children = (
+				44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */,
+				44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */,
+			);
+			path = HeatMapView;
 			sourceTree = "<group>";
 		};
 		49468239272F9E6B00C92AEE /* SideBarMenu */ = {
@@ -437,6 +474,9 @@
 			dependencies = (
 			);
 			name = Natics;
+			packageProductDependencies = (
+				44DE84C427371CD10034DBA2 /* Charts */,
+			);
 			productName = Natics;
 			productReference = 44558F0B2728688F00DEE0EF /* Natics.app */;
 			productType = "com.apple.product-type.application";
@@ -465,6 +505,9 @@
 				Base,
 			);
 			mainGroup = 44558F022728688F00DEE0EF;
+			packageReferences = (
+				44DE84C327371CD10034DBA2 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 44558F0C2728688F00DEE0EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,6 +524,7 @@
 			files = (
 				44558F162728689100DEE0EF /* Preview Assets.xcassets in Resources */,
 				44558F132728689100DEE0EF /* Assets.xcassets in Resources */,
+				44DE84C727371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,11 +545,14 @@
 				4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */,
 				44159B7C2736B0EB0077F3FF /* WatchlistViewModel.swift in Sources */,
 				44159B742736AF990077F3FF /* DatePickerPopOverView.swift in Sources */,
+				44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
 				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				44159B722736AF990077F3FF /* DatePickerList.swift in Sources */,
 				44159B662736AF900077F3FF /* ToolbarView.swift in Sources */,
+				44DE84C127371BD10034DBA2 /* HeatMapViewModel.swift in Sources */,
+				44DE84BC27371B5D0034DBA2 /* ExportButton.swift in Sources */,
 				44159B602736AF880077F3FF /* FilledButton.swift in Sources */,
 				44159B732736AF990077F3FF /* DatePickerView.swift in Sources */,
 				44159B612736AF880077F3FF /* SharingButton.swift in Sources */,
@@ -515,14 +562,19 @@
 				44159B5F2736AF880077F3FF /* IconButton.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				44159B702736AF990077F3FF /* DatePickerViewModel.swift in Sources */,
+				44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */,
+				44DE84C227371BD10034DBA2 /* TrendsViewModel.swift in Sources */,
 				4EE8C21627369B2000C9AD66 /* RisingRow.swift in Sources */,
 				44159B652736AF900077F3FF /* NavigationBarView.swift in Sources */,
+				44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				449534552732819900CADA9F /* Connection.swift in Sources */,
 				4495345D2733B55600CADA9F /* Request+Region.swift in Sources */,
 				44159B712736AF990077F3FF /* DatePickerModel.swift in Sources */,
+				44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */,
 				4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */,
 				44159B7B2736B0EB0077F3FF /* DashboardModel.swift in Sources */,
+				44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
@@ -732,6 +784,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44DE84C327371CD10034DBA2 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44DE84C427371CD10034DBA2 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44DE84C327371CD10034DBA2 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44558F032728688F00DEE0EF /* Project object */;
 }
