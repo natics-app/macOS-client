@@ -10,12 +10,16 @@ import AppKit
 
 @main
 struct NaticsApp: App {
-    
-//    let clr = NSColor.labe
+    @StateObject var viewModel = DatePickerViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView().frame(minWidth: 1236, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 600, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            SideBarView()
+                .frame(minWidth: 1236, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 600, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .environmentObject(viewModel)
+        }.commands {
+            SidebarCommands()
+            ToolbarCommands()
         }
     }
 }
