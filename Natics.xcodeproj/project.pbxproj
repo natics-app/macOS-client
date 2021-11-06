@@ -32,6 +32,11 @@
 		49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468256272FAB1100C92AEE /* SideBarModel.swift */; };
 		49468259272FBC8000C92AEE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468258272FBC8000C92AEE /* DashboardView.swift */; };
 		4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825A272FBD2000C92AEE /* WatchListView.swift */; };
+		4EE8C21227369A8B00C9AD66 /* Extension+NSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21127369A8B00C9AD66 /* Extension+NSTableView.swift */; };
+		4EE8C21627369B2000C9AD66 /* RisingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21527369B2000C9AD66 /* RisingRow.swift */; };
+		4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21727369BA400C9AD66 /* RisingHeader.swift */; };
+		4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21927369C1500C9AD66 /* RisingCasesTable.swift */; };
+		4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21C27369CCC00C9AD66 /* RisingCaseTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		49468256272FAB1100C92AEE /* SideBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarModel.swift; sourceTree = "<group>"; };
 		49468258272FBC8000C92AEE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4946825A272FBD2000C92AEE /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
+		4EE8C21127369A8B00C9AD66 /* Extension+NSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSTableView.swift"; sourceTree = "<group>"; };
+		4EE8C21527369B2000C9AD66 /* RisingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingRow.swift; sourceTree = "<group>"; };
+		4EE8C21727369BA400C9AD66 /* RisingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingHeader.swift; sourceTree = "<group>"; };
+		4EE8C21927369C1500C9AD66 /* RisingCasesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingCasesTable.swift; sourceTree = "<group>"; };
+		4EE8C21C27369CCC00C9AD66 /* RisingCaseTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisingCaseTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4EE8C21327369AF700C9AD66 /* Trends */,
 				49468239272F9E6B00C92AEE /* SideBarMenu */,
 				440DD604272E983B00758AD9 /* Components1 */,
 			);
@@ -134,6 +145,7 @@
 			children = (
 				4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */,
 				44953452273280AD00CADA9F /* Extension+Encodable.swift */,
+				4EE8C21127369A8B00C9AD66 /* Extension+NSTableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +328,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4EE8C21327369AF700C9AD66 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				4EE8C21B27369CB000C9AD66 /* ViewModel */,
+				4EE8C21427369B0800C9AD66 /* View */,
+			);
+			path = Trends;
+			sourceTree = "<group>";
+		};
+		4EE8C21427369B0800C9AD66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EE8C21527369B2000C9AD66 /* RisingRow.swift */,
+				4EE8C21727369BA400C9AD66 /* RisingHeader.swift */,
+				4EE8C21927369C1500C9AD66 /* RisingCasesTable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4EE8C21B27369CB000C9AD66 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4EE8C21C27369CCC00C9AD66 /* RisingCaseTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,18 +427,23 @@
 			files = (
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
+				4EE8C21227369A8B00C9AD66 /* Extension+NSTableView.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
 				4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */,
+				4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
+				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				440DD606272E984F00758AD9 /* Components1.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
+				4EE8C21627369B2000C9AD66 /* RisingRow.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				449534552732819900CADA9F /* Connection.swift in Sources */,
 				4495345D2733B55600CADA9F /* Request+Region.swift in Sources */,
+				4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
@@ -540,7 +584,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -568,7 +612,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

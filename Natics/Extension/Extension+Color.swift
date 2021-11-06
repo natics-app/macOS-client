@@ -17,4 +17,8 @@ struct MCColorTheme {
     let MCDarkGreen = Color("MCDarkGreen", bundle: nil)
     let MCLightGreen = Color("MCLightGreen", bundle: nil)
     let MCWindowBG = Color("MCWindowBG", bundle: nil)
+    let MCLightGrey = Color("MCLightGrey", bundle: nil)
+    let MCDarkGrey = Color("MCDarkGrey", bundle: nil)
+    let MCBlack = Color("MCBlack", bundle: nil)
+    let MCOutline = Color("MCOutline", bundle: nil)
 }
