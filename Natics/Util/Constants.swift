@@ -9,9 +9,11 @@ import Foundation
 
 struct Constants {
     
-    // Endpoint Constant
     struct Endpoint {
-        static let databaseServer = "https://kasir.farrelanshary.me/docs"
+        static let databaseServer = "https://kasir.farrelanshary.me"
     }
     
+    struct ServerEnvironment {
+        static let apiKey = "bukanUser"
+    }
 }
