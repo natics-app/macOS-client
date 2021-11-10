@@ -56,6 +56,7 @@
 		49468259272FBC8000C92AEE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468258272FBC8000C92AEE /* DashboardView.swift */; };
 		4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825A272FBD2000C92AEE /* WatchListView.swift */; };
 		498E17E7273BA0A30079BC2B /* HeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E17E6273BA0A30079BC2B /* HeatMapView.swift */; };
+		4E45CD05273B5FF700AAB02E /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45CD04273B5FF700AAB02E /* WatchlistView.swift */; };
 		4EDD0328273A64C000647011 /* CasesTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0327273A64C000647011 /* CasesTableRow.swift */; };
 		4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0329273A655E00647011 /* CasesTableHeader.swift */; };
 		4EDD032C273A65D300647011 /* CasesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD032B273A65D300647011 /* CasesTable.swift */; };
@@ -124,6 +125,7 @@
 		49468258272FBC8000C92AEE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4946825A272FBD2000C92AEE /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
 		498E17E6273BA0A30079BC2B /* HeatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapView.swift; sourceTree = "<group>"; };
+		4E45CD04273B5FF700AAB02E /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		4EDD0327273A64C000647011 /* CasesTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableRow.swift; sourceTree = "<group>"; };
 		4EDD0329273A655E00647011 /* CasesTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableHeader.swift; sourceTree = "<group>"; };
 		4EDD032B273A65D300647011 /* CasesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTable.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		440DD5FD272E97D100758AD9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4E45CD01273B5F3200AAB02E /* WatchlistView */,
 				44DE84B227371A8C0034DBA2 /* HeatMapView */,
 				49468245272FA4D200C92AEE /* Settings */,
 				49468244272FA4CC00C92AEE /* Cases */,
@@ -442,6 +445,22 @@
 			path = "Trends+Views";
 			sourceTree = "<group>";
 		};
+		4E45CD01273B5F3200AAB02E /* WatchlistView */ = {
+			isa = PBXGroup;
+			children = (
+				4E45CD03273B5FDF00AAB02E /* Watchlist+Views */,
+			);
+			path = WatchlistView;
+			sourceTree = "<group>";
+		};
+		4E45CD03273B5FDF00AAB02E /* Watchlist+Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E45CD04273B5FF700AAB02E /* WatchlistView.swift */,
+			);
+			path = "Watchlist+Views";
+			sourceTree = "<group>";
+		};
 		4EDD0325273A63F500647011 /* CasesTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +657,7 @@
 				44159B652736AF900077F3FF /* NavigationBarView.swift in Sources */,
 				44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
+				4E45CD05273B5FF700AAB02E /* WatchlistView.swift in Sources */,
 				449534552732819900CADA9F /* Connection.swift in Sources */,
 				4495345D2733B55600CADA9F /* Request+Region.swift in Sources */,
 				44159B712736AF990077F3FF /* DatePickerModel.swift in Sources */,

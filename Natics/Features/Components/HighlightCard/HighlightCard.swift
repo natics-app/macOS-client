@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HighlightCard: View {
     var body: some View {
-        ZStack{
+//        ZStack{
             VStack{
                 Text("Name")
                     .font(.system(size: 24))
@@ -36,8 +36,7 @@ struct HighlightCard: View {
                     .padding(.trailing, 16)
                 }
             }
-        }
-        .frame(width: 297, height: 150)
+//        }
     }
 }
 
