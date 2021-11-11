@@ -19,7 +19,7 @@ struct RegionRequest: Service {
 extension RegionRequest: RegionInterface {
     func getAllProvince() -> AnyPublisher<Response, MCBaseErrorModel> {
         let call = Connector<Network, Response>()
-        return call.doConnect(request: Network.getAllProvince, baseUrl: Constants.Endpoint.databaseServer)
+        return call.doConnect(request: Network.getAllProvince, baseUrl: baseUrl)
     }
     
     func getAllRegencies() {

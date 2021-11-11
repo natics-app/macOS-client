@@ -21,8 +21,9 @@ struct MCBaseErrorModel: Codable, Error {
     var cache: Data?
 }
 
-// General error enum
+
 enum BaseError {
+    // General error enum
     case unexpected(cache: Data?)
     case unknown(cache: Data?)
     case Unreachable(cache: Data?)

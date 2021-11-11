@@ -7,10 +7,12 @@
 
 import SwiftUI
 import AppKit
+import Combine
 
 @main
 struct NaticsApp: App {
     @StateObject var viewModel = DatePickerViewModel()
+    @StateObject var vm = ContohViewModel()
     
     var body: some Scene {
         WindowGroup {
