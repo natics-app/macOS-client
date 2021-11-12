@@ -37,6 +37,7 @@
 		4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345A2733A19B00CADA9F /* Interface+Region.swift */; };
 		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
 		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
+		44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */; };
 		44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */; };
 		44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */; };
 		44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B727371ABB0034DBA2 /* MapEvent.swift */; };
@@ -106,6 +107,7 @@
 		4495345A2733A19B00CADA9F /* Interface+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Region.swift"; sourceTree = "<group>"; };
 		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
 		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContohViewModel.swift; sourceTree = "<group>"; };
 		44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
 		44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
 		44DE84B727371ABB0034DBA2 /* MapEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				44DE84BE27371BD10034DBA2 /* HeatMapViewModel.swift */,
 				44DE84BF27371BD10034DBA2 /* TrendsViewModel.swift */,
 				440DD602272E982D00758AD9 /* VMGlobal.swift */,
+				44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
 				49468250272FA61800C92AEE /* TrendsView.swift in Sources */,
 				4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */,
+				44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */,
 				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
 				E7A0410A2738D16B00B20B99 /* BarChart.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
@@ -788,7 +792,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = A226GG3668;
+				DEVELOPMENT_TEAM = LR9373A784;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -816,7 +820,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = A226GG3668;
+				DEVELOPMENT_TEAM = LR9373A784;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
