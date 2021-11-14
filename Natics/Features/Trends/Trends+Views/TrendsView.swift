@@ -6,16 +6,32 @@
 //
 
 import SwiftUI
+import Charts
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
     
     var body: some View {
-        VStack(){
-            HStack {
-                NavigationBarView()
+        ZStack(){
+            ScrollView {
+                HStack {
+                    NavigationBarView()
+                }
+                Spacer()
+                HStack {
+                    TrendingBarChart()
+                    RisingCasesTable()
+                }
+                HStack {
+                    HeatMapView()
+                }
+                .frame(width: nil, height: 400, alignment: .center)
+                HStack {
+                    MediaChartView()
+                    MediaChartView()
+                }
+                .frame(width: nil, height: 450, alignment: .center)
             }
-            Spacer()
         }.navigationTitle("")
         .toolbar {
             ToolbarItem(placement: ToolbarItemPlacement.navigation) {
