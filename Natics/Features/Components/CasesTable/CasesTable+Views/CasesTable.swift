@@ -18,7 +18,6 @@ struct CasesTable: View {
                             CasesTableRow()
                                 .frame(width: 1613 ,height: 40, alignment: .leading)
                                 .background(Color.white)
-                                
                         }
                     }
                 }

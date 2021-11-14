@@ -44,8 +44,8 @@ struct HeatMapView: View {
                             Spacer()
                             ExportButton {
                                 
-                            }.padding(.trailing, 10)
-                            
+                            }
+                            .frame(width: 120, height: 28).padding(.trailing, 10)
                         }
                         .padding(10)
                         HStack() {
@@ -97,10 +97,6 @@ struct HeatMapView: View {
         }.navigationTitle("Trends")
             .padding(.bottom, 20)
             .padding(.top, 20)
-            .padding(.leading, 25)
-            .padding(.trailing, 25)
-        
-        
     }
 }
 

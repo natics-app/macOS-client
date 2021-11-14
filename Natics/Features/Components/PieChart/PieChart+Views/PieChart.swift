@@ -63,6 +63,7 @@ struct PieChart: NSViewRepresentable {
         pieChart.legend.yEntrySpace = 5
         pieChart.legend.horizontalAlignment = .right
         pieChart.legend.verticalAlignment = .center
+        pieChart.legend.textColor = NSColor(Color.colorTheme.MCBlack)
 
         
     }
