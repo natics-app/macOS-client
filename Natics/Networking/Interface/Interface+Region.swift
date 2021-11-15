@@ -10,7 +10,7 @@ import Combine
 
 // Region interface functions
 protocol RegionInterface: Service {
-    func getAllProvince() -> AnyPublisher<Response, MCBaseErrorModel>
+    func getAllProvince() -> AnyPublisher<MCBaseResponse<RegionGetResponse>, MCBaseErrorModel>
     func getAllRegencies()
 }
 

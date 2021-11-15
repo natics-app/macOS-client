@@ -12,13 +12,12 @@ import Combine
 struct RegionRequest: Service {
     var baseUrl: String = Constants.Endpoint.databaseServer
     typealias Network = RegionDescription
-    typealias Response = MCBaseResponse<RegionGetResponse>
 }
 
 // Reqion Request function
 extension RegionRequest: RegionInterface {
-    func getAllProvince() -> AnyPublisher<Response, MCBaseErrorModel> {
-        let call = Connector<Network, Response>()
+    func getAllProvince() -> AnyPublisher<MCBaseResponse<RegionGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<RegionGetResponse>>()
         return call.doConnect(request: Network.getAllProvince, baseUrl: baseUrl)
     }
     

@@ -10,7 +10,6 @@ import Foundation
 // Request service information
 public protocol Service {
     associatedtype Network: NetworkDescription
-    associatedtype Response: Codable
     var baseUrl: String { get }
 }
 
