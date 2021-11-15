@@ -53,7 +53,7 @@ struct DatePickerView: View {
                     }.buttonStyle(BorderlessButtonStyle())
                     
                     Button {
-                        datePickerViewModel.customTapped()
+                        datePickerViewModel.customChosen()
                         datePickerViewModel.setCustomDate(startDate: startDate, endDate: endDate)
                         sideBarViewModel.closePopOver()
                     } label: {
