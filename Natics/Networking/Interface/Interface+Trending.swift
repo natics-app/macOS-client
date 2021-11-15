@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol TrendingInterface: Service {
-    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<Response, MCBaseErrorModel>
+    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingProvinceGetResponse>, MCBaseErrorModel>
 }
 
 enum TrendingDescription {

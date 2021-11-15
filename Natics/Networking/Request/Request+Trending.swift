@@ -13,13 +13,11 @@ import Combine
 struct TrendingProvinceRequest: Service {
     var baseUrl: String = Constants.Endpoint.databaseServer
     typealias Network = TrendingDescription
-    typealias Response = MCBaseResponse<TrendingProvinceGetResponse>
-    
 }
 
 extension TrendingProvinceRequest: TrendingInterface {
-    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<Response, MCBaseErrorModel> {
-        let call = Connector<Network, Response>()
+    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingProvinceGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<TrendingProvinceGetResponse>>()
         return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
 }
