@@ -13,9 +13,18 @@ class DatePickerViewModel: ObservableObject {
     @Published var selection: DatePickerModel? = .pastWeek
     @Published var filterStartDate = Date()
     @Published var filterEndDate = Date()
+    
+    @State var startDate: String?
+    @State var endDate: String?
+    
     @Published var isCustomTapped = false
     
     @Published var isEverClicked = false
+    
+    func setDate() {
+        startDate = selection?.getStartDate()
+        endDate = selection?.getEndDate()
+    }
     
     func customTapped() {
         isCustomTapped.toggle()

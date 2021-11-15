@@ -38,7 +38,7 @@
 		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
 		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
 		44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */; };
-		44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */; };
+		44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */; };
 		44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */; };
 		44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B727371ABB0034DBA2 /* MapEvent.swift */; };
 		44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */; };
@@ -113,7 +113,7 @@
 		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
 		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContohViewModel.swift; sourceTree = "<group>"; };
-		44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
+		44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingLocationBarChartView.swift; sourceTree = "<group>"; };
 		44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
 		44DE84B727371ABB0034DBA2 /* MapEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
 		44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLegendIndicator.swift; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 		44DE84B227371A8C0034DBA2 /* HeatMapView */ = {
 			isa = PBXGroup;
 			children = (
-				44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */,
+				44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */,
 				44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */,
 				498E17E6273BA0A30079BC2B /* HeatMapView.swift */,
 			);
@@ -683,7 +683,7 @@
 				44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */,
 				4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */,
 				44159B7B2736B0EB0077F3FF /* DashboardModel.swift in Sources */,
-				44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */,
+				44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
 				E7A041082738D13800B20B99 /* CasesDummy.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,

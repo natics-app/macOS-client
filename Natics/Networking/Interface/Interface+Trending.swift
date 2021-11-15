@@ -9,11 +9,11 @@ import Foundation
 import Combine
 
 protocol TrendingInterface: Service {
-    func getTrendingProvince() -> AnyPublisher<Response, MCBaseErrorModel>
+    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<Response, MCBaseErrorModel>
 }
 
 enum TrendingDescription {
-    case getTrendingProvince
+    case getTrendingProvince(startDate: String, endDate: String)
 }
 
 extension TrendingDescription: NetworkDescription {
@@ -32,9 +32,12 @@ extension TrendingDescription: NetworkDescription {
     }
     
     var queryParams: [String : String]? {
-        return ["api_key" : Constants.ServerEnvironment.apiKey,
-                "start": "2015-10-24",
-                "end": "2021-10-31"]
+        switch self {
+            case .getTrendingProvince(let sd, let ed):
+                return ["api_key" : Constants.ServerEnvironment.apiKey,
+                        "start": sd,
+                        "end": ed]
+        }
     }
     
 }

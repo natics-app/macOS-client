@@ -7,14 +7,16 @@
 
 import SwiftUI
 import Charts
+import Combine
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
-    @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    @ObservedObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
     
     var body: some View {
         ZStack(){
             ScrollView {
+                Text("\(viewModel.selection?.rawValue ?? "")")
                 HStack {
                     NavigationBarView()
                 }
@@ -24,7 +26,7 @@ struct TrendsView: View {
                     RisingCasesTable()
                 }
                 HStack {
-                    HeatMapView()
+                    HeatMapView(viewModel: trendingVM)
                 }
                 .frame(width: nil, height: 400, alignment: .center)
                 HStack {
@@ -45,8 +47,8 @@ struct TrendsView: View {
             }
         }
         .padding(24)
-        .onAppear {
-            trendingVM.getTreningProvinces()
+        .onReceive(viewModel.$selection) { selectionPublisher in
+            trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
         }
     }
 }

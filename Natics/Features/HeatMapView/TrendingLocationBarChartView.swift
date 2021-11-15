@@ -8,8 +8,8 @@
 import SwiftUI
 import Charts
 
-struct LocationBarChartView: NSViewRepresentable {
-    @ObservedObject var viewModel: TrendsViewModel
+struct TrendingLocationBarChartView: NSViewRepresentable {
+    @ObservedObject var viewModel: TrendingProvinceViewModel
     
     func makeNSView(context: Context) -> HorizontalBarChartView {
         return HorizontalBarChartView()
@@ -68,6 +68,12 @@ struct LocationBarChartView: NSViewRepresentable {
         xAxis.labelTextColor = NSColor(.primary)
         xAxis.drawGridLinesEnabled = false
         xAxis.granularity = 1
-        xAxis.labelCount = 10
+        xAxis.labelCount = 8
+    }
+}
+
+struct TrendingLocationBarChartView_previews: PreviewProvider {
+    static var previews: some View {
+        TrendingLocationBarChartView(viewModel: TrendingProvinceViewModel())
     }
 }

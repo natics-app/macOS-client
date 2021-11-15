@@ -49,8 +49,8 @@ struct WatchListViewDetail: View {
                     }.frame(height: 150, alignment: .leading)
                 }
                 GeometryReader { geo in
-                    HeatMapView()
-                        .frame(width: geo.size.width)
+//                    HeatMapView()
+//                        .frame(width: geo.size.width)
                 }
                 .frame(height: 520, alignment: .leading)
                 

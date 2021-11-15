@@ -91,7 +91,7 @@ class TrendsViewModel: ObservableObject {
 //                return BarChartDataEntry()
 //            }
         } else {
-            let safeIndex = Int(animalSelected)
+//            let safeIndex = Int(animalSelected)
 //            let selectedAnimalProvTrend = animalTrend[safeIndex].provinceTrend
 //            self.locationNames = selectedAnimalProvTrend.map { trend in
 //                trend.provinceName

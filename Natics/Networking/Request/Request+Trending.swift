@@ -18,10 +18,8 @@ struct TrendingProvinceRequest: Service {
 }
 
 extension TrendingProvinceRequest: TrendingInterface {
-    func getTrendingProvince() -> AnyPublisher<Response, MCBaseErrorModel> {
+    func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<Response, MCBaseErrorModel> {
         let call = Connector<Network, Response>()
-        return call.doConnect(request: Network.getTrendingProvince, baseUrl: baseUrl)
+        return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
-    
-    
 }

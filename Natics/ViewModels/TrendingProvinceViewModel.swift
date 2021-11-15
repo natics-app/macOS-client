@@ -8,31 +8,60 @@
 import Foundation
 import SwiftUI
 import Combine
+import Charts
 
 class TrendingProvinceViewModel: ObservableObject {
     // MARK: Published Properties
     @Published var provincesAllTrending: [ProvinceTrendingModel] = []
-    @Published var provincesTopTrending: [ProvinceTrendingModel] = []
+    @Published var provincesTopTrending: [ProvinceTrendingModel] = [] {
+        didSet {
+            setProvinceTrending()
+        }
+    }
+    @Published var locationList = [BarChartDataEntry]()
+    @Published var locationNames = [String]()
     @Published var isDataLoaded = false
+    
     // MARK: Private Properties
     private let request = TrendingProvinceRequest()
     private var cancellable = Set<AnyCancellable>()
     
+    init() {
+        setProvinceTrending()
+    }
+    
     // MARK: Public Methods
-    func getTreningProvinces() {
-        request.getTrendingProvince()
+    func getTrendingProvinces(selected: DatePickerModel) {
+        request.getTrendingProvince(startDate: selected.getStartDate(), endDate: selected.getEndDate())
             .receive(on: RunLoop.main)
             .sink { result in
-                print(result)
+                switch result {
+                    case .failure(let err):
+                        print(err.message!)
+                    case .finished:
+                        print("Finish")
+                        self.isDataLoaded = true
+                }
+                
             } receiveValue: { [weak self] (trendingProvince) in
                 self?.provincesAllTrending = trendingProvince.data!.provinces
-                self?.isDataLoaded = true
                 
                 let arraySlice = trendingProvince.data!.provinces.prefix(8)
                 self?.provincesTopTrending = Array(arraySlice)
-                
-                print(self!.provincesTopTrending)
             }
             .store(in: &cancellable)
+    }
+}
+
+extension TrendingProvinceViewModel {
+    
+    func setProvinceTrending() {
+        self.locationNames = provincesTopTrending.map { trend in
+            trend.name
+        }
+        print(self.locationNames)
+        self.locationList = provincesTopTrending.enumerated().map { (index, element) in
+            return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
+        }
     }
 }

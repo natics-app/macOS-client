@@ -11,6 +11,7 @@ struct CasesView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
     var body: some View {
         VStack(){
+            Text("\(viewModel.selection?.rawValue ?? "")")
             HStack {
                 NavigationBarView()
             }
@@ -27,6 +28,7 @@ struct CasesView: View {
             }
         }
         .padding(24)
+        
     }
 }
 
