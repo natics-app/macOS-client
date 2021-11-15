@@ -12,13 +12,16 @@ class AddWatchlistViewModel: ObservableObject {
     
     // MARK: PUBLISHED PROPERTIES
     @Published var searchText: String = ""
-    @Published var animalTrendings: [String] = ["Kukang", "Macan", "Buaya"]
+    @Published var animalTrendings: [NumberCasesCategories] = []
     
     // MARK: PRIVATE PROPERTIES
     private var cancellable = Set<AnyCancellable>()
     private var dummyData = ["Kukang", "Macan", "Buaya"]
-    var getAnimalTrendings: [String] {
-        return searchText == "" ? dummyData : animalTrendings
+    private var trendingRequest = TrendingRequest()
+    
+    // MARK: COMPUTED PROPERTIES
+    var getAnimalTrendings: [NumberCasesCategories] {
+        return animalTrendings
     }
     
     //MARK: COMPUTED PROPERTIES
@@ -28,17 +31,34 @@ class AddWatchlistViewModel: ObservableObject {
     
     // MARK: INIT
     init() {
+        bind()
+        getTrendingAnimals()
+    }
+    
+    private func bind() {
         $searchText
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] value in
-                print(value.lowercased())
                 self?.getTrendingAnimals()
             }
             .store(in: &cancellable)
     }
     
     func getTrendingAnimals() {
-        print("call")
-        animalTrendings = dummyData.filter({ $0.lowercased().contains(searchText.lowercased()) })
+        trendingRequest
+            .getNumberOfCases()
+            .receive(on: DispatchQueue.main, options: nil)
+            .sink { result in
+                switch result {
+                case .finished:
+                    print("Finished get number of cases")
+                case .failure(let err):
+                    print(err.message ?? "")
+                }
+            } receiveValue: { [weak self] value in
+                guard let data = value.data else {return}
+                self?.animalTrendings = data.categories
+            }
+            .store(in: &cancellable)
     }
 }

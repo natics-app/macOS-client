@@ -19,6 +19,9 @@ extension TrendingRequest: TrendingInterface {
     func getTrendingAnimals(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingAnimalGetResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<TrendingAnimalGetResponse>>()
         return call.doConnect(request: Network.getTrendingAnimals(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
+    func getNumberOfCases() -> AnyPublisher<MCBaseResponse<GetNumberCasesOfResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<GetNumberCasesOfResponse>>()
+        return call.doConnect(request: .getNumberOfCases, baseUrl: baseUrl)
     }
     
     func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingProvinceGetResponse>, MCBaseErrorModel> {

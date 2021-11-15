@@ -70,9 +70,9 @@ struct AddWatchlistView: View {
                                 List {
                                     ForEach(
                                         addWatchlistVM.getAnimalTrendings,
-                                        id: \.self
+                                        id: \.id
                                     ) { item in
-                                        AddWatchlistCell(animalName: item, casesNumber: 2220)
+                                        AddWatchlistCell(animalName: item.name, casesNumber: item.newsCount)
                                     }
                                 }
                             } // END: VSTACK-4
