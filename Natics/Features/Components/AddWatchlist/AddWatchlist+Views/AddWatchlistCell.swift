@@ -18,7 +18,7 @@ struct AddWatchlistCell: View {
             HStack { // START: HTACK
                 
                 // Label container
-                VStack(alignment: .leading, spacing: 10) { // START: VTACK
+                VStack(alignment: .leading, spacing: 10) { // START: VSTACK
                     // Animal name label
                     Text(animalName)
                         .font(Font.system(size: 13))
@@ -46,7 +46,11 @@ struct AddWatchlistCell: View {
         } // END: ZTACK
         .padding(.vertical, 15)
         .padding(.horizontal, 25)
-        .background(Color.colorTheme.MCWindowBG)
+        .background(Color.colorTheme.MCWindowBG.cornerRadius(8))
+        .overlay(RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.colorTheme.MCDarkGrey, lineWidth: 1))
+        .padding(.horizontal,1)
+        
     }
 }
 
