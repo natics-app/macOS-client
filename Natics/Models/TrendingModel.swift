@@ -20,5 +20,5 @@ struct ProvinceTrendingModel: Codable {
     var name: String
     var latitude: Float
     var longitude: Float
-    var news_cound: Int
+    var news_count: Int
 }

@@ -10,6 +10,7 @@ import Charts
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
+    @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
     
     var body: some View {
         ZStack(){
@@ -44,6 +45,9 @@ struct TrendsView: View {
             }
         }
         .padding(24)
+        .onAppear {
+            trendingVM.getTreningProvinces()
+        }
     }
 }
 

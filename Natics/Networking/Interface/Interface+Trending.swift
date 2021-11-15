@@ -32,7 +32,9 @@ extension TrendingDescription: NetworkDescription {
     }
     
     var queryParams: [String : String]? {
-        return ["api_key" : Constants.ServerEnvironment.apiKey]
+        return ["api_key" : Constants.ServerEnvironment.apiKey,
+                "start": "2015-10-24",
+                "end": "2021-10-31"]
     }
     
 }
