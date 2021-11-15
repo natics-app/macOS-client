@@ -55,6 +55,18 @@
 		44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD4273E0F4800231317 /* AddWatchlistCell.swift */; };
 		44FB2AD7273E104100231317 /* AddWatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD6273E104100231317 /* AddWatchlistView.swift */; };
 		44FB2ADA273E4A3200231317 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD9273E4A3200231317 /* Testing.swift */; };
+		44FB2AE32742D5BE00231317 /* Request+Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE22742D5BE00231317 /* Request+Animals.swift */; };
+		44FB2AE52742D5CC00231317 /* Interface+Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE42742D5CC00231317 /* Interface+Animals.swift */; };
+		44FB2AE72742D5E100231317 /* Interface+Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE62742D5E100231317 /* Interface+Organizations.swift */; };
+		44FB2AE92742D5ED00231317 /* Request+Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE82742D5ED00231317 /* Request+Organizations.swift */; };
+		44FB2AEB2742D5FE00231317 /* Interface+Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AEA2742D5FE00231317 /* Interface+Sites.swift */; };
+		44FB2AED2742D60B00231317 /* Request+Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AEC2742D60B00231317 /* Request+Sites.swift */; };
+		44FB2AEF2742D63000231317 /* Interface+News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AEE2742D63000231317 /* Interface+News.swift */; };
+		44FB2AF12742D63C00231317 /* Request+News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF02742D63C00231317 /* Request+News.swift */; };
+		44FB2AF32742D64600231317 /* Request+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF22742D64600231317 /* Request+Users.swift */; };
+		44FB2AF52742D65300231317 /* Interface+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF42742D65300231317 /* Interface+Users.swift */; };
+		44FB2AF72742D66600231317 /* Interface+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF62742D66600231317 /* Interface+Auth.swift */; };
+		44FB2AF92742D66F00231317 /* Request+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF82742D66F00231317 /* Request+Auth.swift */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -136,6 +148,18 @@
 		44FB2AD4273E0F4800231317 /* AddWatchlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchlistCell.swift; sourceTree = "<group>"; };
 		44FB2AD6273E104100231317 /* AddWatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchlistView.swift; sourceTree = "<group>"; };
 		44FB2AD9273E4A3200231317 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		44FB2AE22742D5BE00231317 /* Request+Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Animals.swift"; sourceTree = "<group>"; };
+		44FB2AE42742D5CC00231317 /* Interface+Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Animals.swift"; sourceTree = "<group>"; };
+		44FB2AE62742D5E100231317 /* Interface+Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Organizations.swift"; sourceTree = "<group>"; };
+		44FB2AE82742D5ED00231317 /* Request+Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Organizations.swift"; sourceTree = "<group>"; };
+		44FB2AEA2742D5FE00231317 /* Interface+Sites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Sites.swift"; sourceTree = "<group>"; };
+		44FB2AEC2742D60B00231317 /* Request+Sites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Sites.swift"; sourceTree = "<group>"; };
+		44FB2AEE2742D63000231317 /* Interface+News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+News.swift"; sourceTree = "<group>"; };
+		44FB2AF02742D63C00231317 /* Request+News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+News.swift"; sourceTree = "<group>"; };
+		44FB2AF22742D64600231317 /* Request+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Users.swift"; sourceTree = "<group>"; };
+		44FB2AF42742D65300231317 /* Interface+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Users.swift"; sourceTree = "<group>"; };
+		44FB2AF62742D66600231317 /* Interface+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Auth.swift"; sourceTree = "<group>"; };
+		44FB2AF82742D66F00231317 /* Request+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Auth.swift"; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -376,9 +400,15 @@
 		449534582733A07C00CADA9F /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				44FB2AF22742D64600231317 /* Request+Users.swift */,
 				4495345C2733B55600CADA9F /* Request+Region.swift */,
 				49615AA827420C0400339936 /* Request+Trending.swift */,
 				0C651E8C27415A6800C51692 /* Request+WatchList.swift */,
+				44FB2AE22742D5BE00231317 /* Request+Animals.swift */,
+				44FB2AE82742D5ED00231317 /* Request+Organizations.swift */,
+				44FB2AEC2742D60B00231317 /* Request+Sites.swift */,
+				44FB2AF02742D63C00231317 /* Request+News.swift */,
+				44FB2AF82742D66F00231317 /* Request+Auth.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -389,6 +419,12 @@
 				4495345A2733A19B00CADA9F /* Interface+Region.swift */,
 				49615AA627420AA500339936 /* Interface+Trending.swift */,
 				0C651E8E27415A7800C51692 /* Interface+WatchList.swift */,
+				44FB2AE42742D5CC00231317 /* Interface+Animals.swift */,
+				44FB2AE62742D5E100231317 /* Interface+Organizations.swift */,
+				44FB2AEA2742D5FE00231317 /* Interface+Sites.swift */,
+				44FB2AEE2742D63000231317 /* Interface+News.swift */,
+				44FB2AF42742D65300231317 /* Interface+Users.swift */,
+				44FB2AF62742D66600231317 /* Interface+Auth.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -683,13 +719,16 @@
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
 				49615AAB27420C7E00339936 /* TrendingModel.swift in Sources */,
 				4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */,
+				44FB2AE32742D5BE00231317 /* Request+Animals.swift in Sources */,
 				4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */,
 				4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */,
+				44FB2AEB2742D5FE00231317 /* Interface+Sites.swift in Sources */,
 				0C960CAC27425FFF00EF96AB /* Category.swift in Sources */,
 				44159B7C2736B0EB0077F3FF /* WatchlistViewModel.swift in Sources */,
 				44159B742736AF990077F3FF /* DatePickerPopOverView.swift in Sources */,
 				44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */,
 				E7A0410E2738D1F700B20B99 /* NumberOfCasesView.swift in Sources */,
+				44FB2AF32742D64600231317 /* Request+Users.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
 				49615AAD27420E5A00339936 /* TrendingProvinceViewModel.swift in Sources */,
 				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
@@ -711,23 +750,31 @@
 				44159B782736B0910077F3FF /* WatchlistModel.swift in Sources */,
 				44159B5F2736AF880077F3FF /* IconButton.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
+				44FB2AED2742D60B00231317 /* Request+Sites.swift in Sources */,
 				E7A041142738D24600B20B99 /* PieChartView.swift in Sources */,
 				44159B702736AF990077F3FF /* DatePickerViewModel.swift in Sources */,
 				44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */,
+				44FB2AF92742D66F00231317 /* Request+Auth.swift in Sources */,
 				44DE84C227371BD10034DBA2 /* TrendsViewModel.swift in Sources */,
 				4EE8C21627369B2000C9AD66 /* RisingRow.swift in Sources */,
 				44159B652736AF900077F3FF /* NavigationBarView.swift in Sources */,
+				44FB2AF52742D65300231317 /* Interface+Users.swift in Sources */,
+				44FB2AE92742D5ED00231317 /* Request+Organizations.swift in Sources */,
 				44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				4E45CD05273B5FF700AAB02E /* WatchListViewDetail.swift in Sources */,
+				44FB2AEF2742D63000231317 /* Interface+News.swift in Sources */,
 				449534552732819900CADA9F /* Connection.swift in Sources */,
 				4495345D2733B55600CADA9F /* Request+Region.swift in Sources */,
 				44159B712736AF990077F3FF /* DatePickerModel.swift in Sources */,
 				44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */,
 				4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */,
 				44159B7B2736B0EB0077F3FF /* DashboardModel.swift in Sources */,
+				44FB2AE52742D5CC00231317 /* Interface+Animals.swift in Sources */,
+				44FB2AE72742D5E100231317 /* Interface+Organizations.swift in Sources */,
 				44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
+				44FB2AF72742D66600231317 /* Interface+Auth.swift in Sources */,
 				E7A041082738D13800B20B99 /* CasesDummy.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
@@ -735,6 +782,7 @@
 				4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */,
 				44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */,
 				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
+				44FB2AF12742D63C00231317 /* Request+News.swift in Sources */,
 				E7A0410A2738D16B00B20B99 /* BarChart.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
 				0C651E8F27415A7800C51692 /* Interface+WatchList.swift in Sources */,
