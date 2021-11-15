@@ -14,7 +14,7 @@ struct ContentView: View {
             center: CLLocationCoordinate2D(latitude: 0, longitude: 116.499023),
             span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30)
         )
-    @StateObject var viewModel = TrendsViewModel()
+    @StateObject var viewModel = TrendingProvinceViewModel()
     @State var overImg = false
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
@@ -75,7 +75,7 @@ struct ContentView: View {
                 
                             HStack {
                                 Spacer()
-                                LocationBarChartView(viewModel: viewModel)
+                                TrendingLocationBarChartView(viewModel: viewModel)
                                 Spacer()
                             }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))

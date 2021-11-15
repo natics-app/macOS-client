@@ -38,7 +38,7 @@
 		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
 		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
 		44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */; };
-		44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */; };
+		44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */; };
 		44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */; };
 		44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B727371ABB0034DBA2 /* MapEvent.swift */; };
 		44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */; };
@@ -59,6 +59,10 @@
 		49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468256272FAB1100C92AEE /* SideBarModel.swift */; };
 		49468259272FBC8000C92AEE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468258272FBC8000C92AEE /* DashboardView.swift */; };
 		4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825A272FBD2000C92AEE /* WatchListView.swift */; };
+		49615AA727420AA500339936 /* Interface+Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49615AA627420AA500339936 /* Interface+Trending.swift */; };
+		49615AA927420C0400339936 /* Request+Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49615AA827420C0400339936 /* Request+Trending.swift */; };
+		49615AAB27420C7E00339936 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49615AAA27420C7E00339936 /* TrendingModel.swift */; };
+		49615AAD27420E5A00339936 /* TrendingProvinceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49615AAC27420E5A00339936 /* TrendingProvinceViewModel.swift */; };
 		498E17E7273BA0A30079BC2B /* HeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E17E6273BA0A30079BC2B /* HeatMapView.swift */; };
 		4E45CD05273B5FF700AAB02E /* WatchListViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */; };
 		4EDD0328273A64C000647011 /* CasesTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0327273A64C000647011 /* CasesTableRow.swift */; };
@@ -112,7 +116,7 @@
 		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
 		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContohViewModel.swift; sourceTree = "<group>"; };
-		44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationBarChartView.swift; sourceTree = "<group>"; };
+		44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingLocationBarChartView.swift; sourceTree = "<group>"; };
 		44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
 		44DE84B727371ABB0034DBA2 /* MapEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
 		44DE84B927371B5D0034DBA2 /* MapLegendIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLegendIndicator.swift; sourceTree = "<group>"; };
@@ -132,6 +136,10 @@
 		49468256272FAB1100C92AEE /* SideBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarModel.swift; sourceTree = "<group>"; };
 		49468258272FBC8000C92AEE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4946825A272FBD2000C92AEE /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
+		49615AA627420AA500339936 /* Interface+Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Trending.swift"; sourceTree = "<group>"; };
+		49615AA827420C0400339936 /* Request+Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Trending.swift"; sourceTree = "<group>"; };
+		49615AAA27420C7E00339936 /* TrendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		49615AAC27420E5A00339936 /* TrendingProvinceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingProvinceViewModel.swift; sourceTree = "<group>"; };
 		498E17E6273BA0A30079BC2B /* HeatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapView.swift; sourceTree = "<group>"; };
 		4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewDetail.swift; sourceTree = "<group>"; };
 		4EDD0327273A64C000647011 /* CasesTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableRow.swift; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 				440DD5FB272E97BD00758AD9 /* Model.swift */,
 				4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */,
 				4495345E2733B79D00CADA9F /* RegionModel.swift */,
+				49615AAA27420C7E00339936 /* TrendingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 				44DE84BF27371BD10034DBA2 /* TrendsViewModel.swift */,
 				440DD602272E982D00758AD9 /* VMGlobal.swift */,
 				44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */,
+				49615AAC27420E5A00339936 /* TrendingProvinceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				4495345C2733B55600CADA9F /* Request+Region.swift */,
+				49615AA827420C0400339936 /* Request+Trending.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -365,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				4495345A2733A19B00CADA9F /* Interface+Region.swift */,
+				49615AA627420AA500339936 /* Interface+Trending.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -372,7 +384,7 @@
 		44DE84B227371A8C0034DBA2 /* HeatMapView */ = {
 			isa = PBXGroup;
 			children = (
-				44DE84B327371A8C0034DBA2 /* LocationBarChartView.swift */,
+				44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */,
 				44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */,
 				498E17E6273BA0A30079BC2B /* HeatMapView.swift */,
 			);
@@ -644,9 +656,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49615AA927420C0400339936 /* Request+Trending.swift in Sources */,
 				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
 				44190F40273A61980091ADFB /* DashboardViewModel.swift in Sources */,
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
+				49615AA727420AA500339936 /* Interface+Trending.swift in Sources */,
 				4EE8C21227369A8B00C9AD66 /* Extension+NSTableView.swift in Sources */,
 				4EDD032C273A65D300647011 /* CasesTable.swift in Sources */,
 				E7A041062738D10600B20B99 /* HighlightCard.swift in Sources */,
@@ -655,6 +669,7 @@
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
 				E7A041102738D22900B20B99 /* MediaDummy.swift in Sources */,
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
+				49615AAB27420C7E00339936 /* TrendingModel.swift in Sources */,
 				4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */,
 				4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */,
 				4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */,
@@ -663,6 +678,7 @@
 				44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */,
 				E7A0410E2738D1F700B20B99 /* NumberOfCasesView.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
+				49615AAD27420E5A00339936 /* TrendingProvinceViewModel.swift in Sources */,
 				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				44FB2AD7273E104100231317 /* AddWatchlistView.swift in Sources */,
@@ -695,7 +711,7 @@
 				44DE84B827371ABB0034DBA2 /* MapEvent.swift in Sources */,
 				4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */,
 				44159B7B2736B0EB0077F3FF /* DashboardModel.swift in Sources */,
-				44DE84B527371A8C0034DBA2 /* LocationBarChartView.swift in Sources */,
+				44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */,
 				49468252272FA62300C92AEE /* CasesView.swift in Sources */,
 				E7A041082738D13800B20B99 /* CasesDummy.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,
@@ -840,7 +856,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -868,7 +884,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

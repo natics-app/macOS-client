@@ -13,7 +13,6 @@ struct MapCompat : NSViewRepresentable {
     @Binding var coordinateRegion : MKCoordinateRegion
     let mapView = MKMapView()
     
-    
     func makeNSView(context: Context) -> MKMapView {
         mapView.delegate = context.coordinator
         mapView.region = coordinateRegion
@@ -55,6 +54,10 @@ struct MapCompat : NSViewRepresentable {
         
         init(_ parent: MapCompat) {
             self.parent = parent
+        }
+        
+        deinit {
+            self.parent.mapView.removeAnnotations(parent.mapView.annotations)
         }
         
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
@@ -107,22 +110,6 @@ struct MapCompat : NSViewRepresentable {
             
         }
         
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-                if annotation is MKUserLocation { return nil }
-
-                let reuseIdentifier = "..."
-
-                var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-
-                if annotationView == nil {
-                    annotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-                } else {
-                    annotationView?.annotation = annotation
-                }
-
-                return annotationView
-            }
-        
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polygon = overlay as? MKPolygon {
                 
@@ -154,14 +141,6 @@ struct MapCompat : NSViewRepresentable {
                 renderer.strokeColor = NSColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.3)
                 renderer.lineWidth = 1
                 
-//                let annotation = MKPointAnnotation()
-//                let provinceCoordinate = CLLocationCoordinate2D(latitude: overlayer.shared.polygonInfo.latitude, longitude: overlayer.shared.polygonInfo.longitude)
-                
-//                annotation.coordinate = provinceCoordinate
-//                annotation.title = "\(overlayer.shared.polygonInfo.propinsi): \(overlayer.shared.polygonInfo.jumlah) kasus"
-                
-//                    mapView.addAnnotation(annotation)
-                
                 renderer.polygon.title = overlayer.shared.polygonInfo.propinsi
                 renderer.polygon.subtitle = "\(overlayer.shared.polygonInfo.jumlah)"
                 return renderer
@@ -173,18 +152,6 @@ struct MapCompat : NSViewRepresentable {
                return MKOverlayRenderer(overlay: overlay)
            }
         }
-    }
-}
-
-class CustomAnnotationView: MKPinAnnotationView {
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-
-        canShowCallout = true
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
 }
 
@@ -235,15 +202,6 @@ extension MapCompat {
         
 }
 
-// MARK: - Annotation Maker Function
-extension MapCompat {
-    func makeCallout(namaProvinsi: String, jumlah: Int){
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinateRegion.center
-        annotation.title = "\(namaProvinsi): \(jumlah) kasus"
-        mapView.addAnnotation(annotation)
-    }
-}
 
 // MARK: - Configuring Google style Overlay
 extension MapCompat {

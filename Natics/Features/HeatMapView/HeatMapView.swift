@@ -14,11 +14,12 @@ struct HeatMapView: View {
             center: CLLocationCoordinate2D(latitude: 0, longitude: 116.499023),
             span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30)
         )
-    @StateObject var viewModel = TrendsViewModel()
-    @State var overImg = false
-    var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
+    @State var overImg = false
     @State private var point1: NSPoint = .zero
+    
+    var mouseLocation: NSPoint { NSEvent.mouseLocation }
+    @ObservedObject var viewModel : TrendingProvinceViewModel
     
     var body: some View {
         VStack {
@@ -75,7 +76,7 @@ struct HeatMapView: View {
                 
                             HStack {
                                 Spacer()
-                                LocationBarChartView(viewModel: viewModel)
+                                TrendingLocationBarChartView(viewModel: viewModel)
                                 Spacer()
                             }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -86,22 +87,23 @@ struct HeatMapView: View {
 
                 }
             }.padding(10)
-                .onAppear(perform: {
-                                NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
-                                    if overImg {
-                                        print("mouse: \(self.mouseLocation.x) \(self.mouseLocation.y)")
-                                    }
-                                    return $0
-                                }
-                            })
+            .onAppear(perform: {
+                NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
+                    if overImg {
+                        print("mouse: \(self.mouseLocation.x) \(self.mouseLocation.y)")
+                    }
+                    return $0
+                }
+                viewModel.setProvinceTrending()
+            })
         }.navigationTitle("Trends")
             .padding(.bottom, 20)
             .padding(.top, 20)
     }
 }
 
-struct HeatMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeatMapView()
-    }
-}
+//struct HeatMapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HeatMapView()
+//    }
+//}
