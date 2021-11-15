@@ -54,7 +54,7 @@ extension DatePickerModel {
     
     private func dateFormatter(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "dd/MM/yy"
         return dateFormatter.string(from: date)
     }
 }

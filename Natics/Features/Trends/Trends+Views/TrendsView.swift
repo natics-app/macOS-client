@@ -48,7 +48,11 @@ struct TrendsView: View {
         }
         .padding(24)
         .onReceive(viewModel.$selection) { selectionPublisher in
-            trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
+            if viewModel.isCustomChosen {
+                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+            } else {
+                trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
+            }
         }
     }
 }

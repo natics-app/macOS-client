@@ -24,7 +24,8 @@ struct NavigationBarView: View {
                     } label: {
                         HStack(alignment: .center){
                             Image(systemName: "calendar")
-                            Text(!viewModel.isEverClicked ? placeHolder : viewModel.selection!.getCalculatedYear())
+                            Text(!viewModel.isEverClicked ? placeHolder :
+                                    (viewModel.isCustomChosen ? viewModel.returnCustomRange() : viewModel.selection!.getCalculatedYear()))
                                 .font(Font.custom("SF Pro Text", size: 10))
                             Spacer()
                         }
@@ -33,7 +34,7 @@ struct NavigationBarView: View {
                     .opacity(0.85)
                     .popover(isPresented: $sideBarViewModel.customTimeRangePopOver, arrowEdge: .bottom) {
                         if viewModel.isCustomTapped {
-                            DatePickerView(startDate: $viewModel.filterStartDate, endDate: $viewModel.filterEndDate)
+                            DatePickerView(startDate: $viewModel.filterStartDate, endDate: $viewModel.filterEndDate, sideBarViewModel: sideBarViewModel)
                         } else {
                             DatePickerPopOverView(viewModel: self.viewModel, sideBarViewModel: self.sideBarViewModel)
                         }

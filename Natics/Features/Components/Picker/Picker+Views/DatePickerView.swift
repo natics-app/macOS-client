@@ -11,7 +11,7 @@ struct DatePickerView: View {
     @Binding var startDate: Date
     @Binding var endDate: Date
     @EnvironmentObject var datePickerViewModel: DatePickerViewModel
-    
+    @ObservedObject var sideBarViewModel : SideBarViewModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
@@ -44,7 +44,7 @@ struct DatePickerView: View {
                 }
                 HStack(spacing: 8) {
                     Button {
-                        
+                        sideBarViewModel.closePopOver()
                     } label: {
                         Text("Cancel")
                             .font(Font.custom("SF Pro Text", size: 11))
@@ -53,7 +53,9 @@ struct DatePickerView: View {
                     }.buttonStyle(BorderlessButtonStyle())
                     
                     Button {
-                        
+                        datePickerViewModel.customTapped()
+                        datePickerViewModel.setCustomDate(startDate: startDate, endDate: endDate)
+                        sideBarViewModel.closePopOver()
                     } label: {
                         Text("Done")
                             .font(Font.custom("SF Pro Text", size: 11))
@@ -74,6 +76,6 @@ struct DatePickerView: View {
 
 struct DatePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        DatePickerView(startDate: .constant(Date()), endDate: .constant(Date())).environmentObject(DatePickerViewModel())
+        DatePickerView(startDate: .constant(Date()), endDate: .constant(Date()), sideBarViewModel: SideBarViewModel()).environmentObject(DatePickerViewModel())
     }
 }
