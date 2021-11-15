@@ -15,7 +15,11 @@ struct DashboardView: View {
                     .font(.system(size: 13))
             ) {
             ForEach(viewModel.menuItems, id: \.hashValue) { menu in
-                NavigationLink(destination: viewModel.getContainingView(), tag: menu, selection: $viewModel.selection) {
+                NavigationLink(
+                    destination: viewModel.getContainingView(),
+                    tag: menu,
+                    selection: $viewModel.selection
+                ) {
                     menu.getImage()
                     Text(menu.rawValue)
                 }
