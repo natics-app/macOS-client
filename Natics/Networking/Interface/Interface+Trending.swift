@@ -31,8 +31,7 @@ extension TrendingDescription: NetworkDescription {
             return "/api/general/trending/rising"
         case .getTrendingAnimals, .getNumberOfCases:
             return "/api/general/trending/animals"
-        }
-        
+        }   
     }
     
     var method: HTTPMethod {
@@ -44,24 +43,17 @@ extension TrendingDescription: NetworkDescription {
     
     var queryParams: [String : String]? {
         switch self {
-            case .getTrendingProvince(let sd, let ed),
+        case .getTrendingProvince(let sd, let ed),
                 .getTrendingRisingCases(let sd, let ed),
                 .getTrendingAnimals(let sd, let ed):
-                return ["api_key" : Constants.ServerEnvironment.apiKey,
-                        "start": sd,
-                        "end": ed]
-            case .getTrendingProvince(let sd, let ed):
-                return [
-                    "api_key" : Constants.ServerEnvironment.apiKey,
+            return ["api_key" : Constants.ServerEnvironment.apiKey,
                     "start": sd,
-                    "end": ed
-                ]
+                    "end": ed]
         case .getNumberOfCases:
             return [
                 "api_key" : Constants.ServerEnvironment.apiKey,
             ]
         }
     }
-    
 }
 
