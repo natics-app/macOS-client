@@ -20,4 +20,10 @@ extension TrendingRequest: TrendingInterface {
         let call = Connector<Network, MCBaseResponse<TrendingProvinceGetResponse>>()
         return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
+    
+    func getTrendingRisingCases(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingRisingCasesGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<TrendingRisingCasesGetResponse>>()
+        return call.doConnect(request: Network.getTrendingRisingCases(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
+    }
+    
 }

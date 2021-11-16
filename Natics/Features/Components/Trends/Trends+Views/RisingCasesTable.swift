@@ -10,6 +10,8 @@ import AppKit
 
 
 struct RisingCasesTable: View {
+    @ObservedObject var viewModel: TrendingRisingCaseViewModel
+    
     var body: some View {
         VStack() {
             HStack {
@@ -44,9 +46,15 @@ struct RisingCasesTable: View {
             VStack(alignment: .leading, spacing: -15){
                 RisingHeader()
                 List {
-                    ForEach(1..<8) { _ in
-                        RisingRow()
+//                    ForEach(viewModel.risingCasesTopTrending, id: \.id) { risingCase in
+//                        RisingRow(risingCaseModel: risingCase, rowID: 1)
+//                            .frame(height: 33)
+//                    }
+                    
+                    ForEach(Array(viewModel.risingCasesTopTrending.enumerated()), id: \.offset) { index, element in
+                        RisingRow(risingCaseModel: element, rowID: index+1)
                             .frame(height: 33)
+                        
                     }
                 }
             }
@@ -61,7 +69,7 @@ struct RisingCasesTable: View {
 
 struct RisingCasesTable_Previews: PreviewProvider {
     static var previews: some View {
-        RisingCasesTable()
+        RisingCasesTable(viewModel: TrendingRisingCaseViewModel())
             
     }
 }
