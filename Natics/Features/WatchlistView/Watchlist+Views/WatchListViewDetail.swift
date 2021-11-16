@@ -61,17 +61,17 @@ struct WatchListViewDetail: View {
                 
                 GeometryReader { geo in
                     HStack {
-                        MediaChartView()
-                            .frame(width: geo.size.width * 0.5)
-                            .background(Color.colorTheme.MCLightGrey)
-                            .foregroundColor(Color.colorTheme.MCBlack)
-                            .cornerRadius(10)
+//                        MediaChartView()
+//                            .frame(width: geo.size.width * 0.5)
+//                            .background(Color.colorTheme.MCLightGrey)
+//                            .foregroundColor(Color.colorTheme.MCBlack)
+//                            .cornerRadius(10)
                         Spacer()
-                        MediaChartView()
-                            .frame(width: geo.size.width * 0.5)
-                            .background(Color.colorTheme.MCLightGrey)
-                            .foregroundColor(Color.colorTheme.MCBlack)
-                            .cornerRadius(10)
+//                        MediaChartView()
+//                            .frame(width: geo.size.width * 0.5)
+//                            .background(Color.colorTheme.MCLightGrey)
+//                            .foregroundColor(Color.colorTheme.MCBlack)
+//                            .cornerRadius(10)
                     }
 
                 }

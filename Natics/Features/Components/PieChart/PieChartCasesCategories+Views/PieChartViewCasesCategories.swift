@@ -1,20 +1,20 @@
 //
-//  PieChartView.swift
+//  PieChartViewCasesCategories.swift
 //  Natics
 //
-//  Created by Peter Lee on 08/11/21.
+//  Created by Peter Lee on 16/11/21.
 //
 
 import SwiftUI
 import Charts
 
-struct MediaChartView: View {
-    @ObservedObject var viewModel: ActiveMediaViewModel
+struct CasesCategoriesChartView: View {
+    @ObservedObject var viewModel: CasesCategoriesViewModel
     
     var body: some View {
         VStack{
             HStack{
-                Text("Active Media")
+                Text("Cases Categories")
                     .fontWeight(.semibold)
                     .font(.system(size: 24))
                 Spacer()
@@ -33,15 +33,15 @@ struct MediaChartView: View {
 
             }
             .padding([.trailing, .top, .leading], 25)
-            PieChart(viewModel: viewModel)
+            PieChartCasesCategories(viewModel: viewModel)
         }
         .onAppear {
-            viewModel.setActiveMedia()
+            viewModel.setCasesCategories()
         }
     }
 }
 
-struct MediaChartView_Previews: PreviewProvider {
+struct CasesCategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         MediaChartView(viewModel: ActiveMediaViewModel())
     }

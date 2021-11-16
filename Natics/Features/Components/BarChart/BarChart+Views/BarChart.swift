@@ -9,57 +9,60 @@ import SwiftUI
 import Charts
 
 struct AnimalBarChartView: NSViewRepresentable {
-    @ObservedObject var viewModel: ActiveMediaViewModel
+    @ObservedObject var viewModel: TrendingAnimalsViewModel
     
     func makeNSView(context: Context) -> BarChartView {
         return BarChartView()
     }
     
     func updateNSView(_ nsView: BarChartView, context: Context) {
-        let dataSet = BarChartDataSet(entries: viewModel.activeMediaList)
+        let dataSet = BarChartDataSet(entries: viewModel.trendingAnimalList)
+        dataSet.label = "Transaction"
         nsView.legend.enabled = false
         nsView.noDataText = "No data"
         nsView.data = BarChartData(dataSet: dataSet)
         nsView.rightAxis.enabled = false
-        
-        nsView.setVisibleXRangeMaximum(10)
-        nsView.setScaleEnabled(false) //prevent zoom in
-        
-        nsView.extraBottomOffset = 30
+        nsView.setScaleEnabled(false)
         formatDataSet(dataSet: dataSet)
         formatLeftAxis(leftAxis: nsView.leftAxis)
         formatXAxis(xAxis: nsView.xAxis)
     }
     
-    func formatDataSet(dataSet: BarChartDataSet){
-        dataSet.colors = [NSUIColor(red: 0.267, green: 0.599, blue: 0.228, alpha: 1)]
+    func formatDataSet(dataSet: BarChartDataSet) {
+        dataSet.colors = [NSColor(.accentColor)]
+        dataSet.valueColors = [NSColor(.primary)]
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
         dataSet.valueFormatter = DefaultValueFormatter(formatter: formatter)
     }
     
-    func formatLeftAxis(leftAxis: YAxis){
+    func formatRightAxis(rightAxis: YAxis) {
+        rightAxis.labelTextColor = NSColor(.primary)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .none
+        rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
+        rightAxis.axisMinimum = 0
+        rightAxis.drawGridLinesEnabled = false
+    }
+    
+    func formatLeftAxis(leftAxis: YAxis) {
+        leftAxis.enabled = false
         leftAxis.axisMinimum = 0
     }
     
-    func formatXAxis(xAxis: XAxis){
+    func formatXAxis (xAxis: XAxis) {
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.trendingAnimalNames)
         xAxis.labelPosition = .bottom
-        xAxis.enabled = true
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.activeMediaNames)
-        xAxis.labelCount = 10
-        xAxis.wordWrapEnabled = true
-        
-
-    }
-    
-    func formatLegend(legend: Legend){
+        xAxis.labelTextColor = NSColor(.primary)
+        xAxis.drawGridLinesEnabled = false
+        xAxis.granularity = 1
+        xAxis.labelCount = 8
     }
 }
 
-//
 struct TransactionBarChartView_previews: PreviewProvider {
     static var previews: some View {
-        AnimalBarChartView(viewModel: ActiveMediaViewModel())
+        AnimalBarChartView(viewModel: TrendingAnimalsViewModel())
     }
 }
 

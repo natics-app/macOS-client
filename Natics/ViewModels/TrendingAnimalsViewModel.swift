@@ -5,21 +5,24 @@ import Charts
 
 class TrendingAnimalsViewModel: ObservableObject {
     @Published var animalCases: [CategoriesTrendingModel] = []
-    @Published var activeMedia: [ActiveMediaModel] = [] {
+    @Published var animalCasesTopTrending: [CategoriesTrendingModel] = [] {
         didSet {
             setAnimalTrending()
         }
     }
-
     @Published var trendingAnimalList = [BarChartDataEntry]()
     @Published var trendingAnimalNames = [String]()
     
-    private let categoriesTrendingRequest = TrendingProvinceRequest()
     private var cancellable = Set<AnyCancellable>()
     private let activeMediaRequest = SitesRequest()
+    private let request = TrendingProvinceRequest()
+    
+    init() {
+        self.setAnimalTrending()
+    }
     
     func getAnimalsTrending(selected: DatePickerModel) {
-        categoriesTrendingRequest.getTrendingAnimals(startDate: selected.getStartDate(), endDate: selected.getEndDate())
+        request.getTrendingAnimals(startDate: selected.getStartDate(), endDate: selected.getEndDate())
             .receive(on: RunLoop.main)
             .sink { result in
                 switch result {
@@ -29,15 +32,15 @@ class TrendingAnimalsViewModel: ObservableObject {
                     print("Finish")
                 }
             } receiveValue: { result in
-                guard let data = result.data else {return}
-                self.animalCases = data.categories
-                print(self.animalCases)
+                self.animalCases = result.data!.categories
+                let arraySlice = result.data!.categories.prefix(8)
+                self.animalCasesTopTrending = Array(arraySlice)
             }
             .store(in: &cancellable)
     }
     
-    func getActiveMedia(startDate: String, endDate: String) {
-        activeMediaRequest.getActiveMedia(startDate: startDate, endDate: endDate)
+    func getAnimalsTrending(startDate: String, endDate: String) {
+        request.getTrendingAnimals(startDate: startDate, endDate: endDate)
             .receive(on: RunLoop.main)
             .sink { result in
                 switch result {
@@ -47,9 +50,9 @@ class TrendingAnimalsViewModel: ObservableObject {
                     print("Finish")
                 }
             } receiveValue: { result in
-                guard let data = result.data else {return}
-                self.activeMedia = data.sites
-                print("Debug media: \(self.activeMedia)")
+                self.animalCases = result.data!.categories
+                let arraySlice = result.data!.categories.prefix(8)
+                self.animalCasesTopTrending = Array(arraySlice)
             }
             .store(in: &cancellable)
     }
@@ -57,6 +60,14 @@ class TrendingAnimalsViewModel: ObservableObject {
 
 extension TrendingAnimalsViewModel {
     func setAnimalTrending() {
+        self.trendingAnimalNames = animalCasesTopTrending.map {
+            animal in animal.name
+        }
         
+        self.trendingAnimalList = animalCasesTopTrending.enumerated()
+            .map {
+                (index, element) in
+                return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
+            }
     }
 }
