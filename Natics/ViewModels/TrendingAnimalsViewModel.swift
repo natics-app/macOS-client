@@ -15,7 +15,7 @@ class TrendingAnimalsViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     private let activeMediaRequest = SitesRequest()
-    private let request = TrendingProvinceRequest()
+    private let request = TrendingRequest()
     
     init() {
         self.setAnimalTrending()

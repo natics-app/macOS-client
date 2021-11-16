@@ -85,7 +85,7 @@ struct MapCompat : NSViewRepresentable {
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             var overlayers = MapOverlays.shared.returnOverlayList()
             
-            let fummy = mapView.convert(NSPoint(x: 514.5, y: 461), toCoordinateFrom: mapView)
+            let fummy = mapView.convert(NSPoint(x: 475, y: 240), toCoordinateFrom: mapView)
             let maprect = MKMapRect(origin: MKMapPoint(fummy), size: MKMapSize(width: 0.0001, height: 0.0001))
             var index = 0
             

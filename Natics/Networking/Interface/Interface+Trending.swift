@@ -25,6 +25,10 @@ extension TrendingDescription: NetworkDescription {
         switch self {
         case .getTrendingProvince:
             return "/api/general/trending/region"
+        case .getTrendingRisingCases:
+            return "/api/general/trending/rising"
+        case .getTrendingAnimals:
+            return "/api/general/trending/animals"
         }
         
     }
@@ -38,7 +42,9 @@ extension TrendingDescription: NetworkDescription {
     
     var queryParams: [String : String]? {
         switch self {
-            case .getTrendingProvince(let sd, let ed):
+            case .getTrendingProvince(let sd, let ed),
+                .getTrendingRisingCases(let sd, let ed),
+                .getTrendingAnimals(let sd, let ed):
                 return ["api_key" : Constants.ServerEnvironment.apiKey,
                         "start": sd,
                         "end": ed]

@@ -14,9 +14,9 @@ struct TrendsView: View {
     @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
     @StateObject var trendingCasesVM: TrendingAnimalsViewModel = TrendingAnimalsViewModel()
     @StateObject var activeMediaVM: ActiveMediaViewModel = ActiveMediaViewModel()
-    @StateObject var casesCategoriesVM:
-    
+    @StateObject var casesCategoriesVM = CasesCategoriesViewModel()
     @StateObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
+    
     var body: some View {
         ZStack(){
             ScrollView {
@@ -51,16 +51,7 @@ struct TrendsView: View {
         }
         .padding(24)
         .onReceive(viewModel.$selection) { selectionPublisher in
-            if viewModel.isCustomChosen {
-                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
-                
-                trendingCasesVM.getAnimalsTrending(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
-                
-                activeMediaVM.getActiveMedia(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
-                
-                casesCategoriesVM.getCasesCategories(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
-                
-            } else {
+            if !viewModel.isCustomChosen {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
                 
                 trendingCasesVM.getAnimalsTrending(selected: selectionPublisher ?? .pastWeek)
@@ -68,11 +59,20 @@ struct TrendsView: View {
                 activeMediaVM.getActiveMedia(selected: selectionPublisher ?? .pastWeek)
                 
                 casesCategoriesVM.getCasesCategories(selected: selectionPublisher ?? .pastWeek)
+                
+                risingCasesVM.getTrendingRisingCases(selection: selectionPublisher ?? .pastWeek)
+                
             }
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in
             if chosen {
                 trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                trendingCasesVM.getAnimalsTrending(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                activeMediaVM.getActiveMedia(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                casesCategoriesVM.getCasesCategories(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
                 
                 risingCasesVM.getTrendingRisingCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
             }
