@@ -33,8 +33,16 @@ struct WatchListViewDetail: View {
                                 .foregroundColor(Color.colorTheme.MCBlack)
                                 .cornerRadius(10)
                                 .redacted(reason: watchListViewModel.doneLoadingTotalCases ? [] : .placeholder)
-                                .onAppear {
-                                    watchListViewModel.getTotalCases()
+                                .onReceive(viewModel.$selection) {
+                                    selectionPublisher in
+                                    if !viewModel.isCustomChosen {
+                                        watchListViewModel.getTotalCases(selected: selectionPublisher ?? .pastWeek)
+                                    }
+                                }
+                                .onReceive(viewModel.$isCustomChosen) { chosen in
+                                    if chosen {
+                                        watchListViewModel.getTotalCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                                    }
                                 }
                                 .environmentObject(watchListViewModel.totalCases)
                             
@@ -44,8 +52,16 @@ struct WatchListViewDetail: View {
                                 .foregroundColor(Color.colorTheme.MCBlack)
                                 .cornerRadius(10)
                                 .redacted(reason: watchListViewModel.doneLoadingRank ? [] : .placeholder)
-                                .onAppear {
-                                    watchListViewModel.getRank()
+                                .onReceive(viewModel.$selection) {
+                                    selectionPublisher in
+                                    if !viewModel.isCustomChosen {
+                                        watchListViewModel.getRank(selected: selectionPublisher ?? .pastWeek)
+                                    }
+                                }
+                                .onReceive(viewModel.$isCustomChosen) { chosen in
+                                    if chosen {
+                                        watchListViewModel.getRank(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                                    }
                                 }
                                 .environmentObject(watchListViewModel.rank)
                         }
