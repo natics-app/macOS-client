@@ -9,12 +9,15 @@ import SwiftUI
 
 struct CasesView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
+    @StateObject var casesViewModel: CasesViewModel =  CasesViewModel()
+    
     var body: some View {
         VStack(){
             Text("\(viewModel.selection?.rawValue ?? "")")
             HStack {
                 NavigationBarView()
             }
+            CasesTable(casesViewModel: casesViewModel)
             Spacer()
         }.navigationTitle("")
         .toolbar {
@@ -28,7 +31,16 @@ struct CasesView: View {
             }
         }
         .padding(24)
-        
+        .onReceive(viewModel.$selection) { selectionPublisher in
+            if !viewModel.isCustomChosen {
+                casesViewModel.getAllCases(selection: selectionPublisher ?? .pastWeek)
+            }
+        }
+        .onReceive(viewModel.$isCustomChosen) { chosen in
+            if chosen {
+                casesViewModel.getAllCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+            }
+        }
     }
 }
 

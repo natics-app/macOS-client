@@ -10,12 +10,12 @@ import Combine
 
 
 // Trending Request service information
-struct TrendingProvinceRequest: Service {
+struct TrendingRequest: Service {
     var baseUrl: String = Constants.Endpoint.databaseServer
     typealias Network = TrendingDescription
 }
 
-extension TrendingProvinceRequest: TrendingInterface {
+extension TrendingRequest: TrendingInterface {
     func getTrendingAnimals(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingAnimalGetResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<TrendingAnimalGetResponse>>()
         return call.doConnect(request: Network.getTrendingAnimals(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
@@ -25,4 +25,10 @@ extension TrendingProvinceRequest: TrendingInterface {
         let call = Connector<Network, MCBaseResponse<TrendingProvinceGetResponse>>()
         return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
+    
+    func getTrendingRisingCases(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingRisingCasesGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<TrendingRisingCasesGetResponse>>()
+        return call.doConnect(request: Network.getTrendingRisingCases(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
+    }
+    
 }

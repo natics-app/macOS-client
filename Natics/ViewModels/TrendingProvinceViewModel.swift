@@ -23,7 +23,7 @@ class TrendingProvinceViewModel: ObservableObject {
     @Published var isDataLoaded = false
     
     // MARK: Private Properties
-    private let request = TrendingProvinceRequest()
+    private let request = TrendingRequest()
     private var cancellable = Set<AnyCancellable>()
     
     init() {
@@ -77,12 +77,16 @@ class TrendingProvinceViewModel: ObservableObject {
 extension TrendingProvinceViewModel {
     
     func setProvinceTrending() {
+        
         self.locationNames = provincesTopTrending.map { trend in
             trend.name
         }
-        print(self.locationNames)
-        self.locationList = provincesTopTrending.enumerated().map { (index, element) in
+        
+        self.locationNames = self.locationNames.reversed()
+        
+        self.locationList = provincesTopTrending.reversed().enumerated().map { (index, element) in
             return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
         }
+        
     }
 }

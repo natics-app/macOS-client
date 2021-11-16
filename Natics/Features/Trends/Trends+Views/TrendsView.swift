@@ -15,25 +15,23 @@ struct TrendsView: View {
     @StateObject var trendingCasesVM: TrendingAnimalsViewModel = TrendingAnimalsViewModel()
     @StateObject var activeMediaVM: ActiveMediaViewModel = ActiveMediaViewModel()
     @StateObject var casesCategoriesVM:
-        CasesCategoriesViewModel = CasesCategoriesViewModel()
     
-    
+    @StateObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
     var body: some View {
         ZStack(){
             ScrollView {
-                Text("\(viewModel.selection?.rawValue ?? "")")
                 HStack {
                     NavigationBarView()
                 }
                 Spacer()
                 HStack {
+                    RisingCasesTable(viewModel: risingCasesVM)
                     TrendingBarChart(viewModel: trendingCasesVM)
-                    RisingCasesTable()
                 }
                 HStack {
                     HeatMapView(viewModel: trendingVM)
                 }
-                .frame(width: nil, height: 400, alignment: .center)
+                .frame(width: nil, height: 700, alignment: .center)
                 HStack {
                     MediaChartView(viewModel: activeMediaVM)
                     CasesCategoriesChartView(viewModel: casesCategoriesVM)
@@ -70,6 +68,13 @@ struct TrendsView: View {
                 activeMediaVM.getActiveMedia(selected: selectionPublisher ?? .pastWeek)
                 
                 casesCategoriesVM.getCasesCategories(selected: selectionPublisher ?? .pastWeek)
+            }
+        }
+        .onReceive(viewModel.$isCustomChosen) { chosen in
+            if chosen {
+                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                risingCasesVM.getTrendingRisingCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
             }
         }
     }

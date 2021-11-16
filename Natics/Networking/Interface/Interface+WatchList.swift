@@ -10,21 +10,21 @@ import Combine
 
 // WatchList interface functions
 protocol WatchListInterface: Service {
-    func getNumberOfCases(category_id: Int) -> AnyPublisher<MCBaseResponse<NewsAnimalCategoryResponse>, MCBaseErrorModel>
-    func getRank(category_id: Int) -> AnyPublisher<MCBaseResponse<AnimalRankGetResponse>, MCBaseErrorModel>
+    func getNumberOfCases(category_id: Int, startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<NewsAnimalCategoryResponse>, MCBaseErrorModel>
+    func getRank(category_id: Int, startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<AnimalRankGetResponse>, MCBaseErrorModel>
 }
 
 enum WatchListDescription {
-    case getNumberOfCases(categoryId: Int)
-    case getRank(categoryId: Int)
+    case getNumberOfCases(categoryId: Int, startDate: String, endDate: String)
+    case getRank(category_id: Int, startDate: String, endDate: String)
 }
 
 extension WatchListDescription: NetworkDescription {
     var path: String {
         switch self {
-        case .getRank(let id):
+        case .getRank(let id, _, _):
             return "/api/general/trending/rank/\(id)"
-        case .getNumberOfCases(let id):
+        case .getNumberOfCases(let id, _, _):
             return "/api/general/trending/animals/\(id)"
         }
     }
@@ -37,10 +37,16 @@ extension WatchListDescription: NetworkDescription {
     }
     
     var queryParams: [String : String]? {
-        return [
-            "api_key": Constants.ServerEnvironment.apiKey,
-            "start": "2018-01-01",
-            "end": "2021-11-20"
-        ]
+
+        
+        switch self {
+            case .getNumberOfCases(_ , let sd, let ed),
+                .getRank(_ , let sd, let ed):
+            return [
+                "api_key": Constants.ServerEnvironment.apiKey,
+                "start": sd,
+                "end": ed
+            ]
+        }
     }
 }

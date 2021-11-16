@@ -15,13 +15,13 @@ struct WatchListRequest: Service {
 }
 
 extension WatchListRequest: WatchListInterface {
-    func getNumberOfCases(category_id: Int) -> AnyPublisher<MCBaseResponse<NewsAnimalCategoryResponse>, MCBaseErrorModel> {
+    func getNumberOfCases(category_id: Int, startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<NewsAnimalCategoryResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<NewsAnimalCategoryResponse>>()
-        return call.doConnect(request: Network.getNumberOfCases(categoryId: category_id), baseUrl: baseUrl)
+        return call.doConnect(request: Network.getNumberOfCases(categoryId: category_id, startDate: startDate, endDate:  endDate), baseUrl: baseUrl)
     }
     
-    func getRank(category_id: Int) -> AnyPublisher<MCBaseResponse<AnimalRankGetResponse>, MCBaseErrorModel> {
+    func getRank(category_id: Int, startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<AnimalRankGetResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<AnimalRankGetResponse>>()
-        return call.doConnect(request: Network.getRank(categoryId: category_id), baseUrl: baseUrl)
+        return call.doConnect(request: Network.getRank(category_id: category_id, startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
 }
