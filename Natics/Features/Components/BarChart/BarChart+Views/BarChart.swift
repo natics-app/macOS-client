@@ -9,13 +9,14 @@ import SwiftUI
 import Charts
 
 struct AnimalBarChartView: NSViewRepresentable {
-    let entries: [BarChartDataEntry]
+    @ObservedObject var viewModel: ActiveMediaViewModel
+    
     func makeNSView(context: Context) -> BarChartView {
         return BarChartView()
     }
     
     func updateNSView(_ nsView: BarChartView, context: Context) {
-        let dataSet = BarChartDataSet(entries: entries)
+        let dataSet = BarChartDataSet(entries: viewModel.activeMediaList)
         nsView.legend.enabled = false
         nsView.noDataText = "No data"
         nsView.data = BarChartData(dataSet: dataSet)
@@ -42,15 +43,9 @@ struct AnimalBarChartView: NSViewRepresentable {
     }
     
     func formatXAxis(xAxis: XAxis){
-//        xAxis.valueFormatter = IndexAxisValueFormatter(values: Transaction.months)
         xAxis.labelPosition = .bottom
         xAxis.enabled = true
-        
-        var animalArr: [String] = []
-        for i in Animal.allCases{
-            animalArr.append(i.animalName)
-        }
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: animalArr)
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: viewModel.activeMediaNames)
         xAxis.labelCount = 10
         xAxis.wordWrapEnabled = true
         
@@ -64,7 +59,7 @@ struct AnimalBarChartView: NSViewRepresentable {
 //
 struct TransactionBarChartView_previews: PreviewProvider {
     static var previews: some View {
-        AnimalBarChartView(entries: Animal.dataEntry(animal: Animal.allCases))
+        AnimalBarChartView(viewModel: ActiveMediaViewModel())
     }
 }
 

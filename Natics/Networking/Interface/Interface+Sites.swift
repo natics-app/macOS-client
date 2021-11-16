@@ -10,20 +10,21 @@ import Combine
 
 // Region interface functions
 protocol SitesInterface: Service {
-    
+    func getActiveMedia(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<ActiveMediaGetResponse>, MCBaseErrorModel>
 }
 
 // Region Request enum
 enum SitesDescription {
-    
+    case getActiveMedia(startDate: String, endDate: String)
 }
 
 // Region Description
 extension SitesDescription: NetworkDescription {
     var path: String {
         switch self {
-        default:
-            return ""
+        case .getActiveMedia:
+            return "/api/general/trending/sites"
+
         }
     }
     
@@ -35,6 +36,11 @@ extension SitesDescription: NetworkDescription {
     }
     
     var queryParams: [String : String]? {
-        return ["api_key" : Constants.ServerEnvironment.apiKey]
+        switch self{
+        case .getActiveMedia(startDate: let sd, endDate: let ed):
+            return ["api_key" : Constants.ServerEnvironment.apiKey,
+                    "start": sd,
+                    "end": ed]
+        }
     }
 }

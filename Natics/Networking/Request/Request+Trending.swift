@@ -16,6 +16,11 @@ struct TrendingProvinceRequest: Service {
 }
 
 extension TrendingProvinceRequest: TrendingInterface {
+    func getTrendingAnimals(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingAnimalGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<TrendingAnimalGetResponse>>()
+        return call.doConnect(request: Network.getTrendingAnimals(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
+    }
+    
     func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingProvinceGetResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<TrendingProvinceGetResponse>>()
         return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)

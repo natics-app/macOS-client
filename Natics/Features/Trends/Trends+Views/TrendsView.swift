@@ -11,7 +11,12 @@ import Combine
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
-    @ObservedObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    @StateObject var trendingCases: TrendingAnimalsViewModel = TrendingAnimalsViewModel()
+    @StateObject var activeMedia: ActiveMediaViewModel = ActiveMediaViewModel()
+    @StateObject var casesCategories:
+        CasesCategoriesViewModel = CasesCategoriesViewModel()
+    
     
     var body: some View {
         ZStack(){
@@ -22,7 +27,7 @@ struct TrendsView: View {
                 }
                 Spacer()
                 HStack {
-                    TrendingBarChart()
+                    TrendingBarChart(viewModel: activeMedia)
                     RisingCasesTable()
                 }
                 HStack {
@@ -50,8 +55,17 @@ struct TrendsView: View {
         .onReceive(viewModel.$selection) { selectionPublisher in
             if viewModel.isCustomChosen {
                 trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                trendingCases.getActiveMedia(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
             } else {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
+                
+                trendingCases.getAnimalsTrending(selected: selectionPublisher ?? .pastWeek)
+                
+                activeMedia.getActiveMedia(selected: selectionPublisher ?? .pastWeek)
+                
+                casesCategories.getCasesCategories(selected: selectionPublisher ?? .pastWeek)
             }
         }
     }

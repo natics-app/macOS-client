@@ -9,6 +9,8 @@ import SwiftUI
 import Charts
 
 struct TrendingBarChart: View {
+    @ObservedObject var viewModel: ActiveMediaViewModel
+    
     var body: some View {
         VStack{
             HStack{
@@ -31,7 +33,7 @@ struct TrendingBarChart: View {
 
             }
             .padding([.leading, .trailing, .top], 25)
-            AnimalBarChartView(entries: Animal.dataEntry(animal: Animal.allCases))
+            AnimalBarChartView(viewModel: viewModel)
                 .padding([.leading, .trailing, .bottom], 10)
         }
     }
@@ -39,7 +41,7 @@ struct TrendingBarChart: View {
 
 struct TrendingBarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingBarChart()
+        TrendingBarChart(viewModel: ActiveMediaViewModel())
     }
 }
 
