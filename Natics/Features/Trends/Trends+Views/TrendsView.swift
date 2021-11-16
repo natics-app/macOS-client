@@ -11,7 +11,9 @@ import Combine
 
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
-    @ObservedObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    
+    @ObservedObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
     
     var body: some View {
         ZStack(){
@@ -49,6 +51,8 @@ struct TrendsView: View {
         .padding(24)
         .onReceive(viewModel.$selection) { selectionPublisher in
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
+                
+                risingCasesVM.getTrendingRisingCases(selection: selectionPublisher ?? .pastWeek)
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in
             if chosen {
