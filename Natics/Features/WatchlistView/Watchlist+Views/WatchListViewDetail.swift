@@ -11,6 +11,7 @@ import Charts
 struct WatchListViewDetail: View {
     
     @EnvironmentObject var viewModel: DatePickerViewModel
+    @StateObject var casesViewModel: CasesViewModel = CasesViewModel()
     
     var body: some View {
         ScrollView {

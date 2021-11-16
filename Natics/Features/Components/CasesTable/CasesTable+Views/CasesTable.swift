@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct CasesTable: View {
+    
+    @StateObject var casesViewModel: CasesViewModel = CasesViewModel()
+    
     var body: some View {
         ScrollView(.horizontal) {
             VStack(alignment: .leading, spacing: 0) {
                 CasesTableHeader()
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 0) {
-                        ForEach(1..<20) { _ in
-                            CasesTableRow()
+                
+                        ForEach(casesViewModel.cases, id: \.id) { news in
+                            CasesTableRow(rowcase: news, rowindex: news.id)
                                 .frame(width: 1613 ,height: 40, alignment: .leading)
                                 .background(Color.white)
-                        }
+                       }
                     }
                 }
             }

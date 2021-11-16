@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CasesView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
+    @StateObject var casesViewModel: CasesViewModel =  CasesViewModel()
+    
     var body: some View {
         VStack(){
             HStack {

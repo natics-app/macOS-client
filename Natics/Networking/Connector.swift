@@ -29,7 +29,7 @@ struct Connector<N, S> where N: NetworkDescription, S: Codable {
             .dataTaskPublisher(for: urlRequest)
             .tryMap({ (data: Data, response: URLResponse)  in // Map on Request response
                 // If the response is invalid, throw an error
-//                print("debugNetwork: \(String(data: data, encoding: .utf8))")
+                print("debugNetwork: \(String(data: data, encoding: .utf8))")
                 if let response = response as? HTTPURLResponse,
                    !(200...299).contains(response.statusCode) {
 //                    print("debugNetwork: \(String(data: data, encoding: .utf8))")

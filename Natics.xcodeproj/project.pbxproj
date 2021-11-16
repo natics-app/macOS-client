@@ -60,6 +60,10 @@
 		49468259272FBC8000C92AEE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468258272FBC8000C92AEE /* DashboardView.swift */; };
 		4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946825A272FBD2000C92AEE /* WatchListView.swift */; };
 		498E17E7273BA0A30079BC2B /* HeatMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E17E6273BA0A30079BC2B /* HeatMapView.swift */; };
+		4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */; };
+		4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */; };
+		4E15B5B027425EB800F5C0CF /* CasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AF27425EB800F5C0CF /* CasesModel.swift */; };
+		4E15B5B32742680600F5C0CF /* CasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5B22742680600F5C0CF /* CasesViewModel.swift */; };
 		4E45CD05273B5FF700AAB02E /* WatchListViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */; };
 		4EDD0328273A64C000647011 /* CasesTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0327273A64C000647011 /* CasesTableRow.swift */; };
 		4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0329273A655E00647011 /* CasesTableHeader.swift */; };
@@ -133,6 +137,10 @@
 		49468258272FBC8000C92AEE /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		4946825A272FBD2000C92AEE /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
 		498E17E6273BA0A30079BC2B /* HeatMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapView.swift; sourceTree = "<group>"; };
+		4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Cases.swift"; sourceTree = "<group>"; };
+		4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Cases.swift"; sourceTree = "<group>"; };
+		4E15B5AF27425EB800F5C0CF /* CasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesModel.swift; sourceTree = "<group>"; };
+		4E15B5B22742680600F5C0CF /* CasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesViewModel.swift; sourceTree = "<group>"; };
 		4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewDetail.swift; sourceTree = "<group>"; };
 		4EDD0327273A64C000647011 /* CasesTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableRow.swift; sourceTree = "<group>"; };
 		4EDD0329273A655E00647011 /* CasesTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableHeader.swift; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 				440DD5FB272E97BD00758AD9 /* Model.swift */,
 				4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */,
 				4495345E2733B79D00CADA9F /* RegionModel.swift */,
+				4E15B5AF27425EB800F5C0CF /* CasesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				4495345C2733B55600CADA9F /* Request+Region.swift */,
+				4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -365,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				4495345A2733A19B00CADA9F /* Interface+Region.swift */,
+				4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -436,6 +447,7 @@
 		49468244272FA4CC00C92AEE /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				4E15B5B1274267F500F5C0CF /* Cases+ViewModels */,
 				4946824A272FA57000C92AEE /* Cases+Views */,
 			);
 			path = Cases;
@@ -471,6 +483,14 @@
 				4946824F272FA61800C92AEE /* TrendsView.swift */,
 			);
 			path = "Trends+Views";
+			sourceTree = "<group>";
+		};
+		4E15B5B1274267F500F5C0CF /* Cases+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4E15B5B22742680600F5C0CF /* CasesViewModel.swift */,
+			);
+			path = "Cases+ViewModels";
 			sourceTree = "<group>";
 		};
 		4E45CD01273B5F3200AAB02E /* WatchlistView */ = {
@@ -667,6 +687,7 @@
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
 				44FB2AD7273E104100231317 /* AddWatchlistView.swift in Sources */,
 				E7A041122738D23900B20B99 /* PieChart.swift in Sources */,
+				4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */,
 				44159B722736AF990077F3FF /* DatePickerList.swift in Sources */,
 				44159B662736AF900077F3FF /* ToolbarView.swift in Sources */,
 				44DE84C127371BD10034DBA2 /* HeatMapViewModel.swift in Sources */,
@@ -685,6 +706,7 @@
 				44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */,
 				44DE84C227371BD10034DBA2 /* TrendsViewModel.swift in Sources */,
 				4EE8C21627369B2000C9AD66 /* RisingRow.swift in Sources */,
+				4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */,
 				44159B652736AF900077F3FF /* NavigationBarView.swift in Sources */,
 				44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
@@ -705,8 +727,10 @@
 				44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */,
 				4946825B272FBD2000C92AEE /* WatchListView.swift in Sources */,
 				E7A0410A2738D16B00B20B99 /* BarChart.swift in Sources */,
+				4E15B5B027425EB800F5C0CF /* CasesModel.swift in Sources */,
 				44558F0F2728688F00DEE0EF /* NaticsApp.swift in Sources */,
 				49468254272FA63400C92AEE /* SettingsView.swift in Sources */,
+				4E15B5B32742680600F5C0CF /* CasesViewModel.swift in Sources */,
 				4EDD0328273A64C000647011 /* CasesTableRow.swift in Sources */,
 				44953453273280AD00CADA9F /* Extension+Encodable.swift in Sources */,
 			);
@@ -840,7 +864,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -868,7 +892,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
