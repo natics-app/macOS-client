@@ -16,5 +16,10 @@ struct SitesRequest: Service {
 
 // Reqion Request function
 extension SitesRequest: SitesInterface {
+    func getActiveMedia(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<ActiveMediaGetResponse>, MCBaseErrorModel> {
+        let call = Connector<Network, MCBaseResponse<ActiveMediaGetResponse>>()
+        return call.doConnect(request: Network.getActiveMedia(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
+    }
+    
 
 }

@@ -1,15 +1,16 @@
 //
-//  PieChart.swift
+//  PieChartCasesCategories.swift
 //  Natics
 //
-//  Created by Peter Lee on 08/11/21.
+//  Created by Peter Lee on 16/11/21.
 //
+
 import SwiftUI
 import Charts
 
-struct PieChart: NSViewRepresentable {
+struct PieChartCasesCategories: NSViewRepresentable {
     
-    @ObservedObject var viewModel: ActiveMediaViewModel
+    @ObservedObject var viewModel: CasesCategoriesViewModel
     
     let pieChart = PieChartView()
     func makeNSView(context: Context) -> PieChartView {
@@ -18,7 +19,7 @@ struct PieChart: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: PieChartView, context: Context) {
-        let dataSet = PieChartDataSet(entries: viewModel.activeMediaList)
+        let dataSet = PieChartDataSet(entries: viewModel.casesCategoriesList)
         dataSet.colors = [NSUIColor(red: 1, green: 0.369, blue: 0.341, alpha: 1), NSUIColor(red: 0.235, green: 0.514, blue: 0.969, alpha: 1), NSUIColor(red: 0.698, green: 0.384, blue: 0.918, alpha: 1), NSUIColor(red: 0.973, green: 0.839, blue: 0.294, alpha: 1), NSUIColor(red: 0.506, green: 0.816, blue: 0.98, alpha: 1)]
         let pieChartData = PieChartData(dataSet: dataSet)
         nsView.data = pieChartData
@@ -31,8 +32,8 @@ struct PieChart: NSViewRepresentable {
     }
     
     class Coordinator: NSObject, ChartViewDelegate {
-        var parent: PieChart
-        init(parent: PieChart){
+        var parent: PieChartCasesCategories
+        init(parent: PieChartCasesCategories){
             self.parent = parent
         }
     }
@@ -69,11 +70,10 @@ struct PieChart: NSViewRepresentable {
     }
 }
 
-struct PieChart_previews: PreviewProvider {
+struct PieChartCasesCategories_previews: PreviewProvider {
     static var previews: some View {
-        PieChart(viewModel: ActiveMediaViewModel())
+        PieChartCasesCategories(viewModel: CasesCategoriesViewModel())
             .frame(height: 400)
             .padding()
     }
 }
-

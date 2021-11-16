@@ -12,9 +12,11 @@ import Combine
 struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
     @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
+    @StateObject var trendingCasesVM: TrendingAnimalsViewModel = TrendingAnimalsViewModel()
+    @StateObject var activeMediaVM: ActiveMediaViewModel = ActiveMediaViewModel()
+    @StateObject var casesCategoriesVM:
     
     @StateObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
-    
     var body: some View {
         ZStack(){
             ScrollView {
@@ -23,16 +25,16 @@ struct TrendsView: View {
                 }
                 Spacer()
                 HStack {
-                    TrendingBarChart()
                     RisingCasesTable(viewModel: risingCasesVM)
+                    TrendingBarChart(viewModel: trendingCasesVM)
                 }
                 HStack {
                     HeatMapView(viewModel: trendingVM)
                 }
                 .frame(width: nil, height: 700, alignment: .center)
                 HStack {
-                    MediaChartView()
-                    MediaChartView()
+                    MediaChartView(viewModel: activeMediaVM)
+                    CasesCategoriesChartView(viewModel: casesCategoriesVM)
                 }
                 .frame(width: nil, height: 450, alignment: .center)
             }
@@ -48,12 +50,24 @@ struct TrendsView: View {
             }
         }
         .padding(24)
-        .onReceive(viewModel.$selection) {
-            selectionPublisher in
-            if !viewModel.isCustomChosen {
+        .onReceive(viewModel.$selection) { selectionPublisher in
+            if viewModel.isCustomChosen {
+                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                trendingCasesVM.getAnimalsTrending(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                activeMediaVM.getActiveMedia(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                casesCategoriesVM.getCasesCategories(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+            } else {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
                 
-                risingCasesVM.getTrendingRisingCases(selection: selectionPublisher ?? .pastWeek)
+                trendingCasesVM.getAnimalsTrending(selected: selectionPublisher ?? .pastWeek)
+                
+                activeMediaVM.getActiveMedia(selected: selectionPublisher ?? .pastWeek)
+                
+                casesCategoriesVM.getCasesCategories(selected: selectionPublisher ?? .pastWeek)
             }
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in

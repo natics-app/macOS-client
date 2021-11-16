@@ -23,6 +23,19 @@ struct ProvinceTrendingModel: Codable {
     var news_count: Int
 }
 
+struct TrendingAnimalGetResponse: Codable {
+    var total: Int
+    var selected_start: String
+    var selected_end: String
+    var categories: [CategoriesTrendingModel]
+}
+
+struct CategoriesTrendingModel: Codable {
+    var id: Int
+    var name: String
+    var news_count: Int
+}
+
 struct TrendingRisingCasesGetResponse: Codable {
     var selected_start: String
     var selected_end: String
