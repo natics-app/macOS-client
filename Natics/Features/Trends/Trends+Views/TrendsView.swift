@@ -13,19 +13,18 @@ struct TrendsView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
     @StateObject var trendingVM: TrendingProvinceViewModel = TrendingProvinceViewModel()
     
-    @ObservedObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
+    @StateObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
     
     var body: some View {
         ZStack(){
             ScrollView {
-                Text("\(viewModel.selection?.rawValue ?? "")")
                 HStack {
                     NavigationBarView()
                 }
                 Spacer()
                 HStack {
                     TrendingBarChart()
-                    RisingCasesTable()
+                    RisingCasesTable(viewModel: risingCasesVM)
                 }
                 HStack {
                     HeatMapView(viewModel: trendingVM)
@@ -57,6 +56,8 @@ struct TrendsView: View {
         .onReceive(viewModel.$isCustomChosen) { chosen in
             if chosen {
                 trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                
+                risingCasesVM.getTrendingRisingCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
             }
         }
     }

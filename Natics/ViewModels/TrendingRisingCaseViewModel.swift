@@ -30,7 +30,24 @@ class TrendingRisingCaseViewModel: ObservableObject {
                 self?.risingCasesAllTrending = trendingRisingCases.data!.categories
                 let arraySlice = trendingRisingCases.data!.categories.prefix(8)
                 self?.risingCasesTopTrending = Array(arraySlice)
-                print(self?.risingCasesTopTrending)
+            }
+            .store(in: &cancellable)
+    }
+    
+    func getTrendingRisingCases(startDate: String, endDate: String) {
+        request.getTrendingRisingCases(startDate: startDate, endDate: endDate)
+            .receive(on: RunLoop.main)
+            .sink { result in
+                switch result {
+                    case .failure(let err):
+                        print(err)
+                    case .finished:
+                        print("Get Trending Cases finish")
+                }
+            } receiveValue: { [weak self] (trendingRisingCases) in
+                self?.risingCasesAllTrending = trendingRisingCases.data!.categories
+                let arraySlice = trendingRisingCases.data!.categories.prefix(20)
+                self?.risingCasesTopTrending = Array(arraySlice)
             }
             .store(in: &cancellable)
     }
