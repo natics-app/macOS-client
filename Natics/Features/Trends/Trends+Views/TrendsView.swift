@@ -48,10 +48,13 @@ struct TrendsView: View {
             }
         }
         .padding(24)
-        .onReceive(viewModel.$selection) { selectionPublisher in
+        .onReceive(viewModel.$selection) {
+            selectionPublisher in
+            if !viewModel.isCustomChosen {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
                 
                 risingCasesVM.getTrendingRisingCases(selection: selectionPublisher ?? .pastWeek)
+            }
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in
             if chosen {
