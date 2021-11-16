@@ -17,9 +17,9 @@ struct CasesRequest: Service {
 // Cases Request function
 
 extension CasesRequest: CasesInterface {
-    func getAllCases() -> AnyPublisher<MCBaseResponse<CasesGetResponse>, MCBaseErrorModel> {
+    func getAllCases(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<CasesGetResponse>, MCBaseErrorModel> {
         let call =  Connector<Network,MCBaseResponse<CasesGetResponse>>()
-        return call.doConnect(request: Network.getAllCases, baseUrl: baseUrl)
+        return call.doConnect(request: Network.getAllCases(startDate: startDate, endDate: endDate), baseUrl: baseUrl)
     }
     
     

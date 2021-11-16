@@ -10,12 +10,12 @@ import Combine
 
 // Cases interface functions
 protocol CasesInterface: Service {
-    func getAllCases() -> AnyPublisher<MCBaseResponse<CasesGetResponse>, MCBaseErrorModel>
+    func getAllCases(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<CasesGetResponse>, MCBaseErrorModel>
 }
 
 // Cases Request enum
 enum CasesDescription {
-    case getAllCases
+    case getAllCases(startDate: String, endDate: String)
 }
 
 // Cases Description
@@ -42,9 +42,12 @@ extension CasesDescription: NetworkDescription {
     }
     
     var queryParams: [String : String]? {
-        return ["api_key" : Constants.ServerEnvironment.apiKey,
-                "start" : "2020-10-31",
-                "end" : "2021-11-11"]
+        switch self {
+        case .getAllCases(let sd, let nd):
+            return ["api_key" : Constants.ServerEnvironment.apiKey,
+                    "start" : sd,
+                    "end" : nd]
+        }
     }
     
 }
