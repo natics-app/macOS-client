@@ -88,7 +88,9 @@ struct MapCompat : NSViewRepresentable {
             let fummy = mapView.convert(NSPoint(x: 514.5, y: 461), toCoordinateFrom: mapView)
             let maprect = MKMapRect(origin: MKMapPoint(fummy), size: MKMapSize(width: 0.0001, height: 0.0001))
             var index = 0
-
+            
+            mapView.removeOverlays(mapView.overlays)
+            
             for overlayMap in mapView.overlays {
                 if overlayMap.boundingMapRect.intersects(maprect)  {
                     let polygon = overlayers[index].overlay as? MKPolygon
@@ -107,7 +109,6 @@ struct MapCompat : NSViewRepresentable {
             for overlayer in overlayers {
                 self.render(mapView, overlay: overlayer.overlay, info: overlayer.polygonInfo, isHover: overlayer.isHover)
             }
-            
         }
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -136,8 +137,6 @@ struct MapCompat : NSViewRepresentable {
                         renderer.fillColor = NSColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
                     }
                 }
-                
-                
                 renderer.strokeColor = NSColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.3)
                 renderer.lineWidth = 1
                 

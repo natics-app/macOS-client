@@ -14,8 +14,8 @@ class DatePickerViewModel: ObservableObject {
     @Published var filterStartDate = Date()
     @Published var filterEndDate = Date()
     
-    @State var customStartDate: String?
-    @State var customEndDate: String?
+    @Published var customStartDate: String?
+    @Published var customEndDate: String?
     
     @Published var isCustomTapped = false
     @Published var isEverClicked = false
@@ -27,6 +27,11 @@ class DatePickerViewModel: ObservableObject {
     }
     
     func customTapped() {
+        isEverClicked = true
+        isCustomTapped = true
+    }
+    
+    func customChosen() {
         isCustomChosen = true
         isEverClicked = true
         isCustomTapped = true
