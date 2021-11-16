@@ -32,7 +32,6 @@ struct AddWatchlistView: View {
                         } label: {
                             Image(systemName: "xmark")
                                 .font(Font.system(size: 20))
-//                                .frame(width: 20, height: 20, alignment: .center)
                         }
                         .buttonStyle(.plain)
                         
@@ -72,7 +71,9 @@ struct AddWatchlistView: View {
                                         addWatchlistVM.getAnimalTrendings,
                                         id: \.id
                                     ) { item in
-                                        AddWatchlistCell(animalName: item.name, casesNumber: item.newsCount)
+                                        AddWatchlistCell(
+                                            animalName: item.name.capitalizingFirstLetter(),
+                                            casesNumber: item.newsCount ?? 0)
                                     }
                                 }
                             } // END: VSTACK-4

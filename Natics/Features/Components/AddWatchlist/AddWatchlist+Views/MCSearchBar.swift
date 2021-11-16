@@ -16,6 +16,7 @@ struct MCSearchBar: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("Search animal name", text: $text)
+                    .textFieldStyle(PlainTextFieldStyle())
                     .background(Color.colorTheme.MCDarkGrey)
             }
             .padding(10)

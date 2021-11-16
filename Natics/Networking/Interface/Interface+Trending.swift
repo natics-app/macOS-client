@@ -60,8 +60,6 @@ extension TrendingDescription: NetworkDescription {
         case .getNumberOfCases:
             return [
                 "api_key" : Constants.ServerEnvironment.apiKey,
-                "start": Date().getDateString(with: "yyyy-MM-dd"),
-                "end": Date().getDateString(with: "yyyy-MM-dd")
             ]
         }
     }

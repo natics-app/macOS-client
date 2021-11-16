@@ -36,21 +36,5 @@ struct AnimalRankGetResponse: Codable {
 
 // MARK: - ANIMALS NUMBER OF CASES
 struct NewsAnimalCategoryResponse: Codable {
-    var category: Category?
-}
-
-struct Category: Codable {
-    var id: Int
-    var name: String
-    var newCount: Int?
-    var oldCount: Int?
-}
-
-extension Category {
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case newCount = "new_count"
-        case oldCount = "old_count"
-    }
+    var category: Category? // Get this from Category in models
 }

@@ -55,26 +55,14 @@ struct RisingCategoriesModel: Codable {
 
 struct GetNumberCasesOfResponse: Codable {
     var total: Int
-    var selectedStart: String
-    var selectedEnd: String
-    var categories: [NumberCasesCategories]
+    var selectedStart: String?
+    var selectedEnd: String?
+    var categories: [Category]
     
     enum CodingKeys: String, CodingKey {
         case total
         case selectedStart = "selected_start"
         case selectedEnd = "selected_end"
         case categories
-    }
-}
-
-struct NumberCasesCategories: Codable {
-    var id: Int
-    var name: String
-    var newsCount: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case newsCount = "news_count"
     }
 }
