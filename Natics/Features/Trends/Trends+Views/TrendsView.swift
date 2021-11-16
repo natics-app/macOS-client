@@ -28,7 +28,7 @@ struct TrendsView: View {
                 HStack {
                     HeatMapView(viewModel: trendingVM)
                 }
-                .frame(width: nil, height: 900, alignment: .center)
+                .frame(width: nil, height: 700, alignment: .center)
                 HStack {
                     MediaChartView()
                     MediaChartView()
