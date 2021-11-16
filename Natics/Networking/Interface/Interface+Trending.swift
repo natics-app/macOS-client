@@ -29,8 +29,7 @@ extension TrendingDescription: NetworkDescription {
             return "/api/general/trending/region"
         case .getTrendingRisingCases:
             return "/api/general/trending/rising"
-        case .getTrendingAnimals:
-        case .getNumberOfCases:
+        case .getTrendingAnimals, .getNumberOfCases:
             return "/api/general/trending/animals"
         }
         

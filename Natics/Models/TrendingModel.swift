@@ -51,8 +51,9 @@ struct RisingCategoriesModel: Codable {
     var recent: Int
     var total: Int
     var percentage: Double
-// MARK: GET NUMBER OF CASES
+}
 
+// MARK: GET NUMBER OF CASES
 struct GetNumberCasesOfResponse: Codable {
     var total: Int
     var selectedStart: String?
