@@ -12,6 +12,7 @@ struct Category: Codable {
     var name: String
     var newCount: Int?
     var oldCount: Int?
+    var newsCount: Int?
 }
 
 extension Category {
@@ -20,5 +21,6 @@ extension Category {
         case name
         case newCount = "new_count"
         case oldCount = "old_count"
+        case newsCount = "news_count"
     }
 }

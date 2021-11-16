@@ -8,19 +8,36 @@
 import SwiftUI
 
 struct ToolbarView: View {
+    
+    @State private var isShown = false
+    
+    
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                ActionButton(action: {
-                }, imageName: "bell.badge.fill")
-                    .padding(.trailing, 16)
-                    .help("Notification Bell")
-                
-                FilledButton(title: "Add Watchlist") {
-                }.help("Add Watch List")
-            }.padding(.init(top: 27, leading: 0, bottom: 0, trailing: 16))
+        ZStack {
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    ActionButton(action: {
+                    }, imageName: "bell.badge.fill")
+                        .padding(.trailing, 16)
+                        .help("Notification Bell")
+                    
+                    FilledButton(title: "Add Watchlist") {
+                        isShown.toggle()
+                    }.help("Add Watch List")
+                    
+                }
+                .padding(.init(top: 27, leading: 0, bottom: 0, trailing: 16))
+            }
+            .sheet(isPresented: $isShown, onDismiss: nil, content: {
+                VStack {
+                    AddWatchlistView()
+                        .frame(width: 550, height: 600, alignment: .center)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .background(Color.black.opacity(0.75))
+            })
         }
     }
 }

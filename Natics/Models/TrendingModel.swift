@@ -52,3 +52,18 @@ struct RisingCategoriesModel: Codable {
     var total: Int
     var percentage: Double
 }
+
+// MARK: GET NUMBER OF CASES
+struct GetNumberCasesOfResponse: Codable {
+    var total: Int
+    var selectedStart: String?
+    var selectedEnd: String?
+    var categories: [Category]
+    
+    enum CodingKeys: String, CodingKey {
+        case total
+        case selectedStart = "selected_start"
+        case selectedEnd = "selected_end"
+        case categories
+    }
+}

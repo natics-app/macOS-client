@@ -11,7 +11,6 @@
 		0C651E8D27415A6800C51692 /* Request+WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C651E8C27415A6800C51692 /* Request+WatchList.swift */; };
 		0C651E8F27415A7800C51692 /* Interface+WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C651E8E27415A7800C51692 /* Interface+WatchList.swift */; };
 		0C960CAC27425FFF00EF96AB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C960CAB27425FFF00EF96AB /* Category.swift */; };
-		440DD5FC272E97BD00758AD9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD5FB272E97BD00758AD9 /* Model.swift */; };
 		440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440DD602272E982D00758AD9 /* VMGlobal.swift */; };
 		44159B5F2736AF880077F3FF /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44159B5C2736AF880077F3FF /* IconButton.swift */; };
 		44159B602736AF880077F3FF /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44159B5D2736AF880077F3FF /* FilledButton.swift */; };
@@ -54,7 +53,8 @@
 		44DE84C727371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */; };
 		44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD4273E0F4800231317 /* AddWatchlistCell.swift */; };
 		44FB2AD7273E104100231317 /* AddWatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD6273E104100231317 /* AddWatchlistView.swift */; };
-		44FB2ADA273E4A3200231317 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AD9273E4A3200231317 /* Testing.swift */; };
+		44FB2ADC2742772300231317 /* MCSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2ADB2742772200231317 /* MCSearchBar.swift */; };
+		44FB2AE12742A1FD00231317 /* AddWatchlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE02742A1FD00231317 /* AddWatchlistViewModel.swift */; };
 		44FB2AE32742D5BE00231317 /* Request+Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE22742D5BE00231317 /* Request+Animals.swift */; };
 		44FB2AE52742D5CC00231317 /* Interface+Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE42742D5CC00231317 /* Interface+Animals.swift */; };
 		44FB2AE72742D5E100231317 /* Interface+Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AE62742D5E100231317 /* Interface+Organizations.swift */; };
@@ -67,6 +67,8 @@
 		44FB2AF52742D65300231317 /* Interface+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF42742D65300231317 /* Interface+Users.swift */; };
 		44FB2AF72742D66600231317 /* Interface+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF62742D66600231317 /* Interface+Auth.swift */; };
 		44FB2AF92742D66F00231317 /* Request+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AF82742D66F00231317 /* Request+Auth.swift */; };
+		44FB2AFC27430A6D00231317 /* Helper+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AFB27430A6D00231317 /* Helper+Date.swift */; };
+		44FB2AFE274312F700231317 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FB2AFD274312F700231317 /* Extension+String.swift */; };
 		49468240272F9FE700C92AEE /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946823F272F9FE700C92AEE /* SideBarView.swift */; };
 		49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49468241272FA08A00C92AEE /* SiderBarViewModel.swift */; };
 		49468250272FA61800C92AEE /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946824F272FA61800C92AEE /* TrendsView.swift */; };
@@ -121,7 +123,6 @@
 		0C651E8C27415A6800C51692 /* Request+WatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+WatchList.swift"; sourceTree = "<group>"; };
 		0C651E8E27415A7800C51692 /* Interface+WatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+WatchList.swift"; sourceTree = "<group>"; };
 		0C960CAB27425FFF00EF96AB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		440DD5FB272E97BD00758AD9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		440DD602272E982D00758AD9 /* VMGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMGlobal.swift; sourceTree = "<group>"; };
 		44159B5C2736AF880077F3FF /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		44159B5D2736AF880077F3FF /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
@@ -165,7 +166,8 @@
 		44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndonesiaGeoJSONProvinces.geojson; sourceTree = "<group>"; };
 		44FB2AD4273E0F4800231317 /* AddWatchlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchlistCell.swift; sourceTree = "<group>"; };
 		44FB2AD6273E104100231317 /* AddWatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchlistView.swift; sourceTree = "<group>"; };
-		44FB2AD9273E4A3200231317 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		44FB2ADB2742772200231317 /* MCSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSearchBar.swift; sourceTree = "<group>"; };
+		44FB2AE02742A1FD00231317 /* AddWatchlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatchlistViewModel.swift; sourceTree = "<group>"; };
 		44FB2AE22742D5BE00231317 /* Request+Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Animals.swift"; sourceTree = "<group>"; };
 		44FB2AE42742D5CC00231317 /* Interface+Animals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Animals.swift"; sourceTree = "<group>"; };
 		44FB2AE62742D5E100231317 /* Interface+Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Organizations.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,8 @@
 		44FB2AF42742D65300231317 /* Interface+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Users.swift"; sourceTree = "<group>"; };
 		44FB2AF62742D66600231317 /* Interface+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Auth.swift"; sourceTree = "<group>"; };
 		44FB2AF82742D66F00231317 /* Request+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Auth.swift"; sourceTree = "<group>"; };
+		44FB2AFB27430A6D00231317 /* Helper+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Date.swift"; sourceTree = "<group>"; };
+		44FB2AFD274312F700231317 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		4946823F272F9FE700C92AEE /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		49468241272FA08A00C92AEE /* SiderBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiderBarViewModel.swift; sourceTree = "<group>"; };
 		4946824F272FA61800C92AEE /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
@@ -248,7 +252,6 @@
 				44159B762736B0900077F3FF /* WatchlistModel.swift */,
 				E7A041072738D13800B20B99 /* CasesDummy.swift */,
 				E7A0410F2738D22900B20B99 /* MediaDummy.swift */,
-				440DD5FB272E97BD00758AD9 /* Model.swift */,
 				4495344D27323FA200CADA9F /* MCGenericResponseModel.swift */,
 				4495345E2733B79D00CADA9F /* RegionModel.swift */,
 				4E15B5AF27425EB800F5C0CF /* CasesModel.swift */,
@@ -368,6 +371,7 @@
 		4454BDE0272F9BD20012E4A4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				44FB2AFA27430A5A00231317 /* Helper */,
 				4454BDE7272FA6600012E4A4 /* Constants.swift */,
 				44DE84B727371ABB0034DBA2 /* MapEvent.swift */,
 			);
@@ -380,6 +384,7 @@
 				4454BDE2272F9C9D0012E4A4 /* Extension+Color.swift */,
 				44953452273280AD00CADA9F /* Extension+Encodable.swift */,
 				4EE8C21127369A8B00C9AD66 /* Extension+NSTableView.swift */,
+				44FB2AFD274312F700231317 /* Extension+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -415,7 +420,6 @@
 				44DE84C627371D6A0034DBA2 /* IndonesiaGeoJSONProvinces.geojson */,
 				44558F172728689100DEE0EF /* Natics.entitlements */,
 				44558F142728689100DEE0EF /* Preview Content */,
-				44FB2AD9273E4A3200231317 /* Testing.swift */,
 			);
 			path = Natics;
 			sourceTree = "<group>";
@@ -489,6 +493,7 @@
 		44FB2AD1273E08F600231317 /* AddWatchlist */ = {
 			isa = PBXGroup;
 			children = (
+				44FB2ADD2742A1C400231317 /* AddWatchlist+ViewModels */,
 				44FB2AD8273E3EDA00231317 /* AddWatchlist+Views */,
 			);
 			path = AddWatchlist;
@@ -499,8 +504,25 @@
 			children = (
 				44FB2AD4273E0F4800231317 /* AddWatchlistCell.swift */,
 				44FB2AD6273E104100231317 /* AddWatchlistView.swift */,
+				44FB2ADB2742772200231317 /* MCSearchBar.swift */,
 			);
 			path = "AddWatchlist+Views";
+			sourceTree = "<group>";
+		};
+		44FB2ADD2742A1C400231317 /* AddWatchlist+ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				44FB2AE02742A1FD00231317 /* AddWatchlistViewModel.swift */,
+			);
+			path = "AddWatchlist+ViewModels";
+			sourceTree = "<group>";
+		};
+		44FB2AFA27430A5A00231317 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				44FB2AFB27430A6D00231317 /* Helper+Date.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		49468239272F9E6B00C92AEE /* SideBarMenu */ = {
@@ -775,19 +797,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				49615AA927420C0400339936 /* Request+Trending.swift in Sources */,
-				440DD5FC272E97BD00758AD9 /* Model.swift in Sources */,
 				44190F40273A61980091ADFB /* DashboardViewModel.swift in Sources */,
 				49468259272FBC8000C92AEE /* DashboardView.swift in Sources */,
 				49615AA727420AA500339936 /* Interface+Trending.swift in Sources */,
 				4EE8C21227369A8B00C9AD66 /* Extension+NSTableView.swift in Sources */,
 				4EDD032C273A65D300647011 /* CasesTable.swift in Sources */,
 				E7A041062738D10600B20B99 /* HighlightCard.swift in Sources */,
-				44FB2ADA273E4A3200231317 /* Testing.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
 				E7A041102738D22900B20B99 /* MediaDummy.swift in Sources */,
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
 				E75B3F902743757B00989409 /* CasesCategories.swift in Sources */,
+				44FB2AFC27430A6D00231317 /* Helper+Date.swift in Sources */,
 				49615AAB27420C7E00339936 /* TrendingModel.swift in Sources */,
 				4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */,
 				E75B3F8A2743736C00989409 /* Request+CasesCategories.swift in Sources */,
@@ -818,11 +839,13 @@
 				44DE84BC27371B5D0034DBA2 /* ExportButton.swift in Sources */,
 				0C651E8D27415A6800C51692 /* Request+WatchList.swift in Sources */,
 				44159B602736AF880077F3FF /* FilledButton.swift in Sources */,
+				44FB2AE12742A1FD00231317 /* AddWatchlistViewModel.swift in Sources */,
 				44159B732736AF990077F3FF /* DatePickerView.swift in Sources */,
 				0C651E8B2741586400C51692 /* WatchListViewModel.swift in Sources */,
 				498E17E7273BA0A30079BC2B /* HeatMapView.swift in Sources */,
 				44159B612736AF880077F3FF /* SharingButton.swift in Sources */,
 				49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */,
+				44FB2AFE274312F700231317 /* Extension+String.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */,
 				44159B782736B0910077F3FF /* WatchlistModel.swift in Sources */,
@@ -841,6 +864,7 @@
 				44FB2AE92742D5ED00231317 /* Request+Organizations.swift in Sources */,
 				E75B3F952743D6E700989409 /* PieChartViewCasesCategories.swift in Sources */,
 				44DE84C027371BD10034DBA2 /* GeoJSON.swift in Sources */,
+				44FB2ADC2742772300231317 /* MCSearchBar.swift in Sources */,
 				49468257272FAB1200C92AEE /* SideBarModel.swift in Sources */,
 				4E45CD05273B5FF700AAB02E /* WatchListViewDetail.swift in Sources */,
 				44FB2AEF2742D63000231317 /* Interface+News.swift in Sources */,

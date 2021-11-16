@@ -17,14 +17,15 @@ struct SideBarView: View {
                     DashboardView()
                     WatchListView()
                     Spacer()
-                }.listStyle(SidebarListStyle())
+                }
+                .listStyle(SidebarListStyle())
                 .toolbar {
-                        ToolbarItem(placement: .navigation) {
-                            Button(action: viewModel.toggleSidebar) {
-                                Image(systemName: "sidebar.left")
-                                    .help("Toggle Sidebar")
-                            }
+                    ToolbarItem(placement: .navigation) {
+                        Button(action: viewModel.toggleSidebar) {
+                            Image(systemName: "sidebar.left")
+                                .help("Toggle Sidebar")
                         }
+                    }
                 }
             }.navigationTitle("")
         }
