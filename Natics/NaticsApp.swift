@@ -12,6 +12,7 @@ import Combine
 @main
 struct NaticsApp: App {
     @StateObject var viewModel = DatePickerViewModel()
+    @StateObject var testVM = CasesViewModel()
     
     var body: some Scene {
         WindowGroup {

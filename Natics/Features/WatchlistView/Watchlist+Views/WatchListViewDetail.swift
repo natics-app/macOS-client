@@ -92,7 +92,7 @@ struct WatchListViewDetail: View {
 
                 }
                 .frame(height: 420, alignment: .leading)
-                CasesTable()
+//                CasesTable()
                 Spacer()
             }
         }

@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct Testing: View {
-    @StateObject var vm = ContohViewModel()
     
     var body: some View {
-        Text(vm.provinces.first?.name ?? "")
-            .onAppear {
-                vm.getAllProvinces()
-            }
+        Text("")
     }
 }
 
