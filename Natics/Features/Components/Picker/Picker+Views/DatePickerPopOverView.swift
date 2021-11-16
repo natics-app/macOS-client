@@ -21,7 +21,6 @@ struct DatePickerPopOverView: View {
                     ForEach(viewModel.datePickerList, id: \.self) { data in
                         Button {
                             viewModel.selection = data
-                            print(data.getCalculatedYear())
                             sideBarViewModel.closePopOver()
                             viewModel.isClicked()
                             

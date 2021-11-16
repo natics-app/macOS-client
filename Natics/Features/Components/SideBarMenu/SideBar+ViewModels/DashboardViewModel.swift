@@ -26,7 +26,7 @@ class DashboardViewModel: ObservableObject {
         case .cases:
             CasesView(casesViewModel: CasesViewModel())
         case .settings:
-            SettingsView()
+            WatchListViewDetail(id: 79)
         case .none:
             TrendsView()
         }

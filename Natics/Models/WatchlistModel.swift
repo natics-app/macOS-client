@@ -26,3 +26,13 @@ extension WatchlistModel {
         }
     }
 }
+
+struct AnimalRankGetResponse: Codable {
+    var old_rank: Int
+    var new_rank: Int
+}
+
+struct NewsAnimalCategoryResponse: Codable {
+    var category: Category?
+}
+

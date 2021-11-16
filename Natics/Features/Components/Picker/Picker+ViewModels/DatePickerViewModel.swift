@@ -13,12 +13,28 @@ class DatePickerViewModel: ObservableObject {
     @Published var selection: DatePickerModel? = .pastWeek
     @Published var filterStartDate = Date()
     @Published var filterEndDate = Date()
-    @Published var isCustomTapped = false
     
+    @Published var customStartDate: String?
+    @Published var customEndDate: String?
+    
+    @Published var isCustomTapped = false
     @Published var isEverClicked = false
+    @Published var isCustomChosen = false
+    
+    func setCustomDate(startDate: Date, endDate: Date) {
+        customStartDate = dateFormatter(date: startDate)
+        customEndDate = dateFormatter(date: endDate)
+    }
     
     func customTapped() {
-        isCustomTapped.toggle()
+        isEverClicked = true
+        isCustomTapped = true
+    }
+    
+    func customChosen() {
+        isCustomChosen = true
+        isEverClicked = true
+        isCustomTapped = true
     }
     
     func closePicker() {
@@ -27,6 +43,7 @@ class DatePickerViewModel: ObservableObject {
     
     func isClicked() {
         isEverClicked = true
+        isCustomChosen = false
     }
     
     func checkDateRange() {
@@ -42,5 +59,13 @@ class DatePickerViewModel: ObservableObject {
         let end = dateFormatter.string(from: self.filterEndDate)
         
         return "\(start) - \(end)"
+    }
+}
+
+extension DatePickerViewModel {
+    private func dateFormatter(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
     }
 }

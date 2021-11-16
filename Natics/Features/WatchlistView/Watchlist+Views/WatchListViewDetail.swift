@@ -9,9 +9,14 @@ import SwiftUI
 import Charts
 
 struct WatchListViewDetail: View {
-    
+    let id: Int
     @EnvironmentObject var viewModel: DatePickerViewModel
-    @StateObject var casesViewModel: CasesViewModel = CasesViewModel()
+    @ObservedObject var watchListViewModel: WatchListViewModel
+    
+    init(id: Int) {
+        self.id = id
+        self.watchListViewModel = WatchListViewModel(id: id)
+    }
     
     var body: some View {
         ScrollView {
@@ -22,36 +27,34 @@ struct WatchListViewDetail: View {
                 HStack {
                     GeometryReader { geo in
                         HStack {
-                            HighlightCard()
-                                .frame(width: geo.size.width * 0.25)
+                            HighlightCard(name: "Total Cases", content: watchListViewModel.totalCases)
+                                .frame(width: geo.size.width * 0.5)
                                 .background(Color.colorTheme.MCLightGrey)
                                 .foregroundColor(Color.colorTheme.MCBlack)
                                 .cornerRadius(10)
+                                .redacted(reason: watchListViewModel.doneLoadingTotalCases ? [] : .placeholder)
+                                .onAppear {
+                                    watchListViewModel.getTotalCases()
+                                }
+                                .environmentObject(watchListViewModel.totalCases)
                             
-                            HighlightCard()
-                                .frame(width: geo.size.width * 0.25)
+                            HighlightCard(name: "Rank", content: watchListViewModel.rank)
+                                .frame(width: geo.size.width * 0.5)
                                 .background(Color.colorTheme.MCLightGrey)
                                 .foregroundColor(Color.colorTheme.MCBlack)
                                 .cornerRadius(10)
-                            
-                            HighlightCard()
-                                .frame(width: geo.size.width * 0.25)
-                                .background(Color.colorTheme.MCLightGrey)
-                                .foregroundColor(Color.colorTheme.MCBlack)
-                                .cornerRadius(10)
-                            
-                            HighlightCard()
-                                .frame(width: geo.size.width * 0.25)
-                                .background(Color.colorTheme.MCLightGrey)
-                                .foregroundColor(Color.colorTheme.MCBlack)
-                                .cornerRadius(10)
+                                .redacted(reason: watchListViewModel.doneLoadingRank ? [] : .placeholder)
+                                .onAppear {
+                                    watchListViewModel.getRank()
+                                }
+                                .environmentObject(watchListViewModel.rank)
                         }
                         
                     }.frame(height: 150, alignment: .leading)
                 }
                 GeometryReader { geo in
-                    HeatMapView()
-                        .frame(width: geo.size.width)
+//                    HeatMapView()
+//                        .frame(width: geo.size.width)
                 }
                 .frame(height: 520, alignment: .leading)
                 
@@ -94,7 +97,7 @@ struct WatchListViewDetail: View {
 
 struct WatchlistView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchListViewDetail()
+        WatchListViewDetail(id: 26)
             .environmentObject(DatePickerViewModel())
     }
 }
