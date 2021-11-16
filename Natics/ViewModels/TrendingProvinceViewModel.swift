@@ -82,7 +82,6 @@ extension TrendingProvinceViewModel {
         self.locationNames = provincesTopTrending.map { trend in
             trend.name
         }
-        print(self.locationNames)
         self.locationList = provincesTopTrending.enumerated().map { (index, element) in
             return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
         }

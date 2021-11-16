@@ -50,6 +50,8 @@ struct TrendsView: View {
         .onReceive(viewModel.$selection) { selectionPublisher in
             if !viewModel.isCustomChosen {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
+            } else {
+                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!, custom: viewModel.isCustomChosen)
             }
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in
