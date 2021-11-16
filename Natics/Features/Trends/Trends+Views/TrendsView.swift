@@ -25,8 +25,8 @@ struct TrendsView: View {
                 }
                 Spacer()
                 HStack {
-                    RisingCasesTable(viewModel: risingCasesVM)
                     TrendingBarChart(viewModel: trendingCasesVM)
+                    RisingCasesTable(viewModel: risingCasesVM)
                 }
                 HStack {
                     HeatMapView(viewModel: trendingVM)
