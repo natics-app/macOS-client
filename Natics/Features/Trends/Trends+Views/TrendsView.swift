@@ -28,7 +28,7 @@ struct TrendsView: View {
                 HStack {
                     HeatMapView(viewModel: trendingVM)
                 }
-                .frame(width: nil, height: 400, alignment: .center)
+                .frame(width: nil, height: 900, alignment: .center)
                 HStack {
                     MediaChartView()
                     MediaChartView()
@@ -48,15 +48,11 @@ struct TrendsView: View {
         }
         .padding(24)
         .onReceive(viewModel.$selection) { selectionPublisher in
-            if !viewModel.isCustomChosen {
                 trendingVM.getTrendingProvinces(selected: selectionPublisher ?? .pastWeek)
-            } else {
-                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!, custom: viewModel.isCustomChosen)
-            }
         }
         .onReceive(viewModel.$isCustomChosen) { chosen in
-            if viewModel.isCustomChosen {
-                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!, custom: chosen)
+            if chosen {
+                trendingVM.getTrendingProvinces(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
             }
         }
     }

@@ -10,12 +10,12 @@ import Combine
 
 
 // Trending Request service information
-struct TrendingProvinceRequest: Service {
+struct TrendingRequest: Service {
     var baseUrl: String = Constants.Endpoint.databaseServer
     typealias Network = TrendingDescription
 }
 
-extension TrendingProvinceRequest: TrendingInterface {
+extension TrendingRequest: TrendingInterface {
     func getTrendingProvince(startDate: String, endDate: String) -> AnyPublisher<MCBaseResponse<TrendingProvinceGetResponse>, MCBaseErrorModel> {
         let call = Connector<Network, MCBaseResponse<TrendingProvinceGetResponse>>()
         return call.doConnect(request: Network.getTrendingProvince(startDate: startDate, endDate: endDate), baseUrl: baseUrl)

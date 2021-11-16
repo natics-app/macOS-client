@@ -10,6 +10,8 @@ import MapKit
 
 struct HeatMapView: View {
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var viewModel : TrendingProvinceViewModel
+    
     @State private var region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 0, longitude: 116.499023),
             span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30)
@@ -19,7 +21,6 @@ struct HeatMapView: View {
     @State private var point1: NSPoint = .zero
     
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
-    @ObservedObject var viewModel : TrendingProvinceViewModel
     
     var body: some View {
         VStack {
@@ -49,27 +50,27 @@ struct HeatMapView: View {
                             .frame(width: 120, height: 28).padding(.trailing, 10)
                         }
                         .padding(10)
+                        
                         HStack() {
                             VStack {
                                 ZStack(alignment: .center) {
                                     MapCompat(coordinateRegion: $region)
                                     .trackingMouse { location in
-                                                            self.point1 = location }
+                                        self.point1 = location }
                                     .clipped()
                                     Rectangle()
-                                                    .fill(Color.red)
-                                                    .frame(width: 10, height: 10)
+                                        .fill(Color.red)
+                                        .frame(width: 10, height: 10)
                                 }
                                     
                                 
                                 Text("\(String(format: "X = %.0f, Y = %.0f", self.point1.x, self.point1.y))")
                                 HStack(alignment: .center, spacing: 16) {
-                                    MapLegendIndicator(legendColor: Color.red, legendLabel: "Sangat Rawan (>300)")
-                                    MapLegendIndicator(legendColor: Color.orange, legendLabel: "Rawan (100-299)")
-                                    MapLegendIndicator(legendColor: Color.yellow, legendLabel: "Cukup Rawan (1-99)")
-                                    MapLegendIndicator(legendColor: Color.green, legendLabel: "Tidak Rawan")
+                                    MapLegendIndicator(legendColor: Color.red, legendLabel: "Very Vurnerable (>300)")
+                                    MapLegendIndicator(legendColor: Color.orange, legendLabel: "Vurnerable (100-299)")
+                                    MapLegendIndicator(legendColor: Color.yellow, legendLabel: "Quiet Vurnerable (1-99)")
+                                    MapLegendIndicator(legendColor: Color.green, legendLabel: "Not Vurnerable")
                                 }
-                                Spacer()
                             }
                         .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
                         .frame(width: geo.size.width * 0.60)
@@ -80,7 +81,7 @@ struct HeatMapView: View {
                                 Spacer()
                             }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
-                        }                        .padding(10)
+                        }                        .padding(24)
                 }.background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
                     .cornerRadius(10)
                     .frame(width: geo.size.width * 1)
@@ -96,14 +97,13 @@ struct HeatMapView: View {
                 }
                 viewModel.setProvinceTrending()
             })
-        }.navigationTitle("Trends")
-            .padding(.bottom, 20)
-            .padding(.top, 20)
+        }
+        .padding([.bottom, .top], 20)
     }
 }
 
-//struct HeatMapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HeatMapView()
-//    }
-//}
+struct HeatMapView_Previews: PreviewProvider {
+    static var previews: some View {
+        HeatMapView(viewModel: TrendingProvinceViewModel())
+    }
+}

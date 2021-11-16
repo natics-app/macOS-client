@@ -23,7 +23,7 @@ class TrendingProvinceViewModel: ObservableObject {
     @Published var isDataLoaded = false
     
     // MARK: Private Properties
-    private let request = TrendingProvinceRequest()
+    private let request = TrendingRequest()
     private var cancellable = Set<AnyCancellable>()
     
     init() {
@@ -52,27 +52,25 @@ class TrendingProvinceViewModel: ObservableObject {
             .store(in: &cancellable)
     }
     
-    func getTrendingProvinces(startDate: String, endDate: String, custom: Bool) {
-        if custom {
-            request.getTrendingProvince(startDate: startDate, endDate: endDate)
-                .receive(on: RunLoop.main)
-                .sink { result in
-                    switch result {
-                        case .failure(let err):
-                            print(err.message!)
-                        case .finished:
-                            print("Finish")
-                            self.isDataLoaded = true
-                    }
-                    
-                } receiveValue: { [weak self] (trendingProvince) in
-                    self?.provincesAllTrending = trendingProvince.data!.provinces
-                    
-                    let arraySlice = trendingProvince.data!.provinces.prefix(8)
-                    self?.provincesTopTrending = Array(arraySlice)
+    func getTrendingProvinces(startDate: String, endDate: String) {
+        request.getTrendingProvince(startDate: startDate, endDate: endDate)
+            .receive(on: RunLoop.main)
+            .sink { result in
+                switch result {
+                    case .failure(let err):
+                        print(err.message!)
+                    case .finished:
+                        print("Finish")
+                        self.isDataLoaded = true
                 }
-                .store(in: &cancellable)
-        }
+                
+            } receiveValue: { [weak self] (trendingProvince) in
+                self?.provincesAllTrending = trendingProvince.data!.provinces
+                
+                let arraySlice = trendingProvince.data!.provinces.prefix(8)
+                self?.provincesTopTrending = Array(arraySlice)
+            }
+            .store(in: &cancellable)
     }
 }
 
