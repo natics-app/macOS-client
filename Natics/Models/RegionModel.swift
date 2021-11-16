@@ -16,6 +16,6 @@ struct RegionGetResponse: Codable {
 struct ProvinceModel: Codable {
     var id: Int
     var name: String
-    var latitude: Float
-    var longitude: Float
+    var latitude: Double
+    var longitude: Double
 }

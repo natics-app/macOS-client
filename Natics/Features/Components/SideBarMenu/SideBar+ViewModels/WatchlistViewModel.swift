@@ -24,7 +24,7 @@ class WatchlistViewModel: ObservableObject {
         case .trends:
             TrendsView()
         case .cases:
-            CasesView()
+            CasesView(casesViewModel: CasesViewModel())
         case .settings:
             SettingsView()
         case .none:

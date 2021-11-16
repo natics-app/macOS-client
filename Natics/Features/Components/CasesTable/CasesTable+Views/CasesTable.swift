@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct CasesTable: View {
+    
+    @ObservedObject var casesViewModel: CasesViewModel
+    
     var body: some View {
         ScrollView(.horizontal) {
             VStack(alignment: .leading, spacing: 0) {
                 CasesTableHeader()
                 ScrollView(.vertical) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        ForEach(1..<20) { _ in
-                            CasesTableRow()
+                    LazyVStack(alignment: .leading, spacing: 0) {
+                
+                        ForEach(casesViewModel.cases, id: \.id) { news in
+                            CasesTableRow(rowcase: news, rowindex: news.id)
                                 .frame(width: 1613 ,height: 40, alignment: .leading)
                                 .background(Color.white)
-                        }
+                       }
                     }
+                    .redacted(reason: casesViewModel.doneLoading ? [] : .placeholder)
                 }
             }
             
@@ -29,6 +34,6 @@ struct CasesTable: View {
 
 struct CasesTable_Previews: PreviewProvider {
     static var previews: some View {
-        CasesTable()
+        CasesTable(casesViewModel: CasesViewModel())
     }
 }
