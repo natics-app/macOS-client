@@ -18,7 +18,7 @@ struct HeatMapView: View {
         )
     
     @State var overImg = false
-    @State private var point1: NSPoint = .zero
+    @State private var touchPoint: NSPoint = .zero
     
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
@@ -53,18 +53,20 @@ struct HeatMapView: View {
                         
                         HStack() {
                             VStack {
-                                ZStack(alignment: .center) {
-                                    MapCompat(coordinateRegion: $region)
+                                ZStack(alignment: .topLeading) {
+                                    MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
                                     .trackingMouse { location in
-                                        self.point1 = location }
+                                        self.touchPoint = location
+                                    }
                                     .clipped()
-                                    Rectangle()
-                                        .fill(Color.red)
-                                        .frame(width: 10, height: 10)
+                                    if viewModel.isIntersect {
+                                        HeatMapRegionHighlight()
+                                            .clipped()
+                                            .offset(x: self.touchPoint.x, y:
+                                                        self.touchPoint.y)
+                                    }
                                 }
-                                    
-                                
-                                Text("\(String(format: "X = %.0f, Y = %.0f", self.point1.x, self.point1.y))")
+                                Text("\(String(format: "X = %.0f, Y = %.0f", self.touchPoint.x, self.touchPoint.y))")
                                 HStack(alignment: .center, spacing: 16) {
                                     MapLegendIndicator(legendColor: Color.red, legendLabel: "Very Vurnerable (>300)")
                                     MapLegendIndicator(legendColor: Color.orange, legendLabel: "Vurnerable (100-299)")
@@ -89,12 +91,6 @@ struct HeatMapView: View {
                 }
             }.padding(10)
             .onAppear(perform: {
-                NSEvent.addLocalMonitorForEvents(matching: [.mouseMoved]) {
-                    if overImg {
-                        print("mouse: \(self.mouseLocation.x) \(self.mouseLocation.y)")
-                    }
-                    return $0
-                }
                 viewModel.setProvinceTrending()
             })
         }

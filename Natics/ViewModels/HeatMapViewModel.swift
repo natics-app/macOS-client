@@ -11,32 +11,38 @@ import MapKit
 
 struct MapCompat : NSViewRepresentable {
     @Binding var coordinateRegion : MKCoordinateRegion
-    let mapView = MKMapView()
+    @Binding var touchPoint: NSPoint
     
+    @ObservedObject var viewModel: TrendingProvinceViewModel
+    let mapView = MKMapView()
     
     func makeNSView(context: Context) -> MKMapView {
         mapView.delegate = context.coordinator
         mapView.region = coordinateRegion
 
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 5500000)
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 10000000)
         mapView.setCameraZoomRange(zoomRange, animated: false)
         
         mapView.showsZoomControls = true
         mapView.showsTraffic = true
         
+        mapView.isScrollEnabled = false
+        mapView.isZoomEnabled = false
         
         loadGeoJson()
         return mapView
     }
-
+    
     func updateNSView(_ view: MKMapView, context: Context) {
         DispatchQueue.main.async {
             view.region = coordinateRegion
+            context.coordinator.touchPoint = touchPoint
+            context.coordinator.mapView(view, regionDidChangeAnimated: true)
         }
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
+        return Coordinator(self, touchPoint: self.$touchPoint, provinces: self.$viewModel.provincesAllTrending)
     }
     
     func render(overlay: MKOverlay, info: Any?) {
@@ -52,14 +58,20 @@ struct MapCompat : NSViewRepresentable {
     class Coordinator : NSObject, MKMapViewDelegate {
         var parent : MapCompat
         let tempOverlayers = MapOverlays.shared
+        @Binding var provincesAllTrending: [ProvinceTrendingModel]
+        @Binding var touchPoint: NSPoint
         
-        init(_ parent: MapCompat) {
+        init(_ parent: MapCompat, touchPoint: Binding<NSPoint>, provinces: Binding<[ProvinceTrendingModel]>) {
             self.parent = parent
+            self._touchPoint = touchPoint
+            self._provincesAllTrending = provinces
         }
         
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
             DispatchQueue.main.async {
                 self.parent.coordinateRegion = mapView.region
+                self.touchPoint = self.parent.touchPoint
+                self.provincesAllTrending = self.parent.viewModel.provincesAllTrending
             }
         }
         
@@ -72,8 +84,10 @@ struct MapCompat : NSViewRepresentable {
                     let data = info as! PolygonInfo
                     intersectData.isIntersect = true
                     print("INTERSECT! with \(data.propinsi) on \(overlay.coordinate)")
+//                    parent.viewModel.isIntersect = true
                 }
                 overlayer.shared.changePolygon(newPolygon: intersectData)
+//                parent.viewModel.isIntersect = false
             }
             
             mapView.addOverlay(overlay)
@@ -82,7 +96,7 @@ struct MapCompat : NSViewRepresentable {
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             var overlayers = MapOverlays.shared.returnOverlayList()
             
-            let fummy = mapView.convert(NSPoint(x: 474, y: 240), toCoordinateFrom: mapView)
+            let fummy = mapView.convert(NSPoint(x: self.touchPoint.x, y: self.touchPoint.y), toCoordinateFrom: mapView)
             let maprect = MKMapRect(origin: MKMapPoint(fummy), size: MKMapSize(width: 0.0001, height: 0.0001))
             var index = 0
 
@@ -128,8 +142,14 @@ struct MapCompat : NSViewRepresentable {
                 
                 let renderer = MKPolygonRenderer(polygon: polygon)
                 
+                for datas in provincesAllTrending {
+                    if overlayer.shared.polygonInfo.kode == datas.id {
+                        overlayer.shared.polygonInfo.jumlah = datas.news_count
+                        break
+                    }
+                }
                 if overlayer.shared.polygonInfo.isIntersect {
-                    renderer.fillColor = NSColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+                    renderer.fillColor = NSColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
                 } else {
                     if overlayer.shared.polygonInfo.jumlah == 0 {
                         renderer.fillColor = NSColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.5)
@@ -149,18 +169,8 @@ struct MapCompat : NSViewRepresentable {
                         renderer.fillColor = NSColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
                     }
                 }
-                
-                
                 renderer.strokeColor = NSColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.3)
                 renderer.lineWidth = 1
-                
-//                let annotation = MKPointAnnotation()
-//                let provinceCoordinate = CLLocationCoordinate2D(latitude: overlayer.shared.polygonInfo.latitude, longitude: overlayer.shared.polygonInfo.longitude)
-                
-//                annotation.coordinate = provinceCoordinate
-//                annotation.title = "\(overlayer.shared.polygonInfo.propinsi): \(overlayer.shared.polygonInfo.jumlah) kasus"
-                
-//                    mapView.addAnnotation(annotation)
                 
                 renderer.polygon.title = overlayer.shared.polygonInfo.propinsi
                 renderer.polygon.subtitle = "\(overlayer.shared.polygonInfo.jumlah)"
@@ -223,16 +233,6 @@ extension MapCompat {
             }
         }
     }
-    
-//    func writeToFile(location: URL) {
-//        do{
-//            let encoder = JSONEncoder()
-//            encoder.outputFormatting = .prettyPrinted
-//            let JsonData = try encoder.encode(athleteList)
-//            try JsonData.write(to: location)
-//        }catch{}
-//    }
-        
 }
 
 // MARK: - Annotation Maker Function

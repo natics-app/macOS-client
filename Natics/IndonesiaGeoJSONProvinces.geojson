@@ -132,7 +132,7 @@
         "kode": 52,
         "Propinsi": "NUSA TENGGARA BARAT",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 300,
+        "Jumlah": 0,
         "latitude": -8.6529,
         "longitude": 117.3616
       }
@@ -228,7 +228,7 @@
         "kode": 75,
         "Propinsi": "GORONTALO",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 0.71862,
         "longitude": 122.45559
       }
@@ -369,7 +369,7 @@
         "kode": 74,
         "Propinsi": "SULAWESI TENGGARA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 120,
+        "Jumlah": 0,
         "latitude": -3.54912,
         "longitude": 121.72796
       }
@@ -574,7 +574,7 @@
         "kode": 33,
         "Propinsi": "JAWA TENGAH",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -7.30324,
         "longitude": 110.00441
       }
@@ -669,7 +669,7 @@
         "kode": 36,
         "Propinsi": "BANTEN",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 210,
+        "Jumlah": 0,
         "latitude": -6.44538,
         "longitude": 106.13756
       }
@@ -841,7 +841,7 @@
         "kode": 35,
         "Propinsi": "JAWA TIMUR",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 233,
+        "Jumlah": 0,
         "latitude": -6.96851,
         "longitude": 113.98005
       }
@@ -1012,7 +1012,7 @@
         "kode": 82,
         "Propinsi": "MALUKU UTARA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 100,
+        "Jumlah": 0,
         "latitude": 0.63012,
         "longitude": 127.97202
       }
@@ -1149,7 +1149,7 @@
         "kode": 81,
         "Propinsi": "MALUKU",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 130,
+        "Jumlah": 0,
         "latitude": -3.11884,
         "longitude": 129.42078
       }
@@ -1332,7 +1332,7 @@
         "kode": 73,
         "Propinsi": "SULAWESI SELATAN",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 250,
+        "Jumlah": 0,
         "latitude": -3.64467,
         "longitude": 119.94719
       }
@@ -1368,7 +1368,7 @@
         "kode": 31,
         "Propinsi": "DKI JAKARTA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 140,
+        "Jumlah": 0,
         "latitude": -6.2088,
         "longitude": 106.8456
       }
@@ -1499,7 +1499,7 @@
         "kode": 32,
         "Propinsi": "JAWA BARAT",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 170,
+        "Jumlah": 0,
         "latitude": -6.88917,
         "longitude": 107.64047
       }
@@ -2328,7 +2328,7 @@
         "kode": 91,
         "Propinsi": "PAPUA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 10,
+        "Jumlah": 0,
         "latitude": -3.98857,
         "longitude": 138.34853
       }
@@ -2477,7 +2477,7 @@
         "kode": 53,
         "Propinsi": "NUSA TENGGARA TIMUR",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 8,
+        "Jumlah": 0,
         "latitude": -8.56568,
         "longitude": 120.69786
       }
@@ -2543,7 +2543,7 @@
         "kode": 51,
         "Propinsi": "BALI",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -8.23566,
         "longitude": 115.12239
       }
@@ -2735,7 +2735,7 @@
         "kode": 14,
         "Propinsi": "RIAU",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 0.50041,
         "longitude": 101.54758
       }
@@ -2777,7 +2777,7 @@
         "kode": 21,
         "Propinsi": "KEPULAUAN RIAU",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -0.15478,
         "longitude": 104.58037
       }
@@ -2884,7 +2884,7 @@
         "kode": 76,
         "Propinsi": "SULAWESI BARAT",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -2.49745,
         "longitude": 119.3919
       }
@@ -3251,7 +3251,7 @@
         "kode": 72,
         "Propinsi": "SULAWESI TENGAH",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -1.69378,
         "longitude": 120.80886
       }
@@ -3359,7 +3359,7 @@
         "kode": 71,
         "Propinsi": "SULAWESI UTARA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 0.65557,
         "longitude": 124.09015
       }
@@ -4288,7 +4288,7 @@
         "kode": 92,
         "Propinsi": "PAPUA BARAT",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -1.38424,
         "longitude": 132.90253
       }
@@ -4466,7 +4466,7 @@
         "kode": 12,
         "Propinsi": "SUMATERA UTARA",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 2.19235,
         "longitude": 99.38122
       }
@@ -4569,7 +4569,7 @@
         "kode": 19,
         "Propinsi": "BANGKA BELITUNG",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -2.75775,
         "longitude": 107.58394
       }
@@ -4719,7 +4719,7 @@
         "kode": 13,
         "Propinsi": "SUMATERA BARAT",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -0.7399,
         "longitude": 100.80000
       }
@@ -4961,7 +4961,7 @@
         "kode": 16,
         "Propinsi": "SUMATERA SELATAN",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -3.12668,
         "longitude": 104.09306
       }
@@ -5119,7 +5119,7 @@
         "kode": 15,
         "Propinsi": "JAMBI",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -1.61157,
         "longitude": 102.7797
       }
@@ -5277,7 +5277,7 @@
         "kode": 18,
         "Propinsi": "LAMPUNG",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -4.8555,
         "longitude": 105.0273
       }
@@ -5411,7 +5411,7 @@
         "kode": 17,
         "Propinsi": "BENGKULU",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": -3.51868,
         "longitude": 102.53598
       }
@@ -5563,7 +5563,7 @@
         "kode": 11,
         "Propinsi": "DI. ACEH",
         "SUMBER": "Peta Dasar BAKOSURTANAL Skala 1 : 250.000",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 4.36855,
         "longitude": 97.0253
       }
@@ -6551,7 +6551,7 @@
         "kode": 61,
         "Propinsi": "KALIMANTAN BARAT",
         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)",
-        "Jumlah": 310,
+        "Jumlah": 0,
         "latitude": -0.13224,
         "longitude": 111.09689
       }
@@ -7327,7 +7327,7 @@
         "kode": 62,
         "Propinsi": "KALIMANTAN TENGAH",
         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)",
-        "Jumlah": 120,
+        "Jumlah": 0,
         "latitude": -1.49958,
         "longitude": 113.29033
       }
@@ -7710,7 +7710,7 @@
         "kode": 63,
         "Propinsi": "KALIMANTAN SELATAN",
         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)",
-        "Jumlah": 210,
+        "Jumlah": 0,
         "latitude": -3.64467,
         "longitude": 119.94719
       }
@@ -8690,7 +8690,7 @@
         "kode": 64,
         "Propinsi": "KALIMANTAN TIMUR",
         "SUMBER": "Batas Provinsi Desember 2019 Dukcapil (Skala tidak diketahui)",
-        "Jumlah": 20,
+        "Jumlah": 0,
         "latitude": 0.78844,
         "longitude": 116.242
       }

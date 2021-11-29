@@ -3,7 +3,7 @@ import CoreLocation
 import MapKit
 
 struct PolygonInfo: Codable {
-    let id, kode, jumlah: Int
+    var id, kode, jumlah: Int
     let latitude, longitude: Double
     let propinsi: String
     let sumber: String
