@@ -88,6 +88,7 @@
 		4E15B5B027425EB800F5C0CF /* CasesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AF27425EB800F5C0CF /* CasesModel.swift */; };
 		4E15B5B32742680600F5C0CF /* CasesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5B22742680600F5C0CF /* CasesViewModel.swift */; };
 		4E45CD05273B5FF700AAB02E /* WatchListViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */; };
+		4E61989227562B5600224C9C /* InsightCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61989127562B5600224C9C /* InsightCard.swift */; };
 		4EDD0328273A64C000647011 /* CasesTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0327273A64C000647011 /* CasesTableRow.swift */; };
 		4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD0329273A655E00647011 /* CasesTableHeader.swift */; };
 		4EDD032C273A65D300647011 /* CasesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDD032B273A65D300647011 /* CasesTable.swift */; };
@@ -201,6 +202,7 @@
 		4E15B5AF27425EB800F5C0CF /* CasesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesModel.swift; sourceTree = "<group>"; };
 		4E15B5B22742680600F5C0CF /* CasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesViewModel.swift; sourceTree = "<group>"; };
 		4E45CD04273B5FF700AAB02E /* WatchListViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewDetail.swift; sourceTree = "<group>"; };
+		4E61989127562B5600224C9C /* InsightCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCard.swift; sourceTree = "<group>"; };
 		4EDD0327273A64C000647011 /* CasesTableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableRow.swift; sourceTree = "<group>"; };
 		4EDD0329273A655E00647011 /* CasesTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTableHeader.swift; sourceTree = "<group>"; };
 		4EDD032B273A65D300647011 /* CasesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesTable.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				44159B5B2736AF880077F3FF /* Buttons */,
 				4EE8C21327369AF700C9AD66 /* Trends */,
 				49468239272F9E6B00C92AEE /* SideBarMenu */,
+				4E61989127562B5600224C9C /* InsightCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				E7A041102738D22900B20B99 /* MediaDummy.swift in Sources */,
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
 				E75B3F902743757B00989409 /* CasesCategories.swift in Sources */,
+				4E61989227562B5600224C9C /* InsightCard.swift in Sources */,
 				44FB2AFC27430A6D00231317 /* Helper+Date.swift in Sources */,
 				49615AAB27420C7E00339936 /* TrendingModel.swift in Sources */,
 				4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */,
@@ -1032,7 +1036,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1060,7 +1064,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
