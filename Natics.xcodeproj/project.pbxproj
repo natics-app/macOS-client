@@ -88,6 +88,8 @@
 		49C6360027567E2000AFA0EB /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C635FF27567E2000AFA0EB /* NotificationModel.swift */; };
 		49C6360227567FE800AFA0EB /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6360127567FE800AFA0EB /* Extension+View.swift */; };
 		49C636052756809000AFA0EB /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C636042756809000AFA0EB /* EdgeBorder.swift */; };
+		49CD36E72757E6C1008D95D0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E62757E6C1008D95D0 /* TextButton.swift */; };
+		49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */; };
 		49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */; };
 		4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */; };
 		4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */; };
@@ -207,6 +209,8 @@
 		49C635FF27567E2000AFA0EB /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		49C6360127567FE800AFA0EB /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		49C636042756809000AFA0EB /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
+		49CD36E62757E6C1008D95D0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLabelButton.swift; sourceTree = "<group>"; };
 		49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRisingCaseViewModel.swift; sourceTree = "<group>"; };
 		4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Cases.swift"; sourceTree = "<group>"; };
 		4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Cases.swift"; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				44159B5C2736AF880077F3FF /* IconButton.swift */,
 				44159B5D2736AF880077F3FF /* FilledButton.swift */,
 				44159B5E2736AF880077F3FF /* SharingButton.swift */,
+				49CD36E62757E6C1008D95D0 /* TextButton.swift */,
+				49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -882,6 +888,7 @@
 				E75B3F922743789800989409 /* Interface+CasesCategories.swift in Sources */,
 				44DE84C127371BD10034DBA2 /* HeatMapViewModel.swift in Sources */,
 				44DE84BC27371B5D0034DBA2 /* ExportButton.swift in Sources */,
+				49CD36E72757E6C1008D95D0 /* TextButton.swift in Sources */,
 				0C651E8D27415A6800C51692 /* Request+WatchList.swift in Sources */,
 				44159B602736AF880077F3FF /* FilledButton.swift in Sources */,
 				44FB2AE12742A1FD00231317 /* AddWatchlistViewModel.swift in Sources */,
@@ -891,6 +898,7 @@
 				44159B612736AF880077F3FF /* SharingButton.swift in Sources */,
 				49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */,
 				44FB2AFE274312F700231317 /* Extension+String.swift in Sources */,
+				49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */,
 				44159B782736B0910077F3FF /* WatchlistModel.swift in Sources */,

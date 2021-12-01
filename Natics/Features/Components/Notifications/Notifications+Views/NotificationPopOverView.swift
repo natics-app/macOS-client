@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationPopOverView: View {
-    @ObservedObject var viewModel: DatePickerViewModel
+    @EnvironmentObject var notificationViewModel: NotificationViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,79 +21,46 @@ struct NotificationPopOverView: View {
                     .font(Font.system(size: 18))
             }.padding(24)
             
-            HStack(spacing: 16) {
-                Button {
-                    
-                } label: {
-                    VStack {
-                        Text("Unread")
-                            .foregroundColor(.primary)
-                            .padding(.vertical)
-                            .padding(.horizontal, 4)
-                            .border(width: 2, edges: [.bottom], color: Color.accentColor)
-                    }
-                }
-                .buttonStyle(LinkButtonStyle())
-                .background(Color.blue)
+            HStack(spacing: 8) {
+                TextButton(label: NotificationSelection.unread.rawValue, action: {
+                    notificationViewModel.changeSelection(selected: .unread)
+                }, selected: $notificationViewModel.notificationSelected)
                 
-                Button {
-                    
-                } label: {
-                    HStack(spacing: 4) {
-                        Text("All")
-                            .foregroundColor(.primary)
-                            .padding(.vertical)
-                            .padding(.leading, 4)
-                            
-                        Text("26")
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 5)
-                            .background(Color.red)
-                            .padding(.trailing, 4)
-                            .cornerRadius(4)
-                        
-                    }.border(width: 2, edges: [.bottom], color: Color.accentColor)
-                        .background(Color.blue)
-                }
-                .buttonStyle(LinkButtonStyle())
+                NotificationLabelButton(label: NotificationSelection.allNotification.rawValue, action: {
+                    notificationViewModel.changeSelection(selected: .allNotification)
+                }, totalNotification: notificationViewModel.getNotificationCount(), selected: $notificationViewModel.notificationSelected)
                 
-                Button {
-                    
-                } label: {
-                    VStack {
-                        Text("Watchlist")
-                            .foregroundColor(.primary)
-                            .padding(.vertical)
-                            .padding(.horizontal, 4)
-                            .border(width: 2, edges: [.bottom], color: Color.accentColor)
-                            .background(Color.blue)
-                    }
-                }
-                .buttonStyle(LinkButtonStyle())
+                TextButton(label: NotificationSelection.watchlist.rawValue, action: {
+                    notificationViewModel.changeSelection(selected: .watchlist)
+                }, selected: $notificationViewModel.notificationSelected)
+                
                 
                 Spacer()
             }.padding(.horizontal)
             Divider()
             
-            VStack(alignment: .leading, spacing: 8){
-                ForEach(viewModel.datePickerList, id: \.self) { data in
-                    Button {
-                        
-                    } label: {
-                        NotificationRow(animalTitle: "Kukang", notificationLabel: "is now Trending", notificationDate: "Now")
+            GeometryReader { geo in
+                ScrollView(.vertical) {
+                    VStack {
+                        List {
+                            ForEach(
+                                notificationViewModel.getNotification(),
+                                id: \.self
+                            ) { item in
+                                Button {
+                                    
+                                } label: {
+                                    NotificationRow(animalTitle: "Kukang", notificationLabel: "is now Trending", notificationDate: "Now")
+                                }
+                                .cornerRadius(8)
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .background(Color.orange)
-                    
-                    Button {
-                        
-                    } label: {
-                        NotificationRow(animalTitle: "Kukang", notificationLabel: "is now Trending", notificationDate: "Now")
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .background(Color.orange)
-                }.listRowInsets(EdgeInsets())
-            }.padding(16)
+                    .frame(height: geo.frame(in: .local).size.height)
+                }
+            }
+            .frame(maxHeight: .infinity)
             
             Spacer()
         }
@@ -103,6 +70,7 @@ struct NotificationPopOverView: View {
 
 struct NotificationPopOverView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPopOverView(viewModel: DatePickerViewModel())
+        NotificationPopOverView()
+            .environmentObject(NotificationViewModel())
     }
 }

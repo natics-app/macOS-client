@@ -44,9 +44,10 @@ struct NotificationRow: View {
         .onHover { hovering in
             self.hovering = hovering
         }
-        .padding(8)
-        .background(hovering ? Color.gray.opacity(0.4) : Color.clear)
-        .cornerRadius(4)
+        .padding(16)
+        .background(hovering ? Color.gray.opacity(0.4) : Color.gray)
+        .overlay(RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.colorTheme.MCDarkGrey, lineWidth: 1))
     }
 }
 

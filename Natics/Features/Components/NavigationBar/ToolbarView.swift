@@ -10,7 +10,7 @@ import SwiftUI
 struct ToolbarView: View {
     
     @State private var isShown = false
-    
+    @EnvironmentObject var notificationVM: NotificationViewModel
     
     var body: some View {
         ZStack {
@@ -19,9 +19,13 @@ struct ToolbarView: View {
                     Spacer()
                     
                     ActionButton(action: {
+                        notificationVM.showPopover()
                     }, imageName: "bell.badge.fill")
                         .padding(.trailing, 16)
                         .help("Notification Bell")
+                        .popover(isPresented: $notificationVM.notificationPopoverShown) {
+                            NotificationPopOverView()
+                        }
                     
                     FilledButton(title: "Add Watchlist") {
                         isShown.toggle()
@@ -45,5 +49,6 @@ struct ToolbarView: View {
 struct ToolbarView_Previews: PreviewProvider {
     static var previews: some View {
         ToolbarView()
+            .environmentObject(NotificationViewModel())
     }
 }
