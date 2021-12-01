@@ -59,12 +59,12 @@ struct HeatMapView: View {
                                         self.touchPoint = location
                                     }
                                     .clipped()
-                                    if viewModel.isIntersect {
+//                                    if viewModel.isIntersect {
                                         HeatMapRegionHighlight()
                                             .clipped()
                                             .offset(x: self.touchPoint.x, y:
                                                         self.touchPoint.y)
-                                    }
+//                                    }
                                 }
                                 Text("\(String(format: "X = %.0f, Y = %.0f", self.touchPoint.x, self.touchPoint.y))")
                                 HStack(alignment: .center, spacing: 16) {
