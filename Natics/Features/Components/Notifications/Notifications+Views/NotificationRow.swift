@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoticationRow: View {
+struct NotificationRow: View {
     var animalTitle: String
     var notificationLabel: String
     var notificationDate: String
@@ -52,6 +52,6 @@ struct NoticationRow: View {
 
 struct NoticationRow_Previews: PreviewProvider {
     static var previews: some View {
-        NoticationRow(animalTitle: "Kukang", notificationLabel: "is now Trending", notificationDate: "Now")
+        NotificationRow(animalTitle: "Kukang", notificationLabel: "is now Trending", notificationDate: "Now")
     }
 }
