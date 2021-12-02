@@ -13,7 +13,7 @@ struct InsightCard: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: "info")
+            Image(systemName: "lightbulb")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.colorTheme.MCLightGrey)
