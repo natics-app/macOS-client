@@ -26,6 +26,8 @@ class TrendingProvinceViewModel: ObservableObject {
     private let request = TrendingRequest()
     private var cancellable = Set<AnyCancellable>()
     
+    @Published var isIntersect = false
+    
     init() {
         setProvinceTrending()
     }
