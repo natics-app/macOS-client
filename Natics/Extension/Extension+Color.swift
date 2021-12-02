@@ -21,4 +21,5 @@ struct MCColorTheme {
     let MCDarkGrey = Color("MCDarkGrey", bundle: nil)
     let MCBlack = Color("MCBlack", bundle: nil)
     let MCOutline = Color("MCOutline", bundle: nil)
+    let MCDarkDropdown = Color("MCDarkDropdown", bundle: nil)
 }

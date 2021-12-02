@@ -28,7 +28,7 @@ struct RisingHeader: View {
             
         }
         .frame(height: 33,alignment: .leading)
-        .foregroundColor(Color.colorTheme.MCMainGreen)
+        .foregroundColor(Color.white)
         .padding(.leading,16)
         .padding(.trailing,32)
         .background(Color.colorTheme.MCDarkGrey)

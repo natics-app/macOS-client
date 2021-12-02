@@ -15,22 +15,28 @@ struct RisingCasesTable: View {
     var body: some View {
         VStack() {
             HStack {
-                HStack(alignment: .center){
-                    Text("Rising Cases")
-                        .foregroundColor(Color.colorTheme.MCBlack)
-                        .font(.system(size: 24))
-                        .fontWeight(.semibold)
-                    Button(action: {
-                        print("Clicked")
-                    }, label: {
-                        Image(systemName: "info.circle")
-                            .resizable()
-                            .foregroundColor(Color.gray)
-                    })
-                        .frame(width: 18, height: 18)
-                        .buttonStyle(.plain)
-                        .foregroundColor(Color.colorTheme.MCDarkGrey)
+                VStack (alignment: .leading) {
+                    HStack(alignment: .center){
+                        Text("Overall Rising Cases")
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 24))
+                            .fontWeight(.semibold)
+                        Button(action: {
+                            print("Clicked")
+                        }, label: {
+                            Image(systemName: "info.circle")
+                                .resizable()
+                                .foregroundColor(Color.gray)
+                        })
+                            .frame(width: 18, height: 18)
+                            .buttonStyle(.plain)
+                            .foregroundColor(Color.colorTheme.MCDarkGrey)
+                    }
+                    Text("The table displayed represent the Changes Rate among Animal Cases reported.")
+                        .foregroundColor(Color.gray)
+                        .font(.caption)
                 }
+                
                 Spacer()
                 Button(action: {}){
                     Text("Export")
@@ -43,6 +49,7 @@ struct RisingCasesTable: View {
             .padding(.horizontal,24)
             .padding(.top, 24)
             .padding(.bottom, 46)
+            
             VStack(alignment: .leading, spacing: -15){
                 RisingHeader()
                 List {
@@ -59,9 +66,8 @@ struct RisingCasesTable: View {
                 }
             }
         }
-        .background(Color.colorTheme.MCLightGrey)
+        .background(Color.colorTheme.MCDarkDropdown)
         .frame(width: 610, height: 420)
-        .border(Color.colorTheme.MCOutline, width: 1)
         .cornerRadius(4)
         .padding()
     }
