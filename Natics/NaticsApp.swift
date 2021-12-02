@@ -13,6 +13,7 @@ import Combine
 struct NaticsApp: App {
     @StateObject var viewModel = DatePickerViewModel()
     @StateObject var testVM = CasesViewModel()
+    @StateObject var notificationVM: NotificationViewModel = NotificationViewModel()
     
     private var isHidden = true
     
@@ -22,6 +23,7 @@ struct NaticsApp: App {
                 SideBarView()
                     .frame(minWidth: 1236, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 600, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .environmentObject(viewModel)
+                    .environmentObject(notificationVM)
                 
                 if !isHidden {
                     Text("Tes")
