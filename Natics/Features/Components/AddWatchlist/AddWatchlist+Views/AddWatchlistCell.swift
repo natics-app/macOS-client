@@ -9,8 +9,22 @@ import SwiftUI
 
 struct AddWatchlistCell: View {
     // MARK: INJECTED PROPERTIES
-    var animalName: String
-    var casesNumber: Int
+    private var animalName: String
+    private var casesNumber: Int
+    private var action: ()->()?
+    private var isDisabled: Bool
+    
+    init(
+        animalName: String,
+        casesNumber: Int,
+        isDisabled: Bool,
+        action: @escaping ()->()?
+    ) {
+        self.animalName = animalName
+        self.casesNumber = casesNumber
+        self.isDisabled = isDisabled
+        self.action = action
+    }
     
     // MARK: VIEWS PROPERTIES
     var body: some View {
@@ -34,11 +48,14 @@ struct AddWatchlistCell: View {
                 // Add button
                 Button {
                     print("add button")
+                    action()
                 } label: {
-                    Text("Add")
+                    Text(isDisabled ? "Added" : "Add")
                         .padding(.vertical, 5)
                         .padding(.horizontal, 25)
-                        .background(Color.colorTheme.MCDarkGreen)
+                        .background(
+                            isDisabled ? Color.colorTheme.MCDarkGrey : Color.colorTheme.MCDarkGreen
+                        )
                         .cornerRadius(8)
                 }
                 .buttonStyle(.plain)
@@ -58,6 +75,8 @@ struct AddWatchlistCell: View {
 
 struct AddWatchlistCell_Previews: PreviewProvider {
     static var previews: some View {
-        AddWatchlistCell(animalName: "Animal Name", casesNumber: 0)
+        AddWatchlistCell(animalName: "Animal Name", casesNumber: 0, isDisabled: false, action: {
+            print("")
+        })
     }
 }

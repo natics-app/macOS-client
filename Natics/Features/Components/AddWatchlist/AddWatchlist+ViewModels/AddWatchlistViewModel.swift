@@ -7,12 +7,17 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class AddWatchlistViewModel: ObservableObject {
+    
+    // MARK: CONSTANT
+    let addedWatchlistKey = "Added Watchlist"
     
     // MARK: PUBLISHED PROPERTIES
     @Published var searchText: String = ""
     @Published var animalTrendings: [Category] = []
+    @Published var selectedAnimal: [Int] = []
     
     // MARK: PRIVATE PROPERTIES
     private var cancellable = Set<AnyCancellable>()
@@ -30,19 +35,10 @@ class AddWatchlistViewModel: ObservableObject {
     
     // MARK: INIT
     init() {
-        bind()
         getTrendingAnimals()
     }
     
     // MARK: PRIVATE METHODS
-    private func bind() {
-//        $searchText
-//            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
-//            .sink { [weak self] value in
-//                self?.getTrendingAnimals()
-//            }
-//            .store(in: &cancellable)
-    }
     
     // MARK: PUBLIC METHODS
     func getTrendingAnimals() {
@@ -64,5 +60,41 @@ class AddWatchlistViewModel: ObservableObject {
                 self?.animalTrendings = data.categories
             }
             .store(in: &cancellable)
+    }
+    
+    // Handle if animal is selected
+    func addSelectedAnimal(id: Int) {
+        if checkIfIdSelected(id: id) {
+            selectedAnimal.removeAll { item in
+                item == id
+            }
+            removeFromUserDefault(id: id)
+        } else {
+            selectedAnimal.append(id)
+            saveToUserDefault(id: id)
+        }
+    }
+    
+    // Check if animal ID exist
+    func checkIfIdSelected(id: Int) -> Bool {
+        return selectedAnimal.contains(id)
+    }
+    
+    // Save to user default
+    func saveToUserDefault(id: Int) {
+        let defaults = UserDefaults.standard
+        var savedAnimal = defaults.object(forKey: addedWatchlistKey) as? [Int] ?? []
+        savedAnimal.append(id)
+        defaults.set(savedAnimal, forKey: addedWatchlistKey)
+    }
+    
+    // Remove from user default
+    func removeFromUserDefault(id: Int) {
+        let defaults = UserDefaults.standard
+        var savedAnimal = defaults.object(forKey: addedWatchlistKey) as? [Int] ?? []
+        savedAnimal.removeAll { item in
+            item == id
+        }
+        defaults.set(savedAnimal, forKey: addedWatchlistKey)
     }
 }
