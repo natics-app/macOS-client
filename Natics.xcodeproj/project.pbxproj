@@ -40,6 +40,7 @@
 		4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345A2733A19B00CADA9F /* Interface+Region.swift */; };
 		4495345D2733B55600CADA9F /* Request+Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345C2733B55600CADA9F /* Request+Region.swift */; };
 		4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495345E2733B79D00CADA9F /* RegionModel.swift */; };
+		44B1A14C275C9F49002DF0A7 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1A14B275C9F49002DF0A7 /* UserViewModel.swift */; };
 		44B3B4EA273D03AD006829E8 /* ContohViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */; };
 		44DE84B527371A8C0034DBA2 /* TrendingLocationBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */; };
 		44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */; };
@@ -163,6 +164,7 @@
 		4495345A2733A19B00CADA9F /* Interface+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Region.swift"; sourceTree = "<group>"; };
 		4495345C2733B55600CADA9F /* Request+Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Region.swift"; sourceTree = "<group>"; };
 		4495345E2733B79D00CADA9F /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		44B1A14B275C9F49002DF0A7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		44B3B4E9273D03AD006829E8 /* ContohViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContohViewModel.swift; sourceTree = "<group>"; };
 		44DE84B327371A8C0034DBA2 /* TrendingLocationBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingLocationBarChartView.swift; sourceTree = "<group>"; };
 		44DE84B427371A8C0034DBA2 /* HeatMapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatMapModel.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				E75B3F8D2743756E00989409 /* CasesCategoriesViewModel.swift */,
 				49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */,
 				49C635FD27567E0E00AFA0EB /* NotificationViewModel.swift */,
+				44B1A14B275C9F49002DF0A7 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				44FB2AF32742D64600231317 /* Request+Users.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
 				E75B3F8427436F1B00989409 /* ActiveMediaViewModel.swift in Sources */,
+				44B1A14C275C9F49002DF0A7 /* UserViewModel.swift in Sources */,
 				49615AAD27420E5A00339936 /* TrendingProvinceViewModel.swift in Sources */,
 				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
