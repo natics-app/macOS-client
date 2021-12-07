@@ -14,8 +14,8 @@ struct SideBarView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 List{
-                    DashboardView()
                     WatchListView()
+                    DashboardView()
                     Spacer()
                 }
                 .listStyle(SidebarListStyle())
