@@ -20,6 +20,14 @@ struct HeatMapView: View {
     @State var overImg = false
     @State private var touchPoint: NSPoint = .zero
     
+    var mapCompat: some View {
+        MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
+        .trackingMouse { location in
+            self.touchPoint = location
+        }
+        .clipped()
+    }
+    
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
     var body: some View {
@@ -45,7 +53,13 @@ struct HeatMapView: View {
                             }.padding(.leading, 10)
                             Spacer()
                             ExportButton {
-                                
+                                guard let data = mapCompat.renderAsImage() else {
+                                    print("data nil")
+                                    return
+                                }
+                                NSSavePanel.saveImage(data) { result in
+
+                                }
                             }
                             .frame(width: 120, height: 28).padding(.trailing, 10)
                         }
@@ -54,11 +68,7 @@ struct HeatMapView: View {
                         HStack() {
                             VStack {
                                 ZStack(alignment: .topLeading) {
-                                    MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
-                                    .trackingMouse { location in
-                                        self.touchPoint = location
-                                    }
-                                    .clipped()
+                                    mapCompat
 //                                    if viewModel.isIntersect {
                                         HeatMapRegionHighlight()
                                             .clipped()

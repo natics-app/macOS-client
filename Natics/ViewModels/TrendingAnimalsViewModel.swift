@@ -70,4 +70,14 @@ extension TrendingAnimalsViewModel {
                 return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
             }
     }
+    
+    func exportView(view: AnyView){
+//        let nsView = NSHostingView(rootView: view)
+//        let bitmapRep = nsView.bitmapImageRepForCachingDisplay(in: nsView.bounds)!
+//        bitmapRep.size = nsView.bounds.size
+//        nsView.cacheDisplay(in: nsView.bounds, to: bitmapRep)
+//        let data = image.representation(using: .jpeg, properties: [:])
+//        try data?.write(to: path)
+        
+    }
 }

@@ -92,6 +92,8 @@
 		49C636052756809000AFA0EB /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C636042756809000AFA0EB /* EdgeBorder.swift */; };
 		49CD36E72757E6C1008D95D0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E62757E6C1008D95D0 /* TextButton.swift */; };
 		49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */; };
+		49E4760027609A1300CDC434 /* DownloadShareButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */; };
+		49E476022760AE9000CDC434 /* Extension+FilePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E476012760AE9000CDC434 /* Extension+FilePanel.swift */; };
 		49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */; };
 		4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */; };
 		4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */; };
@@ -215,6 +217,8 @@
 		49C636042756809000AFA0EB /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
 		49CD36E62757E6C1008D95D0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLabelButton.swift; sourceTree = "<group>"; };
+		49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonViewModel.swift; sourceTree = "<group>"; };
+		49E476012760AE9000CDC434 /* Extension+FilePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+FilePanel.swift"; sourceTree = "<group>"; };
 		49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRisingCaseViewModel.swift; sourceTree = "<group>"; };
 		4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Cases.swift"; sourceTree = "<group>"; };
 		4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Cases.swift"; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */,
 				49C635FD27567E0E00AFA0EB /* NotificationViewModel.swift */,
 				44B1A14B275C9F49002DF0A7 /* UserViewModel.swift */,
+				49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				4EE8C21127369A8B00C9AD66 /* Extension+NSTableView.swift */,
 				44FB2AFD274312F700231317 /* Extension+String.swift */,
 				49C6360127567FE800AFA0EB /* Extension+View.swift */,
+				49E476012760AE9000CDC434 /* Extension+FilePanel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -869,6 +875,7 @@
 				4EDD032A273A655E00647011 /* CasesTableHeader.swift in Sources */,
 				E75B3F8A2743736C00989409 /* Request+CasesCategories.swift in Sources */,
 				E75B3F802742E4E700989409 /* TrendingAnimalsViewModel.swift in Sources */,
+				49E476022760AE9000CDC434 /* Extension+FilePanel.swift in Sources */,
 				E75B3F9E2743DFB800989409 /* AccountSection.swift in Sources */,
 				44FB2AE32742D5BE00231317 /* Request+Animals.swift in Sources */,
 				4495345B2733A19B00CADA9F /* Interface+Region.swift in Sources */,
@@ -906,6 +913,7 @@
 				49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */,
 				44FB2AFE274312F700231317 /* Extension+String.swift in Sources */,
 				49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */,
+				49E4760027609A1300CDC434 /* DownloadShareButtonViewModel.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */,
 				44159B782736B0910077F3FF /* WatchlistModel.swift in Sources */,
@@ -1096,7 +1104,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1124,7 +1132,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = LR9373A784;
+				DEVELOPMENT_TEAM = TATAZHHLZ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
