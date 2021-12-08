@@ -17,7 +17,7 @@ struct CasesView: View {
                 VStack {
                     Text("\(viewModel.selection?.rawValue ?? "")")
                     HStack {
-                        NavigationBarView()
+                        NavigationBarView(casesViewModel: casesViewModel)
                     }
                     CasesTable(casesViewModel: casesViewModel, isToggle: $isToggle)
                     Spacer()
