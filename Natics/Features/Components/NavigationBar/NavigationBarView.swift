@@ -10,7 +10,18 @@ import SwiftUI
 struct NavigationBarView: View {
     @StateObject var sideBarViewModel = SideBarViewModel()
     @EnvironmentObject var viewModel: DatePickerViewModel
+    @ObservedObject var casesViewModel: CasesViewModel
+    
+    var sharingVM = DownloadShareButtonViewModel()
     var placeHolder = "Past Week"
+    
+    init() {
+        casesViewModel = CasesViewModel()
+    }
+    
+    init(casesViewModel: CasesViewModel){
+        self.casesViewModel = casesViewModel
+    }
     
     @State var value = ""
         var body: some View {
@@ -44,9 +55,25 @@ struct NavigationBarView: View {
                 }
                 Spacer()
                 HStack(spacing: 16) {
-                    SharingButton(label: "Share") {
-                        
-                    }
+                    Spacer()
+                    Menu {
+                        ForEach(
+                            NSSharingService
+                                .sharingServices(forItems: [""]),
+                            id: \.title
+                        ) { item in
+                            Button {
+                                // Action for each button
+                                item.perform(withItems: [sharingVM.generateFile(fileContent: casesViewModel.csvContent, viewModel.selection!.getCalculatedYear())])
+                            } label: {
+                                Image(nsImage: item.image)
+                                Text(item.title)
+                            }
+                        }.help("Share")
+                    } label: {
+                        Text("Share")
+                    }.frame(width: 70)
+                    
                     SharingButton(label: "Export All") {
                         
                     }
@@ -57,7 +84,7 @@ struct NavigationBarView: View {
 
 struct NavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView()
+        NavigationBarView(casesViewModel: CasesViewModel())
             .environmentObject(DatePickerViewModel())
     }
 }
