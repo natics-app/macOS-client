@@ -115,6 +115,7 @@
 		4EE8C21827369BA400C9AD66 /* RisingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21727369BA400C9AD66 /* RisingHeader.swift */; };
 		4EE8C21A27369C1500C9AD66 /* RisingCasesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21927369C1500C9AD66 /* RisingCasesTable.swift */; };
 		4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE8C21C27369CCC00C9AD66 /* RisingCaseTableViewModel.swift */; };
+		4EFE0A912762005800D596EF /* PushNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = 4EFE0A902762005800D596EF /* PushNotifications */; };
 		E75B3F802742E4E700989409 /* TrendingAnimalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B3F7F2742E4E700989409 /* TrendingAnimalsViewModel.swift */; };
 		E75B3F8427436F1B00989409 /* ActiveMediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B3F8327436F1B00989409 /* ActiveMediaViewModel.swift */; };
 		E75B3F8627436F6A00989409 /* ActiveMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75B3F8527436F6A00989409 /* ActiveMediaModel.swift */; };
@@ -275,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DE84C527371CD10034DBA2 /* Charts in Frameworks */,
+				4EFE0A912762005800D596EF /* PushNotifications in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +844,7 @@
 			name = Natics;
 			packageProductDependencies = (
 				44DE84C427371CD10034DBA2 /* Charts */,
+				4EFE0A902762005800D596EF /* PushNotifications */,
 			);
 			productName = Natics;
 			productReference = 44558F0B2728688F00DEE0EF /* Natics.app */;
@@ -873,6 +876,7 @@
 			mainGroup = 44558F022728688F00DEE0EF;
 			packageReferences = (
 				44DE84C327371CD10034DBA2 /* XCRemoteSwiftPackageReference "Charts" */,
+				4EFE0A8F2762005800D596EF /* XCRemoteSwiftPackageReference "push-notifications-swift" */,
 			);
 			productRefGroup = 44558F0C2728688F00DEE0EF /* Products */;
 			projectDirPath = "";
@@ -1156,7 +1160,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1184,7 +1188,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Natics/Preview Content\"";
-				DEVELOPMENT_TEAM = TATAZHHLZ7;
+				DEVELOPMENT_TEAM = A226GG3668;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1234,6 +1238,14 @@
 				minimumVersion = 3.6.0;
 			};
 		};
+		4EFE0A8F2762005800D596EF /* XCRemoteSwiftPackageReference "push-notifications-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pusher/push-notifications-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1241,6 +1253,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 44DE84C327371CD10034DBA2 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		4EFE0A902762005800D596EF /* PushNotifications */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EFE0A8F2762005800D596EF /* XCRemoteSwiftPackageReference "push-notifications-swift" */;
+			productName = PushNotifications;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
