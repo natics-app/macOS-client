@@ -14,7 +14,7 @@ struct RisingCasesTable: View {
     
     var body: some View {
         VStack() {
-            HStack {
+            HStack (alignment: .top) {
                 VStack (alignment: .leading) {
                     HStack(alignment: .center){
                         Text("Overall Rising Cases")
@@ -34,7 +34,6 @@ struct RisingCasesTable: View {
                     }
                     Text("The table displayed represent the Changes Rate among Animal Cases reported.")
                         .foregroundColor(Color.gray)
-                        .font(.caption)
                 }
                 
                 Spacer()
@@ -48,8 +47,14 @@ struct RisingCasesTable: View {
             }
             .padding(.horizontal,24)
             .padding(.top, 24)
-            .padding(.bottom, 46)
-            
+            InsightCard()
+                .frame(width: 562, height: 83)
+                .background(Color.colorTheme.MCBlack)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4)
+                        .stroke(Color.colorTheme.MCDarkGrey, lineWidth: 2)
+                )
+                .padding()
             VStack(alignment: .leading, spacing: -15){
                 RisingHeader()
                 List {
@@ -67,7 +72,7 @@ struct RisingCasesTable: View {
             }
         }
         .background(Color.colorTheme.MCDarkDropdown)
-        .frame(width: 610, height: 420)
+        .frame(width: 610, height: 552)
         .cornerRadius(4)
         .padding()
     }

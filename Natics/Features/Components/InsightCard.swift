@@ -12,23 +12,24 @@ struct InsightCard: View {
     @State var info: String = "In the last 3 months, there have been 37 new cases where Illegal Wildlife Trading is the most cases, in the total of 24 cases"
     
     var body: some View {
-        HStack(spacing: 16) {
+        HStack {
             Image(systemName: "lightbulb")
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(Color.colorTheme.MCLightGrey)
+                .foregroundColor(Color.colorTheme.MCMainGreen)
                 .frame(width: 30, height: 30)
+//
             VStack(alignment: .leading, spacing: 4) {
                 Text("Insight")
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.colorTheme.MCLightGrey)
+                    .foregroundColor(Color.colorTheme.MCMainGreen)
                 Text(info)
                     .foregroundColor(Color.gray)
             }
+            .padding(.leading, 16)
         }
-        .padding(.leading, 22)
+//        .padding(.leading, 22)
         .padding(.trailing, 24)
-        
     }
 }
 
@@ -38,7 +39,7 @@ struct InsightCard_Previews: PreviewProvider {
             .frame(width: 562, height: 83)
             .background(Color.colorTheme.MCBlack)
             .overlay(
-                RoundedRectangle(cornerRadius: 4)
+                RoundedRectangle(cornerRadius: 1)
                     .stroke(Color.colorTheme.MCDarkGrey, lineWidth: 2)
             )
             .padding()

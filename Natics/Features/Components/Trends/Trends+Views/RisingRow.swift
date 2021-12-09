@@ -14,19 +14,19 @@ struct RisingRow: View {
         var body: some View {
             HStack(spacing: 24) {
                 Text("\(rowID)")
-                    .foregroundColor(Color.colorTheme.MCBlack)
+                    .foregroundColor(Color.colorTheme.MCLightGrey)
                     .fontWeight(.medium)
                     .frame(width: 24, alignment: .leading)
                 Text("\(risingCaseModel.name)")
-                    .foregroundColor(Color.colorTheme.MCBlack)
+                    .foregroundColor(Color.colorTheme.MCLightGrey)
                     .fontWeight(.medium)
                     .frame(width: 216, alignment: .leading)
                 Text("\(risingCaseModel.total)")
-                    .foregroundColor(Color.colorTheme.MCBlack)
+                    .foregroundColor(Color.colorTheme.MCLightGrey)
                     .fontWeight(.medium)
                     .frame(width: 81, alignment: .leading)
                 Text("\(risingCaseModel.recent)")
-                    .foregroundColor(Color.colorTheme.MCBlack)
+                    .foregroundColor(Color.colorTheme.MCLightGrey)
                     .fontWeight(.medium)
                     .frame(width: 75, alignment: .leading)
                 HStack(spacing: 3) {

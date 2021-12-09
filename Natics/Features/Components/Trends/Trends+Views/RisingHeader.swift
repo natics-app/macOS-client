@@ -16,21 +16,20 @@ struct RisingHeader: View {
             Text("Animal Name")
                 .fontWeight(.medium)
                 .frame(width: 216, alignment: .leading)
-            Text("Total Animal")
+            Text("Current News")
                 .fontWeight(.medium)
-                .frame(width: 81, alignment: .leading)
-            Text("Total Cases")
+                .frame(width: 88, alignment: .leading)
+            Text("Recent News")
                 .fontWeight(.medium)
-                .frame(width: 75, alignment: .leading)
-            Text("Change")
+                .frame(width: 95, alignment: .leading)
+            Text("%Change")
                 .fontWeight(.medium)
                 .frame(width: 70, alignment: .leading)
             
         }
-        .frame(height: 33,alignment: .leading)
+        .frame(height: 37,alignment: .leading)
         .foregroundColor(Color.white)
-        .padding(.leading,16)
-        .padding(.trailing,32)
+        .padding(.horizontal,16)
         .background(Color.colorTheme.MCDarkGrey)
     }
 }
