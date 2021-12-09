@@ -38,12 +38,10 @@ struct TrendingBarChart: View {
                     .background(Color.orange)
                 Spacer()
                 Button(action: {
+                    viewModel.renderImage(view: AnyView(self.body))
                     
-                    guard let data = self.renderAsImage() else {
-                        print("data nil")
-                        return
-                    }
-                    NSSavePanel.saveImage(data) { result in
+                    NSSavePanel.saveImage(viewModel.imageData!
+                    ) { result in
 
                     }
 
@@ -61,6 +59,10 @@ struct TrendingBarChart: View {
             }
             .padding([.leading, .trailing, .top], 25)
            barView
+        
+        }
+        .onAppear {
+            viewModel.setAnimalTrending()
         }
     }
 }

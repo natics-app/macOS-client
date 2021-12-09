@@ -13,6 +13,8 @@ class TrendingAnimalsViewModel: ObservableObject {
     @Published var trendingAnimalList = [BarChartDataEntry]()
     @Published var trendingAnimalNames = [String]()
     
+    @Published var imageData : NSImage?
+    
     private var cancellable = Set<AnyCancellable>()
     private let activeMediaRequest = SitesRequest()
     private let request = TrendingRequest()
@@ -71,13 +73,12 @@ extension TrendingAnimalsViewModel {
             }
     }
     
-    func exportView(view: AnyView){
-//        let nsView = NSHostingView(rootView: view)
-//        let bitmapRep = nsView.bitmapImageRepForCachingDisplay(in: nsView.bounds)!
-//        bitmapRep.size = nsView.bounds.size
-//        nsView.cacheDisplay(in: nsView.bounds, to: bitmapRep)
-//        let data = image.representation(using: .jpeg, properties: [:])
-//        try data?.write(to: path)
+    func renderImage(view: AnyView) {
+        guard let data = view.renderAsImage() else {
+            print("data nil")
+            return
+        }
         
+        self.imageData = data
     }
 }

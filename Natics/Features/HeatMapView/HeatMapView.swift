@@ -99,6 +99,7 @@ struct HeatMapView: View {
                     .frame(width: geo.size.width * 1)
 
                 }
+                .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
             }.padding(10)
             .onAppear(perform: {
                 viewModel.setProvinceTrending()

@@ -13,29 +13,50 @@ extension View {
     }
     
     func renderAsImage() -> NSImage? {
-        let contentRect = NSRect(x: 0, y: 0, width: 900, height: 900)
-        let newWindow = NSWindow(
-            contentRect: contentRect,
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        let view = NoInsetHostingView(rootView: self)
-        view.setFrameSize(view.fittingSize)
-        newWindow.contentView = view
-        newWindow.contentView?.setFrameSize(view.fittingSize)
-        
-        print(view.frame.size)
-        
 //        let contentRect = NSRect(x: 0, y: 0, width: 900, height: 900)
 //        let newWindow = NSWindow(
 //            contentRect: contentRect,
 //            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
 //            backing: .buffered, defer: false)
-//                let hosting = NSHostingView(rootView: self)
-//        hosting.frame = newWindow.frame
-//        newWindow.contentView?.addSubview(hosting.rootView as! NSView)
-//        newWindow.makeKey()
-//        return hosting.bitmapImage()
+//        let view = NoInsetHostingView(rootView: self)
+//        view.setFrameSize(view.fittingSize)
+//        newWindow.contentView = view
+//        newWindow.contentView?.setFrameSize(view.fittingSize)
 //
+//        print(view.frame.size)
+//        return newWindow.contentView?.bitmapImage()
+        
+        let view = NoInsetHostingView(rootView: self)
+        view.setFrameSize(view.fittingSize)
+        print("view frame size\(view.frame.size)")
+        
+        let aa = NSHostingView(rootView: self)
+        aa.setFrameSize(aa.fittingSize)
+        
+        print("view frame size\(aa.frame.size)")
+        return view.bitmapImage()
+        
+//        let viewToCapture = view.window!.contentView!
+//        let rep = viewToCapture.bitmapImageRepForCachingDisplay(in: viewToCapture.bounds)!
+//        viewToCapture.cacheDisplay(in: viewToCapture.bounds, to: rep)
+//
+//        let img = NSImage(size: viewToCapture.bounds.size)
+//        img.addRepresentation(rep)
+    }
+    
+    func renderAsImage(origin: CGPoint, size: CGSize) -> NSImage? {
+        let contentRect = NSRect(origin: origin, size: size)
+        let newWindow = NSWindow(
+            contentRect: contentRect,
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        let view = NoInsetHostingView(rootView: self)
+        
+        
+        view.setFrameSize(view.fittingSize)
+        newWindow.contentView = view
+        newWindow.contentView?.setFrameSize(view.fittingSize)
+
         return newWindow.contentView?.bitmapImage()
     }
 
