@@ -38,6 +38,7 @@ struct TrendingBarChart: View {
                     .background(Color.orange)
                 Spacer()
                 Button(action: {
+                    
                     guard let data = self.renderAsImage() else {
                         print("data nil")
                         return
