@@ -14,6 +14,9 @@ extension NSSavePanel {
         savePanel.canCreateDirectories = true
         savePanel.showsTagField = false
         savePanel.nameFieldStringValue = "image.png"
+        savePanel.nameFieldLabel = "Chart Name:"
+        savePanel.prompt = "Save"
+        savePanel.title = "Saving Chart..."
         savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
         savePanel.begin { (result) in
             guard result == .OK,

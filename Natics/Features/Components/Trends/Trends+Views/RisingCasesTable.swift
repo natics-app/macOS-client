@@ -12,6 +12,19 @@ import AppKit
 struct RisingCasesTable: View {
     @ObservedObject var viewModel: TrendingRisingCaseViewModel
     
+    var risingTable: some View {
+        VStack(alignment: .leading, spacing: 0){
+            RisingHeader()
+            List {
+                ForEach(Array(viewModel.risingCasesTopTrending.enumerated()), id: \.offset) { index, element in
+                    RisingRow(risingCaseModel: element, rowID: index+1)
+                        .frame(height: 25)
+                    
+                }
+            }
+        }
+    }
+    
     var body: some View {
         VStack() {
             HStack {
@@ -32,7 +45,14 @@ struct RisingCasesTable: View {
                         .foregroundColor(Color.colorTheme.MCDarkGrey)
                 }
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    let image = risingTable.rasterize(at: CGSize(width: 610, height: 365))
+                    
+                    NSSavePanel.saveImage(image
+                    ) { result in
+
+                    }
+                }){
                     Text("Export")
                 }
                     .frame(width: 73, height: 28)
@@ -43,21 +63,7 @@ struct RisingCasesTable: View {
             .padding(.horizontal,24)
             .padding(.top, 24)
             .padding(.bottom, 46)
-            VStack(alignment: .leading, spacing: -15){
-                RisingHeader()
-                List {
-//                    ForEach(viewModel.risingCasesTopTrending, id: \.id) { risingCase in
-//                        RisingRow(risingCaseModel: risingCase, rowID: 1)
-//                            .frame(height: 33)
-//                    }
-                    
-                    ForEach(Array(viewModel.risingCasesTopTrending.enumerated()), id: \.offset) { index, element in
-                        RisingRow(risingCaseModel: element, rowID: index+1)
-                            .frame(height: 33)
-                        
-                    }
-                }
-            }
+            risingTable
         }
         .background(Color.colorTheme.MCLightGrey)
         .frame(width: 610, height: 420)

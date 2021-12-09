@@ -28,6 +28,10 @@ struct HeatMapView: View {
         .clipped()
     }
     
+    var trendingBarChart: some View {
+        TrendingLocationBarChartView(viewModel: viewModel)
+    }
+    
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
     var body: some View {
@@ -53,13 +57,18 @@ struct HeatMapView: View {
                             }.padding(.leading, 10)
                             Spacer()
                             ExportButton {
-                                guard let data = mapCompat.renderAsImage() else {
-                                    print("data nil")
-                                    return
-                                }
-                                NSSavePanel.saveImage(data) { result in
+//                                guard let data = mapCompat.renderAsImage() else {
+//                                    print("data nil")
+//                                    return
+//                                }
+                                
+                                let image = trendingBarChart.rasterize(at: CGSize(width: 920, height: 350))
+                                
+                                    NSSavePanel.saveImage(image
+                                    ) { result in
 
-                                }
+                                    }
+                                
                             }
                             .frame(width: 120, height: 28).padding(.trailing, 10)
                         }
@@ -89,7 +98,7 @@ struct HeatMapView: View {
                 
                             HStack {
                                 Spacer()
-                                TrendingLocationBarChartView(viewModel: viewModel)
+                                trendingBarChart
                                 Spacer()
                             }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))

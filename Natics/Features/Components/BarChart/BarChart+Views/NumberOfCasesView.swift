@@ -38,15 +38,16 @@ struct TrendingBarChart: View {
                     .background(Color.orange)
                 Spacer()
                 Button(action: {
-                    viewModel.renderImage(view: AnyView(self.body))
                     
-                    NSSavePanel.saveImage(viewModel.imageData!
+                    let image = barView.rasterize(at: CGSize(width: 920, height: 350))
+                    
+                    NSSavePanel.saveImage(image
                     ) { result in
 
                     }
 
                 }) {
-                    Text("Exportsss")
+                    Text("Export")
                         .font(.system(size: 13))
                         .fontWeight(.medium)
                 }

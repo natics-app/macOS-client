@@ -13,8 +13,6 @@ class TrendingAnimalsViewModel: ObservableObject {
     @Published var trendingAnimalList = [BarChartDataEntry]()
     @Published var trendingAnimalNames = [String]()
     
-    @Published var imageData : NSImage?
-    
     private var cancellable = Set<AnyCancellable>()
     private let activeMediaRequest = SitesRequest()
     private let request = TrendingRequest()
@@ -71,14 +69,5 @@ extension TrendingAnimalsViewModel {
                 (index, element) in
                 return BarChartDataEntry(x: Double(index), y: Double(element.news_count))
             }
-    }
-    
-    func renderImage(view: AnyView) {
-        guard let data = view.renderAsImage() else {
-            print("data nil")
-            return
-        }
-        
-        self.imageData = data
     }
 }

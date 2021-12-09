@@ -13,35 +13,10 @@ extension View {
     }
     
     func renderAsImage() -> NSImage? {
-//        let contentRect = NSRect(x: 0, y: 0, width: 900, height: 900)
-//        let newWindow = NSWindow(
-//            contentRect: contentRect,
-//            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-//            backing: .buffered, defer: false)
-//        let view = NoInsetHostingView(rootView: self)
-//        view.setFrameSize(view.fittingSize)
-//        newWindow.contentView = view
-//        newWindow.contentView?.setFrameSize(view.fittingSize)
-//
-//        print(view.frame.size)
-//        return newWindow.contentView?.bitmapImage()
         
         let view = NoInsetHostingView(rootView: self)
         view.setFrameSize(view.fittingSize)
-        print("view frame size\(view.frame.size)")
-        
-        let aa = NSHostingView(rootView: self)
-        aa.setFrameSize(aa.fittingSize)
-        
-        print("view frame size\(aa.frame.size)")
         return view.bitmapImage()
-        
-//        let viewToCapture = view.window!.contentView!
-//        let rep = viewToCapture.bitmapImageRepForCachingDisplay(in: viewToCapture.bounds)!
-//        viewToCapture.cacheDisplay(in: viewToCapture.bounds, to: rep)
-//
-//        let img = NSImage(size: viewToCapture.bounds.size)
-//        img.addRepresentation(rep)
     }
     
     func renderAsImage(origin: CGPoint, size: CGSize) -> NSImage? {
@@ -58,6 +33,22 @@ extension View {
         newWindow.contentView?.setFrameSize(view.fittingSize)
 
         return newWindow.contentView?.bitmapImage()
+    }
+    
+    public func rasterizeBitmap(at size: CGSize) ->  NSBitmapImageRep {
+        let nsView = NSHostingView(rootView: self.frame(width: size.width, height: size.height))
+        nsView.frame.size = size
+                
+        let bitmapRep = nsView.bitmapImageRepForCachingDisplay(in: nsView.bounds)!
+        bitmapRep.size = nsView.bounds.size
+        nsView.cacheDisplay(in: nsView.bounds, to: bitmapRep)
+        return bitmapRep
+    }
+    
+    public func rasterize(at size: CGSize) -> NSImage {
+        let image = NSImage(size: size)
+        image.addRepresentation(self.rasterizeBitmap(at: size))
+        return image
     }
 
 }
