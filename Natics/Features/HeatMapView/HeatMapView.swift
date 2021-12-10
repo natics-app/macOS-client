@@ -20,12 +20,8 @@ struct HeatMapView: View {
     @State var overImg = false
     @State private var touchPoint: NSPoint = .zero
     
-    var mapCompat: some View {
+    var mapCompat: MapCompat {
         MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
-        .trackingMouse { location in
-            self.touchPoint = location
-        }
-        .clipped()
     }
     
     var trendingBarChart: some View {
@@ -62,12 +58,13 @@ struct HeatMapView: View {
 //                                    return
 //                                }
                                 
-                                let image = trendingBarChart.rasterize(at: CGSize(width: 920, height: 350))
-                                
-                                    NSSavePanel.saveImage(image
-                                    ) { result in
+                                let mapView = mapCompat.rasterize(at: CGSize(width: 920, height: 350))
 
-                                    }
+                                NSSavePanel.saveImage(mapView
+                                ) { result in
+                                    print("saved")
+                                }
+                                
                                 
                             }
                             .frame(width: 120, height: 28).padding(.trailing, 10)
@@ -78,6 +75,10 @@ struct HeatMapView: View {
                             VStack {
                                 ZStack(alignment: .topLeading) {
                                     mapCompat
+                                        .trackingMouse { location in
+                                            self.touchPoint = location
+                                        }
+                                        .clipped()
 //                                    if viewModel.isIntersect {
                                         HeatMapRegionHighlight()
                                             .clipped()
