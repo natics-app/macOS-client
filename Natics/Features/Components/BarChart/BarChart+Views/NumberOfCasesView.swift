@@ -10,6 +10,24 @@ import Charts
 
 struct TrendingBarChart: View {
     @ObservedObject var viewModel: TrendingAnimalsViewModel
+    @StateObject var downloadButtonVM: DownloadShareButtonViewModel = DownloadShareButtonViewModel()
+    
+    @ViewBuilder
+    var barView: some View {
+        AnimalBarChartView(viewModel: viewModel)
+            .padding([.leading, .trailing, .bottom], 10)
+            .onAppear {
+                viewModel.setAnimalTrending()
+            }
+    }
+    
+    var textView: some View {
+            Text("Hello, SwiftUI")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
+    }
     
     var body: some View {
         VStack{
@@ -17,9 +35,19 @@ struct TrendingBarChart: View {
                 Text("Number of Cases")
                     .fontWeight(.semibold)
                     .font(.system(size: 24))
+                    .background(Color.orange)
                 Spacer()
                 Button(action: {
-                       //do action
+                    
+                    guard let image = barView.rasterize(at: CGSize(width: 920, height: 350)) else {
+                        return
+                    }
+                    
+                    NSSavePanel.saveImage(image
+                    ) { result in
+
+                    }
+
                 }) {
                     Text("Export")
                         .font(.system(size: 13))
@@ -33,11 +61,11 @@ struct TrendingBarChart: View {
 
             }
             .padding([.leading, .trailing, .top], 25)
-            AnimalBarChartView(viewModel: viewModel)
-                .padding([.leading, .trailing, .bottom], 10)
-                .onAppear {
-                    viewModel.setAnimalTrending()
-                }
+           barView
+        
+        }
+        .onAppear {
+            viewModel.setAnimalTrending()
         }
     }
 }

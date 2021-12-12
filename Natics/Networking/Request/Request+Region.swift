@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-// Region Request service information
+// Region Request service informationx
 struct RegionRequest: Service {
     var baseUrl: String = Constants.Endpoint.databaseServer
     typealias Network = RegionDescription

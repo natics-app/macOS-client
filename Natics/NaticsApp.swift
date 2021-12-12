@@ -31,7 +31,8 @@ struct NaticsApp: App {
                         .background(Color.black.opacity(0.5))
                 }
             }
-        }.commands {
+        }
+        .commands {
             SidebarCommands()
             ToolbarCommands()
         }

@@ -20,6 +20,14 @@ struct HeatMapView: View {
     @State var overImg = false
     @State private var touchPoint: NSPoint = .zero
     
+    var mapCompat: MapCompat {
+        MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
+    }
+    
+    var trendingBarChart: some View {
+        TrendingLocationBarChartView(viewModel: viewModel)
+    }
+    
     var mouseLocation: NSPoint { NSEvent.mouseLocation }
     
     var body: some View {
@@ -45,6 +53,21 @@ struct HeatMapView: View {
                             }.padding(.leading, 10)
                             Spacer()
                             ExportButton {
+//                                guard let data = mapCompat.renderAsImage() else {
+//                                    print("data nil")
+//                                    return
+//                                }
+                                
+                                guard let mapView = mapCompat.rasterize(at: CGSize(width: 920, height: 350)) else {
+                                    print("map is empty")
+                                    return
+                                }
+
+                                NSSavePanel.saveImage(mapView
+                                ) { result in
+                                    print("saved")
+                                }
+                                
                                 
                             }
                             .frame(width: 120, height: 28).padding(.trailing, 10)
@@ -54,17 +77,17 @@ struct HeatMapView: View {
                         HStack() {
                             VStack {
                                 ZStack(alignment: .topLeading) {
-                                    MapCompat(coordinateRegion: $region, touchPoint: $touchPoint, viewModel: viewModel)
-                                    .trackingMouse { location in
-                                        self.touchPoint = location
-                                    }
-                                    .clipped()
-//                                    if viewModel.isIntersect {
+                                    mapCompat
+                                        .trackingMouse { location in
+                                            self.touchPoint = location
+                                        }
+                                        .clipped()
+                                    if viewModel.isIntersect {
                                         HeatMapRegionHighlight()
                                             .clipped()
                                             .offset(x: self.touchPoint.x, y:
                                                         self.touchPoint.y)
-//                                    }
+                                    }
                                 }
                                 Text("\(String(format: "X = %.0f, Y = %.0f", self.touchPoint.x, self.touchPoint.y))")
                                 HStack(alignment: .center, spacing: 16) {
@@ -79,7 +102,7 @@ struct HeatMapView: View {
                 
                             HStack {
                                 Spacer()
-                                TrendingLocationBarChartView(viewModel: viewModel)
+                                trendingBarChart
                                 Spacer()
                             }
                             .background(colorScheme == .light ? Color.white : Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -89,6 +112,7 @@ struct HeatMapView: View {
                     .frame(width: geo.size.width * 1)
 
                 }
+                .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
             }.padding(10)
             .onAppear(perform: {
                 viewModel.setProvinceTrending()

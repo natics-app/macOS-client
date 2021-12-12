@@ -16,6 +16,7 @@ struct TrendsView: View {
     @StateObject var activeMediaVM: ActiveMediaViewModel = ActiveMediaViewModel()
     @StateObject var casesCategoriesVM = CasesCategoriesViewModel()
     @StateObject var risingCasesVM: TrendingRisingCaseViewModel = TrendingRisingCaseViewModel()
+    @StateObject var downloadButtonVM: DownloadShareButtonViewModel = DownloadShareButtonViewModel()
     
     var body: some View {
         ZStack(){
