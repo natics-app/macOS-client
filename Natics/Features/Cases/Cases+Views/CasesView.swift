@@ -10,35 +10,44 @@ import SwiftUI
 struct CasesView: View {
     @EnvironmentObject var viewModel: DatePickerViewModel
     @StateObject var casesViewModel: CasesViewModel =  CasesViewModel()
-    
+    @State var isToggle : Bool = false
     var body: some View {
-        VStack(){
-            Text("\(viewModel.selection?.rawValue ?? "")")
-            HStack {
-                NavigationBarView()
+        VStack {
+            ZStack(){
+                VStack {
+                    Text("\(viewModel.selection?.rawValue ?? "")")
+                    HStack {
+                        NavigationBarView(casesViewModel: casesViewModel)
+                    }
+                    CasesTable(casesViewModel: casesViewModel, isToggle: $isToggle)
+                    Spacer()
+                }
+                VStack {
+                    if isToggle {
+                        CaseEditPopUpView(caseDate: .constant(Date()), show: $isToggle)
+                    }
+                }
+            }.navigationTitle("")
+            .toolbar {
+                ToolbarItem(placement: ToolbarItemPlacement.navigation) {
+                    Text("Cases")
+                        .font(.system(size: 24))
+                        .fontWeight(.semibold)
+                }
+                ToolbarItem {
+                    ToolbarView()
+                }
             }
-            CasesTable(casesViewModel: casesViewModel)
-            Spacer()
-        }.navigationTitle("")
-        .toolbar {
-            ToolbarItem(placement: ToolbarItemPlacement.navigation) {
-                Text("Cases")
-                    .font(.system(size: 24))
-                    .fontWeight(.semibold)
+            .padding(24)
+            .onReceive(viewModel.$selection) { selectionPublisher in
+                if !viewModel.isCustomChosen {
+                    casesViewModel.getAllCases(selection: selectionPublisher ?? .pastWeek)
+                }
             }
-            ToolbarItem {
-                ToolbarView()
-            }
-        }
-        .padding(24)
-        .onReceive(viewModel.$selection) { selectionPublisher in
-            if !viewModel.isCustomChosen {
-                casesViewModel.getAllCases(selection: selectionPublisher ?? .pastWeek)
-            }
-        }
-        .onReceive(viewModel.$isCustomChosen) { chosen in
-            if chosen {
-                casesViewModel.getAllCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+            .onReceive(viewModel.$isCustomChosen) { chosen in
+                if chosen {
+                    casesViewModel.getAllCases(startDate: viewModel.customStartDate!, endDate: viewModel.customEndDate!)
+                }
             }
         }
     }

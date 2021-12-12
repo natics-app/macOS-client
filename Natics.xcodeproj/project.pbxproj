@@ -92,8 +92,16 @@
 		49C636052756809000AFA0EB /* EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C636042756809000AFA0EB /* EdgeBorder.swift */; };
 		49CD36E72757E6C1008D95D0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E62757E6C1008D95D0 /* TextButton.swift */; };
 		49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */; };
-		49E4760027609A1300CDC434 /* DownloadShareButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */; };
 		49E476022760AE9000CDC434 /* Extension+FilePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E476012760AE9000CDC434 /* Extension+FilePanel.swift */; };
+		49E475EC275F8D4E00CDC434 /* CaseEditPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475EB275F8D4E00CDC434 /* CaseEditPopUpView.swift */; };
+		49E475EE275F8D7500CDC434 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475ED275F8D7500CDC434 /* Extension+Array.swift */; };
+		49E475F0275F8D7D00CDC434 /* Extension+ViewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475EF275F8D7D00CDC434 /* Extension+ViewStack.swift */; };
+		49E475F5275F8DAA00CDC434 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475F2275F8DAA00CDC434 /* SearchBarView.swift */; };
+		49E475F6275F8DAA00CDC434 /* SearchBarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475F3275F8DAA00CDC434 /* SearchBarRow.swift */; };
+		49E475F7275F8DAA00CDC434 /* SearchBarRowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475F4275F8DAA00CDC434 /* SearchBarRowLabel.swift */; };
+		49E475F9275F8DCD00CDC434 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475F8275F8DCD00CDC434 /* LabelButton.swift */; };
+		49E475FC275F8DFB00CDC434 /* HyperlinkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475FB275F8DFB00CDC434 /* HyperlinkText.swift */; };
+		49E475FE275FC29C00CDC434 /* DownloadShareButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E475FD275FC29C00CDC434 /* DownloadShareButtonViewModel.swift */; };
 		49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */; };
 		4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */; };
 		4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */; };
@@ -217,8 +225,16 @@
 		49C636042756809000AFA0EB /* EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBorder.swift; sourceTree = "<group>"; };
 		49CD36E62757E6C1008D95D0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLabelButton.swift; sourceTree = "<group>"; };
-		49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonViewModel.swift; sourceTree = "<group>"; };
 		49E476012760AE9000CDC434 /* Extension+FilePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+FilePanel.swift"; sourceTree = "<group>"; };
+		49E475EB275F8D4E00CDC434 /* CaseEditPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseEditPopUpView.swift; sourceTree = "<group>"; };
+		49E475ED275F8D7500CDC434 /* Extension+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
+		49E475EF275F8D7D00CDC434 /* Extension+ViewStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+ViewStack.swift"; sourceTree = "<group>"; };
+		49E475F2275F8DAA00CDC434 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		49E475F3275F8DAA00CDC434 /* SearchBarRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarRow.swift; sourceTree = "<group>"; };
+		49E475F4275F8DAA00CDC434 /* SearchBarRowLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarRowLabel.swift; sourceTree = "<group>"; };
+		49E475F8275F8DCD00CDC434 /* LabelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
+		49E475FB275F8DFB00CDC434 /* HyperlinkText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperlinkText.swift; sourceTree = "<group>"; };
+		49E475FD275FC29C00CDC434 /* DownloadShareButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadShareButtonViewModel.swift; sourceTree = "<group>"; };
 		49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRisingCaseViewModel.swift; sourceTree = "<group>"; };
 		4E15B5AB274259D700F5C0CF /* Interface+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interface+Cases.swift"; sourceTree = "<group>"; };
 		4E15B5AD27425B6B00F5C0CF /* Request+Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Cases.swift"; sourceTree = "<group>"; };
@@ -304,6 +320,9 @@
 		440DD5FE272E97DA00758AD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49E475FA275F8DEE00CDC434 /* HyperlinkText */,
+				49E475F1275F8D9900CDC434 /* SearchBar */,
+				49E475EA275F8D0A00CDC434 /* CaseEditPopOver */,
 				49C636032756808000AFA0EB /* Shape */,
 				49C635F72756792700AFA0EB /* Notifications */,
 				44FB2AD1273E08F600231317 /* AddWatchlist */,
@@ -338,7 +357,7 @@
 				49F340C52743729200969389 /* TrendingRisingCaseViewModel.swift */,
 				49C635FD27567E0E00AFA0EB /* NotificationViewModel.swift */,
 				44B1A14B275C9F49002DF0A7 /* UserViewModel.swift */,
-				49E475FF27609A1300CDC434 /* DownloadShareButtonViewModel.swift */,
+				49E475FD275FC29C00CDC434 /* DownloadShareButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -351,6 +370,7 @@
 				44159B5E2736AF880077F3FF /* SharingButton.swift */,
 				49CD36E62757E6C1008D95D0 /* TextButton.swift */,
 				49CD36E82757E8B3008D95D0 /* NotificationLabelButton.swift */,
+				49E475F8275F8DCD00CDC434 /* LabelButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -419,6 +439,8 @@
 				44FB2AFD274312F700231317 /* Extension+String.swift */,
 				49C6360127567FE800AFA0EB /* Extension+View.swift */,
 				49E476012760AE9000CDC434 /* Extension+FilePanel.swift */,
+				49E475ED275F8D7500CDC434 /* Extension+Array.swift */,
+				49E475EF275F8D7D00CDC434 /* Extension+ViewStack.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -667,6 +689,32 @@
 			path = Shape;
 			sourceTree = "<group>";
 		};
+		49E475EA275F8D0A00CDC434 /* CaseEditPopOver */ = {
+			isa = PBXGroup;
+			children = (
+				49E475EB275F8D4E00CDC434 /* CaseEditPopUpView.swift */,
+			);
+			path = CaseEditPopOver;
+			sourceTree = "<group>";
+		};
+		49E475F1275F8D9900CDC434 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				49E475F3275F8DAA00CDC434 /* SearchBarRow.swift */,
+				49E475F4275F8DAA00CDC434 /* SearchBarRowLabel.swift */,
+				49E475F2275F8DAA00CDC434 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		49E475FA275F8DEE00CDC434 /* HyperlinkText */ = {
+			isa = PBXGroup;
+			children = (
+				49E475FB275F8DFB00CDC434 /* HyperlinkText.swift */,
+			);
+			path = HyperlinkText;
+			sourceTree = "<group>";
+		};
 		4E15B5B1274267F500F5C0CF /* Cases+ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,7 +915,9 @@
 				E7A041062738D10600B20B99 /* HighlightCard.swift in Sources */,
 				49468242272FA08A00C92AEE /* SiderBarViewModel.swift in Sources */,
 				4454BDE3272F9C9D0012E4A4 /* Extension+Color.swift in Sources */,
+				49E475FC275F8DFB00CDC434 /* HyperlinkText.swift in Sources */,
 				E7A041102738D22900B20B99 /* MediaDummy.swift in Sources */,
+				49E475F9275F8DCD00CDC434 /* LabelButton.swift in Sources */,
 				4495345127327D5F00CADA9F /* Interface.swift in Sources */,
 				E75B3F902743757B00989409 /* CasesCategories.swift in Sources */,
 				44FB2AFC27430A6D00231317 /* Helper+Date.swift in Sources */,
@@ -888,12 +938,14 @@
 				44DE84B627371A8C0034DBA2 /* HeatMapModel.swift in Sources */,
 				E7A0410E2738D1F700B20B99 /* NumberOfCasesView.swift in Sources */,
 				44FB2AF32742D64600231317 /* Request+Users.swift in Sources */,
+				49E475F7275F8DAA00CDC434 /* SearchBarRowLabel.swift in Sources */,
 				4495344E27323FA200CADA9F /* MCGenericResponseModel.swift in Sources */,
 				E75B3F8427436F1B00989409 /* ActiveMediaViewModel.swift in Sources */,
 				44B1A14C275C9F49002DF0A7 /* UserViewModel.swift in Sources */,
 				49615AAD27420E5A00339936 /* TrendingProvinceViewModel.swift in Sources */,
 				4EE8C21D27369CCC00C9AD66 /* RisingCaseTableViewModel.swift in Sources */,
 				440DD603272E982D00758AD9 /* VMGlobal.swift in Sources */,
+				49E475EE275F8D7500CDC434 /* Extension+Array.swift in Sources */,
 				44FB2AD7273E104100231317 /* AddWatchlistView.swift in Sources */,
 				E7A041122738D23900B20B99 /* PieChart.swift in Sources */,
 				4E15B5AC274259D700F5C0CF /* Interface+Cases.swift in Sources */,
@@ -913,15 +965,17 @@
 				49F340C62743729200969389 /* TrendingRisingCaseViewModel.swift in Sources */,
 				44FB2AFE274312F700231317 /* Extension+String.swift in Sources */,
 				49CD36E92757E8B3008D95D0 /* NotificationLabelButton.swift in Sources */,
-				49E4760027609A1300CDC434 /* DownloadShareButtonViewModel.swift in Sources */,
+				49E475FE275FC29C00CDC434 /* DownloadShareButtonViewModel.swift in Sources */,
 				4454BDE8272FA6600012E4A4 /* Constants.swift in Sources */,
 				44FB2AD5273E0F4800231317 /* AddWatchlistCell.swift in Sources */,
 				44159B782736B0910077F3FF /* WatchlistModel.swift in Sources */,
 				44159B5F2736AF880077F3FF /* IconButton.swift in Sources */,
+				49E475F0275F8D7D00CDC434 /* Extension+ViewStack.swift in Sources */,
 				44558F112728688F00DEE0EF /* ContentView.swift in Sources */,
 				44FB2AED2742D60B00231317 /* Request+Sites.swift in Sources */,
 				E7A041142738D24600B20B99 /* PieChartView.swift in Sources */,
 				44159B702736AF990077F3FF /* DatePickerViewModel.swift in Sources */,
+				49E475F5275F8DAA00CDC434 /* SearchBarView.swift in Sources */,
 				44DE84BB27371B5D0034DBA2 /* MapLegendIndicator.swift in Sources */,
 				44FB2AF92742D66F00231317 /* Request+Auth.swift in Sources */,
 				44DE84C227371BD10034DBA2 /* TrendsViewModel.swift in Sources */,
@@ -929,6 +983,7 @@
 				4E15B5AE27425B6B00F5C0CF /* Request+Cases.swift in Sources */,
 				44159B652736AF900077F3FF /* NavigationBarView.swift in Sources */,
 				44FB2AF52742D65300231317 /* Interface+Users.swift in Sources */,
+				49E475EC275F8D4E00CDC434 /* CaseEditPopUpView.swift in Sources */,
 				44FB2AE92742D5ED00231317 /* Request+Organizations.swift in Sources */,
 				E75B3F952743D6E700989409 /* PieChartViewCasesCategories.swift in Sources */,
 				49C636052756809000AFA0EB /* EdgeBorder.swift in Sources */,
@@ -958,6 +1013,7 @@
 				E75B3F9C2743DFB800989409 /* LanguageSection.swift in Sources */,
 				4936C5B2275507AB00D29206 /* HeatMapRegionHighlight.swift in Sources */,
 				449534572732822200CADA9F /* Connector.swift in Sources */,
+				49E475F6275F8DAA00CDC434 /* SearchBarRow.swift in Sources */,
 				49468240272F9FE700C92AEE /* SideBarView.swift in Sources */,
 				49468250272FA61800C92AEE /* TrendsView.swift in Sources */,
 				4495345F2733B79D00CADA9F /* RegionModel.swift in Sources */,

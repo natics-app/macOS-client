@@ -11,6 +11,7 @@ struct CasesTableRow: View {
     
     var rowcase: NewsModel
     var rowindex: Int = 1
+    @Binding var isShow : Bool
     
     var body: some View {
         HStack (spacing: 0) {
@@ -34,17 +35,17 @@ struct CasesTableRow: View {
                 .lineLimit(0)
                 .frame(width: 190, alignment: .leading)
                 HStack {
-                    ForEach(rowcase.regencies ?? [], id: \.id) { regency in
+                    ForEach(rowcase.regencies , id: \.id) { regency in
         
-                            Text(String("\(regency.province.name) \n" ?? "-"))
+                        Text(String("\(regency.province.name) \n" ))
                                 .fontWeight(.medium)   
                     }
                 }
                 .lineLimit(0)
                 .frame(width: 97, alignment: .leading)
                 HStack {
-                    ForEach(rowcase.regencies ?? [], id: \.id) { regency in
-                        if regency.name != nil {
+                    ForEach(rowcase.regencies , id: \.id) { regency in
+                        if !regency.name.isEmpty {
                             Text(String("\(regency.name) \n"))
                                 .fontWeight(.medium)
                         } else {
@@ -63,7 +64,7 @@ struct CasesTableRow: View {
                 HStack {
                     ForEach(rowcase.organizations, id: \.id) { org in
 
-                        Text(String(org.name ?? "-"))
+                        Text(String(org.name ))
                                 .fontWeight(.medium)
                                 .lineLimit(0)
                                 
@@ -71,7 +72,6 @@ struct CasesTableRow: View {
                     }
                 }.frame(width: 97, alignment: .leading)
                 
-                //Text(rowcase.organizations.joined(separator: ","))
                 Text(rowcase.date ?? "")
                     .fontWeight(.medium)
                     .frame(width: 85, alignment: .leading)
@@ -91,7 +91,11 @@ struct CasesTableRow: View {
             }
             .foregroundColor(Color.colorTheme.MCBlack)
             HStack{
-                Button(action: {}){
+                Button(action: {
+                    withAnimation {
+                        isShow.toggle()
+                    }
+                }){
                     Text("Edit")
                         .fontWeight(.medium)
                 }
@@ -119,6 +123,6 @@ struct CasesTableRow: View {
 
 struct CasesTableRow_Previews: PreviewProvider {
     static var previews: some View {
-        CasesTableRow(rowcase: NewsModel(id: 1, title: "apa aja", url: "asdada", date: "21313", news_date: "adsada", is_trained: 1, label: "penyitaan", organizations: [], site: SiteModel(id: 1, name: "x"), animals: [], regencies: []), rowindex: 1 )
+        CasesTableRow(rowcase: NewsModel(id: 1, title: "apa aja", url: "asdada", date: "21313", news_date: "adsada", is_trained: 1, label: "penyitaan", organizations: [], site: SiteModel(id: 1, name: "x"), animals: [], regencies: []), rowindex: 1, isShow: .constant(false) )
     }
 }
