@@ -46,7 +46,9 @@ struct RisingCasesTable: View {
                 }
                 Spacer()
                 Button(action: {
-                    let image = risingTable.rasterize(at: CGSize(width: 610, height: 365))
+                    guard let image = risingTable.rasterize(at: CGSize(width: 610, height: 365)) else {
+                        return 
+                    }
                     
                     NSSavePanel.saveImage(image
                     ) { result in

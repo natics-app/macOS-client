@@ -58,7 +58,10 @@ struct HeatMapView: View {
 //                                    return
 //                                }
                                 
-                                let mapView = mapCompat.rasterize(at: CGSize(width: 920, height: 350))
+                                guard let mapView = mapCompat.rasterize(at: CGSize(width: 920, height: 350)) else {
+                                    print("map is empty")
+                                    return
+                                }
 
                                 NSSavePanel.saveImage(mapView
                                 ) { result in
@@ -79,12 +82,12 @@ struct HeatMapView: View {
                                             self.touchPoint = location
                                         }
                                         .clipped()
-//                                    if viewModel.isIntersect {
-//                                        HeatMapRegionHighlight()
-//                                            .clipped()
-//                                            .offset(x: self.touchPoint.x, y:
-//                                                        self.touchPoint.y)
-//                                    }
+                                    if viewModel.isIntersect {
+                                        HeatMapRegionHighlight()
+                                            .clipped()
+                                            .offset(x: self.touchPoint.x, y:
+                                                        self.touchPoint.y)
+                                    }
                                 }
                                 Text("\(String(format: "X = %.0f, Y = %.0f", self.touchPoint.x, self.touchPoint.y))")
                                 HStack(alignment: .center, spacing: 16) {

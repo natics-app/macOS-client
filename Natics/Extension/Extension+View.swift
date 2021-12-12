@@ -45,7 +45,7 @@ extension View {
         return bitmapRep
     }
     
-    public func rasterize(at size: CGSize) -> NSImage {
+    public func rasterize(at size: CGSize) -> NSImage? {
         let image = NSImage(size: size)
         image.addRepresentation(self.rasterizeBitmap(at: size))
         return image

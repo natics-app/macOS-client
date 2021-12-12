@@ -39,7 +39,9 @@ struct TrendingBarChart: View {
                 Spacer()
                 Button(action: {
                     
-                    let image = barView.rasterize(at: CGSize(width: 920, height: 350))
+                    guard let image = barView.rasterize(at: CGSize(width: 920, height: 350)) else {
+                        return
+                    }
                     
                     NSSavePanel.saveImage(image
                     ) { result in
