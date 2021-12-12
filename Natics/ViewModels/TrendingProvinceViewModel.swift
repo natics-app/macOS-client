@@ -112,5 +112,5 @@ extension TrendingProvinceViewModel {
             }
         
             return mapImage!
-        }
+    }
 }

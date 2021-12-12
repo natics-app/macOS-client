@@ -14,7 +14,7 @@ struct MapCompat : NSViewRepresentable {
     @Binding var touchPoint: NSPoint
     
     @ObservedObject var viewModel: TrendingProvinceViewModel
-    let mapView = MKMapView()
+    var mapView = MKMapView()
     
     func makeNSView(context: Context) -> MKMapView {
         mapView.delegate = context.coordinator
@@ -29,7 +29,7 @@ struct MapCompat : NSViewRepresentable {
         mapView.isScrollEnabled = false
         mapView.isZoomEnabled = false
         
-        loadGeoJson()
+        loadMapOverlay()
         return mapView
     }
     
@@ -51,6 +51,7 @@ struct MapCompat : NSViewRepresentable {
         }
         let newMapOverlay = MapOverlayer(overlay: overlay, polygonInfo: overlayer.shared.polygonInfo, isHover: false)
         MapOverlays.shared.addOverlay(mapOverlayer: newMapOverlay)
+        MapOverlays.shared.addTempOverlay(mapOverlayer: overlay)
         self.mapView.addOverlay(overlay)
         self.mapView.setVisibleMapRect(overlay.boundingMapRect, animated: true)
     }
@@ -180,7 +181,7 @@ struct MapCompat : NSViewRepresentable {
             if let tileOverlay = overlay as? MKTileOverlay {
                return MKTileOverlayRenderer(tileOverlay: tileOverlay)
            } else {
-               return MKOverlayRenderer(overlay: overlay)
+               return MKPolygonRenderer(overlay: overlay)
            }
         }
     }
@@ -200,7 +201,14 @@ class CustomAnnotationView: MKPinAnnotationView {
 
 // MARK: - Reading and Writing JSON File
 extension MapCompat {
-    func loadGeoJson() {
+    func loadMapOverlay() {
+        if !MapOverlays.shared.returnTempOverlay().isEmpty {
+            mapView.addOverlays(MapOverlays.shared.returnTempOverlay())
+        } else {
+            loadGeoJson()
+        }
+    }
+    private func loadGeoJson() {
         guard let url = Bundle.main.url(forResource: "IndonesiaGeoJSONProvinces", withExtension: "geojson") else {
             fatalError("unable to get geojson")
         }

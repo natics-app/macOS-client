@@ -80,10 +80,10 @@ struct HeatMapView: View {
                                         }
                                         .clipped()
 //                                    if viewModel.isIntersect {
-                                        HeatMapRegionHighlight()
-                                            .clipped()
-                                            .offset(x: self.touchPoint.x, y:
-                                                        self.touchPoint.y)
+//                                        HeatMapRegionHighlight()
+//                                            .clipped()
+//                                            .offset(x: self.touchPoint.x, y:
+//                                                        self.touchPoint.y)
 //                                    }
                                 }
                                 Text("\(String(format: "X = %.0f, Y = %.0f", self.touchPoint.x, self.touchPoint.y))")
